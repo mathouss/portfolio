@@ -4,25 +4,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Mathis Slezakowa - Journaliste et monteur vidéo.">
+
+    <meta name="description" content="Mathis Slezakowa, journaliste et monteur vidéo. Découvrez mes reportages et réalisations audiovisuelles.">
+
     <title>Mathis Slezakowa — Journaliste & Monteur vidéo</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>Mathis Slezakowa</h1>
-        <p>Journaliste & Monteur vidéo</p>
+    <!-- NAVIGATION -->
+    <header class="header">
+        <a href="#" class="logo">
+            MATHIS <span>SLEZAKOWA.</span>
+        </a>
+
+        <nav class="navigation">
+            <a href="#realisations">Réalisations</a>
+            <a href="#apropos">À propos</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
+
     <main>
-        <section>
-            <h2>Bienvenue sur mon portfolio</h2>
-            <p>Je raconte des histoires en images.</p>
+
+        <!-- PRESENTATION -->
+        <section class="hero" id="apropos">
+
+            <div class="hero-content">
+                <p class="eyebrow">PORTFOLIO — 2026</p>
+
+                <h1>
+                    Mathis<br>
+                    <span>Slezakowa.</span>
+                </h1>
+
+                <p class="profession">
+                    JOURNALISTE <span>·</span> MONTEUR VIDÉO
+                </p>
+
+                <p class="introduction">
+                    Je raconte des histoires, je capture des instants
+                    et je donne vie aux images.
+                </p>
+            </div>
+
+            <div class="hero-image">
+                <img src="images/portrait.jpg" alt="Portrait de Mathis Slezakowa">
+            </div>
+
         </section>
+
+
+        <!-- REALISATIONS -->
+        <section class="realisations" id="realisations">
+
+            <div class="section-heading">
+                <h2>Mes <span>réalisations.</span></h2>
+                <p>UNE SÉLECTION DE MES PROJETS</p>
+            </div>
+
+            <div class="categories">
+
+                <a href="#journalisme" class="category">
+                    <div class="category-image journalism-image"></div>
+                    <div class="category-title">
+                        Journalisme <span>↗</span>
+                    </div>
+                </a>
+
+                <a href="#montage" class="category">
+                    <div class="category-image editing-image"></div>
+                    <div class="category-title">
+                        Montage vidéo <span>↗</span>
+                    </div>
+                </a>
+
+                <a href="#corporate" class="category">
+                    <div class="category-image corporate-image"></div>
+                    <div class="category-title">
+                        Corporate <span>↗</span>
+                    </div>
+                </a>
+
+                <a href="#reseaux" class="category">
+                    <div class="category-image social-image"></div>
+                    <div class="category-title">
+                        Réseaux sociaux <span>↗</span>
+                    </div>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- JOURNALISME -->
+        <section class="project-section" id="journalisme">
+
+            <div class="project-info">
+                <h2>Journalisme<span>.</span></h2>
+                <p>REPORTAGES · INTERVIEWS · TERRAIN</p>
+
+                <a href="#contact" class="project-link">
+                    <span>Découvrir mes reportages</span>
+                    <span class="arrow">↗</span>
+                </a>
+            </div>
+
+            <div class="project-visual">
+                <img src="images/projets/journalisme.jpg"
+                     alt="Reportage journalistique">
+            </div>
+
+        </section>
+
+
+        <!-- MONTAGE VIDEO -->
+        <section class="project-section reverse" id="montage">
+
+            <div class="project-info">
+                <h2>Montage vidéo<span>.</span></h2>
+                <p>ÉDITION · RYTHME · CRÉATION</p>
+
+                <a href="#contact" class="project-link">
+                    <span>Découvrir mes montages</span>
+                    <span class="arrow">↗</span>
+                </a>
+            </div>
+
+            <div class="project-visual">
+                <img src="images/projets/montage.jpg"
+                     alt="Travail de montage vidéo">
+            </div>
+
+        </section>
+
+
+        <!-- CORPORATE -->
+        <section class="project-section" id="corporate">
+
+            <div class="project-info">
+                <h2>Corporate<span>.</span></h2>
+                <p>ENTREPRISES · COMMUNICATION · VIDÉO</p>
+
+                <a href="#contact" class="project-link">
+                    <span>Découvrir mes projets</span>
+                    <span class="arrow">↗</span>
+                </a>
+            </div>
+
+            <div class="project-visual">
+                <img src="images/projets/corporate.jpg"
+                     alt="Production vidéo corporate">
+            </div>
+
+        </section>
+
+
+        <!-- RESEAUX SOCIAUX -->
+        <section class="project-section reverse" id="reseaux">
+
+            <div class="project-info">
+                <h2>Réseaux sociaux<span>.</span></h2>
+                <p>TIKTOK · INSTAGRAM · YOUTUBE</p>
+
+                <a href="#contact" class="project-link">
+                    <span>Découvrir mes créations</span>
+                    <span class="arrow">↗</span>
+                </a>
+            </div>
+
+            <div class="project-visual">
+                <img src="images/projets/reseaux.jpg"
+                     alt="Création de contenus pour les réseaux sociaux">
+            </div>
+
+        </section>
+
     </main>
 
-    <footer>
-        <p>© 2026 Mathis Slezakowa</p>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+
+        <div class="footer-name">
+            MATHIS <span>SLEZAKOWA.</span>
+        </div>
+
+        <p>Journaliste & Monteur vidéo</p>
+
+        <div class="footer-links">
+            <a href="mailto:tonadresse@email.com">E-mail</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 MATHIS SLEZAKOWA — TOUS DROITS RÉSERVÉS
+        </p>
+
     </footer>
 
 </body>
