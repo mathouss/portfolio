@@ -1,14 +1,15 @@
 
-/* =========================================
-   1. IDENTITE VISUELLE
-========================================= */
+/* ==============================
+   BASE
+============================== */
 
 :root {
     --cream: #F0E9DF;
-    --orange: #D66B42;
+    --terracotta: #D66B42;
     --dark: #171513;
     --brown: #78685C;
     --line: #C9B8A7;
+    --white: #FAF7F2;
 }
 
 * {
@@ -19,388 +20,342 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
     background: var(--cream);
     color: var(--dark);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "DM Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 img {
+    display: block;
     max-width: 100%;
 }
 
 
-/* =========================================
-   2. NAVIGATION
-========================================= */
+/* ==============================
+   NAVIGATION
+============================== */
 
-.header {
-    width: 92%;
-    margin: auto;
-    padding: 30px 0;
+.site-header {
+    width: 100%;
+    min-height: 82px;
+    padding: 0 7%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     border-bottom: 1px solid var(--line);
 }
 
 .logo {
-    font-family: Georgia, serif;
-    font-size: 25px;
-    font-weight: bold;
-    color: var(--dark);
-    text-decoration: none;
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -2px;
 }
 
-.logo span,
-.footer-name span {
-    color: var(--orange);
+.logo span {
+    color: var(--terracotta);
 }
 
 .navigation {
     display: flex;
-    gap: 35px;
+    align-items: center;
+    gap: 30px;
 }
 
 .navigation a {
-    text-decoration: none;
-    color: var(--dark);
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: color 0.3s;
+    font-size: 12px;
+    font-weight: 600;
+    transition: color 0.25s ease;
 }
 
 .navigation a:hover {
-    color: var(--orange);
+    color: var(--terracotta);
+}
+
+.navigation .contact-link {
+    color: var(--terracotta);
 }
 
 
-/* =========================================
-   3. PRESENTATION
-========================================= */
+/* ==============================
+   HERO
+============================== */
 
 .hero {
-    width: 92%;
-    margin: 65px auto 100px;
+    min-height: 650px;
+    padding: 90px 12% 80px;
     display: grid;
-    grid-template-columns: 1.5fr 0.8fr;
+    grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
-    gap: 50px;
+    gap: 80px;
+    position: relative;
 }
 
 .eyebrow {
-    font-size: 11px;
-    letter-spacing: 3px;
     color: var(--brown);
-    margin-bottom: 25px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .hero h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(65px, 9vw, 125px);
-    line-height: 0.88;
+    margin-top: 24px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(64px, 8vw, 108px);
+    font-weight: 500;
+    line-height: 0.98;
     letter-spacing: -5px;
-    margin-bottom: 25px;
 }
 
-.hero h1 span {
-    color: var(--orange);
+.hero h1 span,
+.section-heading h2 span,
+.site-footer h2 span {
+    color: var(--terracotta);
 }
 
-.profession {
-    font-size: 15px;
-    font-weight: bold;
-    letter-spacing: 5px;
+.hero h2 {
+    margin-top: 28px;
+    font-size: 17px;
+    font-weight: 600;
 }
 
-.profession span {
-    color: var(--orange);
-}
-
-.introduction {
-    margin-top: 25px;
-    max-width: 400px;
-    line-height: 1.7;
+.hero-description {
+    max-width: 410px;
+    margin-top: 20px;
     color: var(--brown);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.main-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 35px;
+    padding: 15px 20px;
+    background: var(--dark);
+    color: var(--cream);
+    font-size: 12px;
+    font-weight: 600;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.main-button:hover {
+    background: var(--terracotta);
+    transform: translateY(-3px);
+}
+
+.main-button span {
+    font-size: 17px;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 390px;
+    height: 470px;
+    justify-self: end;
+    overflow: hidden;
+    background: var(--line);
 }
 
 .hero-image img {
     width: 100%;
-    height: 320px;
+    height: 100%;
     object-fit: cover;
-    display: block;
+}
+
+.hero-number {
+    position: absolute;
+    bottom: 35px;
+    left: 7%;
+    color: var(--brown);
+    font-size: 10px;
+    letter-spacing: 2px;
 }
 
 
-/* =========================================
-   4. TITRES ET REALISATIONS
-========================================= */
+/* ==============================
+   SECTIONS
+============================== */
 
-.realisations {
-    width: 92%;
-    margin: 0 auto 75px;
+.portfolio-section {
+    padding: 115px 12%;
+    border-top: 1px solid var(--line);
 }
 
 .section-heading {
-    margin-bottom: 25px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 65px;
 }
 
-.section-heading h2,
-.project-info h2 {
-    font-family: Georgia, serif;
-    font-size: clamp(38px, 5vw, 60px);
+.section-heading h2 {
+    margin-top: 20px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 6vw, 76px);
+    font-weight: 500;
+    line-height: 1.05;
     letter-spacing: -2px;
 }
 
-.section-heading h2 span,
-.project-info h2 span {
-    color: var(--orange);
-}
-
-.section-heading p,
-.project-info > p {
-    margin-top: 8px;
-    font-size: 11px;
-    letter-spacing: 3px;
-    font-weight: bold;
+.section-intro {
+    max-width: 360px;
     color: var(--brown);
+    font-size: 14px;
+    line-height: 1.9;
+    padding-bottom: 8px;
 }
 
 
-/* =========================================
-   5. CATEGORIES
-========================================= */
+/* ==============================
+   ILS M'ONT FAIT CONFIANCE
+============================== */
 
-.categories {
+.trust-section {
+    background: var(--white);
+}
+
+.trust-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    gap: 22px;
 }
 
-.category {
-    position: relative;
-    display: block;
+.trust-card {
+    min-height: 190px;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cream);
+    border: 1px solid rgba(201, 184, 167, 0.55);
     overflow: hidden;
-    text-decoration: none;
-    color: white;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
 }
 
-.category-image {
+.trust-card:hover {
+    transform: scale(1.06);
+    border-color: var(--terracotta);
+    box-shadow: 0 14px 35px rgba(23, 21, 19, 0.12);
+    z-index: 2;
+}
+
+.trust-card img {
     width: 100%;
-    aspect-ratio: 4 / 3;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.5s;
+    max-width: 190px;
+    max-height: 115px;
+    object-fit: contain;
+    transition: transform 0.35s ease;
 }
 
-.category:hover .category-image {
+.trust-card:hover img {
     transform: scale(1.06);
 }
 
-.journalism-image {
-    background: linear-gradient(135deg, #796453, #31271F);
-}
-
-.editing-image {
-    background: linear-gradient(135deg, #665D58, #25201D);
-}
-
-.corporate-image {
-    background: linear-gradient(135deg, #A36C48, #39251C);
-}
-
-.social-image {
-    background: linear-gradient(135deg, #B8754B, #39241E);
-}
-
-.category-title {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(23, 21, 19, 0.85);
-    font-family: Georgia, serif;
-    font-size: 17px;
-}
-
-.category-title span {
-    color: var(--orange);
-    font-size: 20px;
-}
-
-
-/* =========================================
-   6. RUBRIQUES DE PROJETS
-========================================= */
-
-.project-section {
-    width: 92%;
-    margin: auto;
-    padding: 60px 0;
-    border-top: 1px solid var(--line);
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 35px;
-    align-items: center;
-}
-
-.project-section.reverse {
-    grid-template-columns: 1.2fr 0.8fr;
-}
-
-.project-section.reverse .project-info {
-    order: 2;
-}
-
-.project-section.reverse .project-visual {
-    order: 1;
-}
-
-.project-visual img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-}
-
-.project-link {
-    margin-top: 30px;
-    min-height: 90px;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid var(--line);
-    color: var(--dark);
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: bold;
-    transition: background 0.3s, color 0.3s;
-}
-
-.project-link:hover {
-    background: var(--dark);
-    color: var(--cream);
-}
-
-.arrow {
-    font-size: 23px;
-    color: var(--orange);
-}
-
-
-
-/* =========================================
-   7. GALERIES DE REALISATIONS
-========================================= */
-
-.gallery-area {
-    grid-column: 1 / -1;
-    width: 100%;
-    min-width: 0;
-    margin-top: 45px;
-    padding-top: 35px;
-    border-top: 1px solid var(--line);
-}
-
-.gallery-heading {
-    margin-bottom: 25px;
-}
-
-.gallery-heading h3 {
-    font-family: Georgia, serif;
-    font-size: clamp(28px, 3vw, 42px);
-    margin-bottom: 8px;
-}
-
-.gallery-heading h3 span {
-    color: var(--orange);
-}
-
-.gallery-heading p {
-    font-size: 11px;
-    letter-spacing: 2px;
+.trust-note {
+    margin-top: 35px;
     color: var(--brown);
-    font-weight: bold;
+    font-size: 12px;
 }
 
-.project-gallery {
+.trust-note a {
+    color: var(--terracotta);
+    font-weight: 700;
+}
+
+
+/* ==============================
+   JOURNALISME & PERSONNEL
+============================== */
+
+.journalism-section,
+.personal-section {
+    background: var(--cream);
+}
+
+.empty-project {
+    min-height: 180px;
+    padding: 35px;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.empty-project p {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+}
+
+.empty-project span {
+    margin-top: 12px;
+    color: var(--brown);
+    font-size: 11px;
+}
+
+
+/* ==============================
+   RÉSEAUX SOCIAUX
+============================== */
+
+.social-section {
+    background: var(--white);
+}
+
+.video-gallery {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    gap: 25px;
-    width: 100%;
-    min-width: 0;
-    overflow-x: auto;
-    padding: 5px 2px 20px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
-    scrollbar-color: var(--orange) transparent;
+    gap: 55px 26px;
 }
 
-.gallery-card {
-    flex: 0 0 calc(50% - 13px);
+.video-card {
+    min-width: 0;
+}
+
+.youtube-card {
+    flex: 0 1 calc(50% - 13px);
     max-width: 650px;
-    min-width: 0;
-    scroll-snap-align: start;
 }
 
-.gallery-card h4 {
-    font-size: 16px;
-    margin: 13px 0 6px;
+.tiktok-card {
+    flex: 0 1 240px;
+    max-width: 240px;
 }
-
-.gallery-card p {
-    font-size: 12px;
-    color: var(--brown);
-}
-
-
-
-/* =========================================
-   8. LECTEURS VIDEO
-========================================= */
 
 .video-frame {
-    position: relative;
     width: 100%;
     overflow: hidden;
-    background: var(--dark);
-    border-radius: 3px;
-}
-
-.video-frame iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
+    background: #171513;
 }
 
 .youtube-frame {
     aspect-ratio: 16 / 9;
 }
 
-/* TikTok : format vertical */
-
-#reseaux .project-gallery {
-    justify-content: center;
-}
-
-#reseaux .gallery-card {
-    flex: 0 0 240px;
-    width: 240px;
-    max-width: 240px;
+.youtube-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 .tiktok-frame {
@@ -408,142 +363,263 @@ img {
     max-width: 100%;
     aspect-ratio: 9 / 16;
     margin: 0 auto;
+    background: #000;
 }
 
-
-
-/* =========================================
-   9. PIED DE PAGE
-========================================= */
-
-.footer {
-    width: 92%;
-    margin: 30px auto 0;
-    padding: 40px 0;
-    border-top: 1px solid var(--line);
-    text-align: center;
+.tiktok-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
-.footer-name {
-    font-family: Georgia, serif;
-    font-size: 23px;
-    font-weight: bold;
+.video-caption {
+    padding-top: 17px;
 }
 
-.footer > p {
+.video-caption h3 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.video-caption p {
+    margin-top: 6px;
     color: var(--brown);
-    margin-top: 10px;
-    font-size: 12px;
+    font-size: 11px;
 }
 
-.footer-links {
+
+/* ==============================
+   FOOTER / CONTACT
+============================== */
+
+.site-footer {
+    padding: 100px 12% 30px;
+    background: var(--dark);
+    color: var(--cream);
+}
+
+.site-footer .eyebrow {
+    color: #B7A99D;
+}
+
+.site-footer h2 {
+    margin-top: 25px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(55px, 8vw, 90px);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.footer-email {
+    display: inline-block;
+    margin-top: 35px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--terracotta);
+    color: var(--cream);
+    font-size: 15px;
+    transition: color 0.25s ease;
+}
+
+.footer-email:hover {
+    color: var(--terracotta);
+}
+
+.footer-bottom {
+    margin-top: 100px;
+    padding-top: 22px;
     display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin: 25px 0;
-}
-
-.footer-links a {
-    color: var(--dark);
-    text-decoration: none;
-    font-size: 13px;
-}
-
-.footer-links a:hover {
-    color: var(--orange);
-}
-
-.footer .copyright {
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid #49413B;
+    color: #B7A99D;
     font-size: 10px;
-    letter-spacing: 2px;
+}
+
+.footer-bottom a:hover {
+    color: var(--terracotta);
 }
 
 
-/* =========================================
-   10. VERSION MOBILE
-========================================= */
+/* ==============================
+   RESPONSIVE — TABLETTES
+============================== */
 
-@media (max-width: 750px) {
+@media (max-width: 1000px) {
 
-    .header {
-        flex-direction: column;
+    .site-header {
+        padding: 0 5%;
+    }
+
+    .navigation {
+        gap: 17px;
+    }
+
+    .navigation a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding-left: 8%;
+        padding-right: 8%;
+        gap: 45px;
+    }
+
+    .portfolio-section {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .site-footer {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+}
+
+
+/* ==============================
+   RESPONSIVE — MOBILES
+============================== */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        min-height: auto;
+        padding: 20px 6%;
+        align-items: flex-start;
         gap: 20px;
     }
 
     .logo {
-        font-size: 21px;
+        font-size: 26px;
     }
 
     .navigation {
-        gap: 15px;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 12px 16px;
     }
 
     .navigation a {
-        font-size: 9px;
-        letter-spacing: 1px;
+        font-size: 10px;
     }
 
     .hero {
+        min-height: auto;
+        padding: 70px 7% 75px;
         grid-template-columns: 1fr;
-        margin-top: 45px;
-        gap: 30px;
+        gap: 45px;
     }
 
     .hero h1 {
-        font-size: clamp(60px, 13vw, 90px);
+        font-size: 70px;
         letter-spacing: -3px;
     }
 
-    .hero-image img {
-        height: 260px;
+    .hero-image {
+        width: 100%;
+        max-width: none;
+        height: 390px;
     }
 
-    .categories {
+    .hero-number {
+        bottom: 25px;
+        left: 7%;
+    }
+
+    .portfolio-section {
+        padding: 75px 7%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+        font-size: 54px;
+    }
+
+    .section-intro {
+        max-width: 100%;
+    }
+
+    .trust-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
 
-    .category-title {
-        font-size: 13px;
-        padding: 10px;
+    .trust-card {
+        min-height: 135px;
+        padding: 18px;
     }
 
-    .project-section,
-    .project-section.reverse {
-        grid-template-columns: 1fr;
-        gap: 25px;
+    .trust-card img {
+        max-height: 85px;
     }
 
-    .project-section.reverse .project-info,
-    .project-section.reverse .project-visual {
-        order: initial;
+    .video-gallery {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
     }
 
-    .project-visual img {
-        height: 230px;
+    .youtube-card {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
     }
 
-    .profession {
-        font-size: 11px;
-        letter-spacing: 3px;
+    .tiktok-card {
+        flex: none;
+        width: 240px;
+        max-width: 100%;
     }
 
-    .gallery-area {
-        margin-top: 30px;
+    .site-footer {
+        padding: 75px 7% 25px;
     }
 
-
-    .gallery-card {
-        flex: 0 0 85%;
+    .site-footer h2 {
+        font-size: 65px;
     }
 
-    #reseaux .gallery-card {
-        flex: 0 0 220px;
-        width: 220px;
+    .footer-bottom {
+        margin-top: 70px;
+    }
+}
+
+
+/* ==============================
+   PETITS ÉCRANS
+============================== */
+
+@media (max-width: 380px) {
+
+    .site-header {
+        flex-direction: column;
     }
 
-    .tiktok-frame {
-        width: 200px;
+    .navigation {
+        justify-content: flex-start;
     }
 
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .section-heading h2 {
+        font-size: 46px;
+    }
+
+    .trust-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
