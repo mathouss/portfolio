@@ -1049,3 +1049,16 @@ body {
 .hero h1 span.hero-dot {
     color: #D7FF38;
 }
+
+/* SUPPRIMER LE CONTOUR DE SLEZAKOWA */
+
+.hero h1 .hero-lastname {
+    -webkit-text-stroke: 0 !important;
+    text-stroke: 0 !important;
+    color: #D65AFF;
+}
+
+.hero h1 .hero-dot {
+    color: #D7FF38;
+    -webkit-text-stroke: 0 !important;
+}
