@@ -331,20 +331,11 @@ img {
     scroll-snap-align: start;
 }
 
+/* YOUTUBE : FORMAT HORIZONTAL */
+
 .youtube-card {
     width: 440px;
     max-width: 75vw;
-}
-
-.tiktok-card {
-    width: 240px;
-    max-width: 75vw;
-}
-
-.video-frame {
-    width: 100%;
-    overflow: hidden;
-    background: #171513;
 }
 
 .youtube-frame {
@@ -355,6 +346,33 @@ img {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+/* INSTAGRAM : FORMAT VERTICAL */
+
+.instagram-card {
+    width: 240px;
+    max-width: 75vw;
+}
+
+.instagram-frame {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background: #171513;
+}
+
+.instagram-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* TIKTOK : FORMAT VERTICAL */
+
+.tiktok-card {
+    width: 240px;
+    max-width: 75vw;
 }
 
 .tiktok-frame {
@@ -371,11 +389,7 @@ img {
     border: 0;
 }
 
-/* LÉGÈRE ADAPTATION DES CARTES JOURNALISME */
-
-.journalism-gallery .video-card {
-    scroll-snap-align: start;
-}
+/* LÉGENDES DES VIDÉOS */
 
 .video-caption {
     padding-top: 17px;
@@ -560,6 +574,11 @@ img {
     .youtube-card {
         width: 82vw;
         max-width: 82vw;
+    }
+
+    .instagram-card {
+        width: 240px;
+        max-width: 75vw;
     }
 
     .tiktok-card {
