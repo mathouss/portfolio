@@ -183,10 +183,8 @@ img {
     display: flex;
     align-items: flex-start;
     gap: 35px;
-
     overflow-x: auto;
     overflow-y: hidden;
-
     padding: 12px 4px 25px;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -305,7 +303,7 @@ img {
     font-size: 11px;
 }
 
-/* RÉSEAUX SOCIAUX : CARROUSEL VIDÉOS */
+/* CARROUSELS VIDÉOS */
 
 .social-section {
     background: var(--white);
@@ -316,10 +314,8 @@ img {
     align-items: flex-start;
     justify-content: flex-start;
     gap: 30px;
-
     overflow-x: auto;
     overflow-y: hidden;
-
     padding: 12px 4px 25px;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -373,6 +369,12 @@ img {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+/* LÉGÈRE ADAPTATION DES CARTES JOURNALISME */
+
+.journalism-gallery .video-card {
+    scroll-snap-align: start;
 }
 
 .video-caption {
