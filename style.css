@@ -1,7 +1,7 @@
 
-/* ==================================
-   IDENTITE VISUELLE
-================================== */
+/* =========================================
+   1. IDENTITE VISUELLE
+========================================= */
 
 :root {
     --cream: #F0E9DF;
@@ -27,10 +27,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+img {
+    max-width: 100%;
+}
 
-/* ==================================
-   NAVIGATION
-================================== */
+
+/* =========================================
+   2. NAVIGATION
+========================================= */
 
 .header {
     width: 92%;
@@ -75,9 +79,9 @@ body {
 }
 
 
-/* ==================================
-   PRESENTATION
-================================== */
+/* =========================================
+   3. PRESENTATION
+========================================= */
 
 .hero {
     width: 92%;
@@ -132,9 +136,9 @@ body {
 }
 
 
-/* ==================================
-   TITRES ET REALISATIONS
-================================== */
+/* =========================================
+   4. TITRES ET REALISATIONS
+========================================= */
 
 .realisations {
     width: 92%;
@@ -167,9 +171,9 @@ body {
 }
 
 
-/* ==================================
-   GALERIE DES CATEGORIES
-================================== */
+/* =========================================
+   5. CATEGORIES
+========================================= */
 
 .categories {
     display: grid;
@@ -233,9 +237,9 @@ body {
 }
 
 
-/* ==================================
-   RUBRIQUES DE PROJETS
-================================== */
+/* =========================================
+   6. RUBRIQUES DE PROJETS
+========================================= */
 
 .project-section {
     width: 92%;
@@ -293,9 +297,114 @@ body {
 }
 
 
-/* ==================================
-   PIED DE PAGE
-================================== */
+/* =========================================
+   7. GALERIES HORIZONTALES
+========================================= */
+
+.gallery-area {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+    margin-top: 45px;
+    padding-top: 35px;
+    border-top: 1px solid var(--line);
+}
+
+.gallery-heading {
+    margin-bottom: 25px;
+}
+
+.gallery-heading h3 {
+    font-family: Georgia, serif;
+    font-size: clamp(28px, 3vw, 42px);
+    margin-bottom: 8px;
+}
+
+.gallery-heading h3 span {
+    color: var(--orange);
+}
+
+.gallery-heading p {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--brown);
+    font-weight: bold;
+}
+
+.project-gallery {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    padding: 5px 2px 20px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--orange) transparent;
+}
+
+.gallery-card {
+    flex: 0 0 420px;
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+.gallery-card h4 {
+    font-size: 16px;
+    margin: 13px 0 6px;
+}
+
+.gallery-card p {
+    font-size: 12px;
+    color: var(--brown);
+}
+
+
+/* =========================================
+   8. LECTEURS VIDEO
+========================================= */
+
+.video-frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--dark);
+    border-radius: 3px;
+}
+
+.video-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.youtube-frame {
+    aspect-ratio: 16 / 9;
+}
+
+/* TikTok : format vertical */
+
+#reseaux .gallery-card {
+    flex: 0 0 240px;
+    width: 240px;
+}
+
+.tiktok-frame {
+    width: 220px;
+    max-width: 100%;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   9. PIED DE PAGE
+========================================= */
 
 .footer {
     width: 92%;
@@ -340,9 +449,9 @@ body {
 }
 
 
-/* ==================================
-   VERSION MOBILE
-================================== */
+/* =========================================
+   10. VERSION MOBILE
+========================================= */
 
 @media (max-width: 750px) {
 
@@ -408,49 +517,21 @@ body {
         font-size: 11px;
         letter-spacing: 3px;
     }
-}
 
-/* LECTEURS VIDEO INTEGRES */
+    .gallery-area {
+        margin-top: 30px;
+    }
 
-.video-frame {
-    width: 100%;
-    overflow: hidden;
-    background: #171513;
-    border-radius: 3px;
-}
-
-.youtube-frame {
-    aspect-ratio: 16 / 9;
-}
-
-.tiktok-frame {
-    aspect-ratio: 9 / 16;
-    width: 220px;
-    max-width: 100%;
-    margin: 0 auto;
-   
-#reseaux .gallery-card {
-    flex: 0 0 240px;
-    min-width: 240px;
-}
-}
-
-}
-
-.video-frame iframe {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.gallery-card {
-    flex: 0 0 40%;
-}
-
-@media (max-width: 700px) {
     .gallery-card {
         flex: 0 0 85%;
     }
-}
 
+    #reseaux .gallery-card {
+        flex: 0 0 220px;
+        width: 220px;
+    }
+
+    .tiktok-frame {
+        width: 200px;
+    }
+}
