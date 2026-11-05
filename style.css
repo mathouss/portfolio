@@ -1030,20 +1030,22 @@ body {
     color: #D65AFF;
 }
 
-/* MATHIS EN MONTSERRAT THIN */
+/* FORCER MATHIS EN MONTSERRAT THIN */
 
-.hero h1 .hero-firstname {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 100;
-    color: #D7FF38;
+.hero h1 span.hero-firstname {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 100 !important;
+    color: #D7FF38 !important;
+    -webkit-text-stroke: 0 !important;
+    text-shadow: none !important;
 }
 
-.hero h1 .hero-lastname {
+.hero h1 span.hero-lastname {
     font-family: "Montserrat", sans-serif;
     font-weight: 800;
     color: #D65AFF;
 }
 
-.hero h1 .hero-lastname .hero-dot {
+.hero h1 span.hero-dot {
     color: #D7FF38;
 }
