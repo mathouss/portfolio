@@ -640,3 +640,63 @@ img {
 .site-header {
     display: none;
 }
+
+/* NOUVEL ACCUEIL MINIMALISTE */
+
+.hero {
+    min-height: 85vh;
+    padding: 100px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    width: 100%;
+}
+
+.hero h1 {
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(38px, 6.5vw, 105px);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -3px;
+    white-space: nowrap;
+}
+
+.hero h1 span {
+    color: var(--terracotta);
+    font-weight: 700;
+}
+
+.hero h2 {
+    margin-top: 18px;
+    font-size: clamp(14px, 1.6vw, 22px);
+    font-weight: 400;
+    letter-spacing: -0.3px;
+}
+
+.hero-image,
+.hero-description {
+    display: none;
+}
+
+/* ADAPTATION MOBILE */
+
+@media (max-width: 700px) {
+    .hero {
+        min-height: 75vh;
+        padding: 80px 6%;
+    }
+
+    .hero h1 {
+        font-size: clamp(32px, 8vw, 56px);
+        letter-spacing: -1.5px;
+        white-space: normal;
+    }
+
+    .hero h2 {
+        font-size: 15px;
+    }
+}
