@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
 :root {
     --cream: #F0E9DF;
     --terracotta: #D66B42;
@@ -772,4 +775,24 @@ img {
     .site-footer .footer-bottom {
         margin-top: 65px;
     }
+}
+
+/* TITRES DES CATÉGORIES EN MONTSERRAT BOLD */
+
+.section-heading h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+/* SUPPRIMER LES TEXTES EXPLICATIFS À DROITE */
+
+.section-heading .section-intro {
+    display: none;
+}
+
+/* SUPPRIMER LA PHRASE SOUS LES COLLABORATIONS */
+
+.trust-note {
+    display: none;
 }
