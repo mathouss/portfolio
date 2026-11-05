@@ -173,22 +173,52 @@ img {
     padding-bottom: 8px;
 }
 
-/* COLLABORATIONS : PROFILS RONDS, SANS CARTES */
+/* COLLABORATIONS : CARROUSEL DE PROFILS */
 
 .trust-section {
     background: var(--white);
 }
 
 .trust-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    justify-items: center;
-    align-items: start;
-    gap: 45px 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 12px 4px 25px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
+}
+
+.trust-grid::-webkit-scrollbar,
+.video-gallery::-webkit-scrollbar {
+    height: 6px;
+}
+
+.trust-grid::-webkit-scrollbar-track,
+.video-gallery::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.trust-grid::-webkit-scrollbar-thumb,
+.video-gallery::-webkit-scrollbar-thumb {
+    background: var(--line);
+    border-radius: 20px;
+}
+
+.trust-grid::-webkit-scrollbar-thumb:hover,
+.video-gallery::-webkit-scrollbar-thumb:hover {
+    background: var(--brown);
 }
 
 .trust-card {
-    width: 100%;
+    flex: 0 0 155px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -199,6 +229,7 @@ img {
     border: none;
     box-shadow: none;
     text-align: center;
+    scroll-snap-align: center;
     transition: transform 0.3s ease;
 }
 
@@ -235,7 +266,7 @@ img {
 }
 
 .trust-note {
-    margin-top: 55px;
+    margin-top: 35px;
     color: var(--brown);
     font-size: 12px;
 }
@@ -274,7 +305,7 @@ img {
     font-size: 11px;
 }
 
-/* RÉSEAUX SOCIAUX */
+/* RÉSEAUX SOCIAUX : CARROUSEL VIDÉOS */
 
 .social-section {
     background: var(--white);
@@ -282,24 +313,36 @@ img {
 
 .video-gallery {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: flex-start;
-    gap: 55px 26px;
+    justify-content: flex-start;
+    gap: 30px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 12px 4px 25px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
 }
 
 .video-card {
+    flex: 0 0 auto;
     min-width: 0;
+    scroll-snap-align: start;
 }
 
 .youtube-card {
-    flex: 0 1 calc(50% - 13px);
-    max-width: 650px;
+    width: 440px;
+    max-width: 75vw;
 }
 
 .tiktok-card {
-    flex: 0 1 240px;
-    max-width: 240px;
+    width: 240px;
+    max-width: 75vw;
 }
 
 .video-frame {
@@ -424,8 +467,8 @@ img {
         padding-right: 8%;
     }
 
-    .trust-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    .trust-card {
+        flex-basis: 145px;
     }
 
     .site-footer {
@@ -496,8 +539,11 @@ img {
     }
 
     .trust-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 35px 15px;
+        gap: 25px;
+    }
+
+    .trust-card {
+        flex-basis: 125px;
     }
 
     .trust-card img {
@@ -506,21 +552,17 @@ img {
     }
 
     .video-gallery {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
+        gap: 22px;
     }
 
     .youtube-card {
-        flex: none;
-        width: 100%;
-        max-width: 100%;
+        width: 82vw;
+        max-width: 82vw;
     }
 
     .tiktok-card {
-        flex: none;
         width: 240px;
-        max-width: 100%;
+        max-width: 75vw;
     }
 
     .site-footer {
@@ -553,5 +595,23 @@ img {
 
     .section-heading h2 {
         font-size: 46px;
+    }
+}
+
+/* ACCESSIBILITÉ : RÉDUIRE LES ANIMATIONS */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .trust-grid,
+    .video-gallery {
+        scroll-behavior: auto;
+    }
+
+    .trust-card,
+    .trust-card img {
+        transition: none;
     }
 }
