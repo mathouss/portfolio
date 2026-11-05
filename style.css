@@ -475,9 +475,9 @@ img {
     margin-top: 0;
     margin-bottom: 55px;
 
-    font-family: "Playfair Display", serif;
+    font-family: "Montserrat", sans-serif;
     font-size: clamp(48px, 6vw, 75px);
-    font-weight: 500;
+    font-weight: 700;
 
     line-height: 1;
     letter-spacing: -3px;
