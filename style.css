@@ -410,3 +410,37 @@ body {
     }
 }
 
+/* LECTEURS VIDEO INTEGRES */
+
+.video-frame {
+    width: 100%;
+    overflow: hidden;
+    background: #171513;
+    border-radius: 3px;
+}
+
+.youtube-frame {
+    aspect-ratio: 16 / 9;
+}
+
+.tiktok-frame {
+    aspect-ratio: 9 / 16;
+}
+
+.video-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.gallery-card {
+    flex: 0 0 40%;
+}
+
+@media (max-width: 700px) {
+    .gallery-card {
+        flex: 0 0 85%;
+    }
+}
+
