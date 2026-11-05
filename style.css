@@ -796,3 +796,216 @@ img {
 .trust-note {
     display: none;
 }
+
+/* ==========================================
+   NOUVELLE DIRECTION ARTISTIQUE
+   NOIR + VERT LIME + VIOLET + ROSE
+========================================== */
+
+:root {
+    --cream: #111016;
+    --terracotta: #D7FF38;
+    --dark: #111016;
+    --brown: #B7AEC2;
+    --line: #39333F;
+    --white: #1C1925;
+
+    --lime: #D7FF38;
+    --violet: #D65AFF;
+    --pink: #FF4DB8;
+    --text-light: #F4F0F7;
+}
+
+/* FOND ET TEXTES */
+
+body {
+    background: var(--cream);
+    color: var(--text-light);
+}
+
+/* ACCUEIL */
+
+.hero {
+    background: #111016;
+}
+
+.hero h1 {
+    color: var(--text-light);
+}
+
+.hero h1 .hero-firstname {
+    color: var(--lime);
+    font-weight: 700;
+}
+
+.hero h1 .hero-lastname {
+    color: var(--violet);
+    font-weight: 800;
+    -webkit-text-stroke: 1.5px var(--lime);
+    paint-order: stroke fill;
+}
+
+.hero h1 .hero-dot {
+    color: var(--lime);
+    -webkit-text-stroke: 0;
+}
+
+.hero h2 {
+    color: var(--text-light);
+}
+
+/* TITRES DES SECTIONS */
+
+.section-heading h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+/* COLLABORATIONS */
+
+.trust-section {
+    background: var(--white);
+}
+
+.trust-section .section-heading h2 {
+    color: var(--lime);
+}
+
+.trust-card span {
+    color: var(--text-light);
+}
+
+.trust-card .follower-count {
+    color: var(--brown);
+}
+
+.trust-card img {
+    border: 2px solid transparent;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.trust-card:hover img {
+    border-color: var(--violet);
+    transform: scale(1.08);
+}
+
+/* JOURNALISME */
+
+.journalism-section {
+    background: var(--cream);
+}
+
+.journalism-section .section-heading h2 {
+    color: var(--violet);
+}
+
+/* RÉSEAUX SOCIAUX */
+
+.social-section {
+    background: var(--white);
+}
+
+.social-section .section-heading h2 {
+    color: var(--lime);
+}
+
+/* PERSONNEL */
+
+.personal-section {
+    background: var(--cream);
+}
+
+.personal-section .section-heading h2 {
+    color: var(--violet);
+}
+
+/* CARTES VIDÉOS */
+
+.video-card {
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-caption h3 {
+    color: var(--text-light);
+}
+
+.video-caption p {
+    color: var(--brown);
+}
+
+/* BARRES DE DÉFILEMENT */
+
+.trust-grid,
+.video-gallery {
+    scrollbar-color: var(--violet) transparent;
+}
+
+.trust-grid::-webkit-scrollbar-thumb,
+.video-gallery::-webkit-scrollbar-thumb {
+    background: var(--violet);
+}
+
+.trust-grid::-webkit-scrollbar-thumb:hover,
+.video-gallery::-webkit-scrollbar-thumb:hover {
+    background: var(--lime);
+}
+
+/* CONTACT */
+
+.site-footer {
+    background: #17131E;
+    color: var(--text-light);
+}
+
+.site-footer .contact-title {
+    color: var(--lime);
+}
+
+.site-footer .contact-title span {
+    color: var(--violet);
+}
+
+.contact-item {
+    color: var(--text-light);
+}
+
+.contact-item svg {
+    stroke: var(--violet);
+}
+
+.contact-item:hover {
+    color: var(--lime);
+}
+
+.footer-bottom {
+    border-top-color: var(--line);
+    color: var(--brown);
+}
+
+/* ADAPTATION MOBILE */
+
+@media (max-width: 700px) {
+    .hero h1 .hero-lastname {
+        -webkit-text-stroke-width: 1px;
+    }
+
+    .section-heading h2 {
+        letter-spacing: -1.5px;
+    }
+}
+
+/* ACCESSIBILITÉ */
+
+@media (prefers-reduced-motion: reduce) {
+    .video-card,
+    .trust-card img {
+        transition: none;
+    }
+}
