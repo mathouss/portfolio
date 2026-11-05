@@ -1009,3 +1009,22 @@ body {
         transition: none;
     }
 }
+
+/* POINTS DES TITRES EN COULEUR INVERSEE */
+
+/* Titres verts : point violet */
+.trust-section .section-heading h2 span,
+.social-section .section-heading h2 span {
+    color: #D65AFF;
+}
+
+/* Titres violets : point vert lime */
+.journalism-section .section-heading h2 span,
+.personal-section .section-heading h2 span {
+    color: #D7FF38;
+}
+
+/* Contact vert : point violet */
+.site-footer .contact-title span {
+    color: #D65AFF;
+}
