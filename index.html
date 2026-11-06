@@ -453,49 +453,183 @@
 
     </footer>
 
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    const carousel = document.querySelector(".trust-grid");
 
+    const carousel = document.querySelector(".trust-grid");
     if (!carousel) return;
 
-    const cards = [...carousel.querySelectorAll(".trust-card")];
+    const cards = Array.from(
+        carousel.querySelectorAll(".trust-card")
+    );
 
-    function updateFocus() {
-        const carouselRect = carousel.getBoundingClientRect();
-        const center = carouselRect.left + carouselRect.width / 2;
+    if (!cards.length) return;
 
-        let closestCard = null;
-        let smallestDistance = Infinity;
+    let activeIndex = 3;
+    let autoPlay;
 
-        cards.forEach(card => {
-            const rect = card.getBoundingClientRect();
-            const cardCenter = rect.left + rect.width / 2;
-            const distance = Math.abs(cardCenter - center);
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
 
-            if (distance < smallestDistance) {
-                smallestDistance = distance;
-                closestCard = card;
+    function updateCarousel() {
+
+        const total = cards.length;
+        const width = carousel.clientWidth;
+
+        // Espacement adapté à l'écran
+        const spacing = Math.min(
+            185,
+            Math.max(90, width * 0.22)
+        );
+
+        cards.forEach((card, index) => {
+
+            // Distance circulaire par rapport
+            // au logo central
+            let distance = index - activeIndex;
+
+            if (distance > total / 2) {
+                distance -= total;
             }
-        });
 
-        cards.forEach(card => {
+            if (distance < -total / 2) {
+                distance += total;
+            }
+
+            const abs = Math.abs(distance);
+
+            const visible = abs <= 2;
+
+            // Position horizontale
+            const x = distance * spacing;
+
+            // Profondeur 3D
+            const z = -abs * 110;
+
+            // Taille : centre grand,
+            // côtés de plus en plus petits
+            const scale = Math.max(
+                0.55,
+                1.18 - abs * 0.22
+            );
+
+            // Rotation vers le centre
+            const rotate = distance * -9;
+
+            // Opacité progressive
+            const opacity =
+                abs === 0 ? 1 :
+                abs === 1 ? 0.72 :
+                abs === 2 ? 0.35 : 0;
+
+            // Flou progressif
+            const blur =
+                abs === 0 ? 0 :
+                abs === 1 ? 0.7 :
+                abs === 2 ? 2.2 : 5;
+
+            card.style.setProperty("--x", x + "px");
+            card.style.setProperty("--z", z + "px");
+            card.style.setProperty("--scale", scale);
+            card.style.setProperty("--rotate", rotate + "deg");
+            card.style.setProperty("--depth", 10 - abs);
+
+            card.style.opacity = opacity;
+            card.style.filter = `blur(${blur}px)`;
+
             card.classList.toggle(
                 "is-focused",
-                card === closestCard
+                distance === 0
             );
+
+            card.classList.toggle(
+                "is-visible",
+                visible
+            );
+
+            card.setAttribute(
+                "tabindex",
+                visible ? "0" : "-1"
+            );
+
         });
     }
 
-    carousel.addEventListener("scroll", updateFocus, {
-        passive: true
+    // Défilement vers le logo suivant
+    function nextSlide() {
+        activeIndex = (activeIndex + 1) % cards.length;
+        updateCarousel();
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+
+        if (reducedMotion.matches) return;
+
+        autoPlay = setInterval(nextSlide, 10000);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlay) {
+            clearInterval(autoPlay);
+        }
+    }
+
+    // Clic sur un logo latéral :
+    // il devient le logo central
+    cards.forEach((card, index) => {
+        card.addEventListener("click", event => {
+            if (index !== activeIndex) {
+                event.preventDefault();
+                activeIndex = index;
+                updateCarousel();
+                startAutoPlay();
+            }
+        });
     });
 
-    window.addEventListener("resize", updateFocus);
+    // Pause lorsque la souris est dessus
+    carousel.addEventListener(
+        "mouseenter",
+        stopAutoPlay
+    );
 
-    updateFocus();
+    carousel.addEventListener(
+        "mouseleave",
+        startAutoPlay
+    );
+
+    // Pause lorsque l'onglet est masqué
+    document.addEventListener(
+        "visibilitychange",
+        () => {
+            if (document.hidden) {
+                stopAutoPlay();
+            } else {
+                startAutoPlay();
+            }
+        }
+    );
+
+    // Adaptation aux changements de largeur
+    window.addEventListener(
+        "resize",
+        updateCarousel
+    );
+
+    reducedMotion.addEventListener(
+        "change",
+        startAutoPlay
+    );
+
+    updateCarousel();
+    startAutoPlay();
+
 });
 </script>
+
 
 </body>
 </html>
