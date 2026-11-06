@@ -1006,3 +1006,77 @@ img {
         transition: none;
     }
 }
+
+/* ==========================================
+   CARROUSEL 3D — VERSION AGRANDIE
+========================================== */
+
+.trust-grid {
+    height: 400px;
+    perspective: 1200px;
+}
+
+.trust-grid .trust-card {
+    top: 55px;
+    width: 210px;
+    height: 300px;
+}
+
+.trust-grid .trust-card img {
+    width: 180px;
+    height: 180px;
+}
+
+.trust-grid .trust-card span {
+    font-size: 16px;
+}
+
+.trust-grid .trust-card .follower-count {
+    font-size: 13px;
+}
+
+/* TABLETTES */
+
+@media (max-width: 1000px) {
+    .trust-grid {
+        height: 340px;
+    }
+
+    .trust-grid .trust-card {
+        top: 45px;
+        width: 170px;
+        height: 260px;
+    }
+
+    .trust-grid .trust-card img {
+        width: 145px;
+        height: 145px;
+    }
+}
+
+/* MOBILES */
+
+@media (max-width: 700px) {
+    .trust-grid {
+        height: 280px;
+    }
+
+    .trust-grid .trust-card {
+        top: 35px;
+        width: 135px;
+        height: 210px;
+    }
+
+    .trust-grid .trust-card img {
+        width: 115px;
+        height: 115px;
+    }
+
+    .trust-grid .trust-card span {
+        font-size: 12px;
+    }
+
+    .trust-grid .trust-card .follower-count {
+        font-size: 10px;
+    }
+}
