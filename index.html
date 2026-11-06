@@ -184,18 +184,6 @@ img {max-width:100%;display:block}
 /* =====================================
    ANNEAUX DE SATURNE
 ===================================== */
-
-/*
-  Chaque anneau est une ellipse virtuelle.
-  Le JavaScript place les vidéos sur
-  cette ellipse et calcule :
-  - la profondeur
-  - la taille
-  - le flou
-  - l'inclinaison
-  - l'ordre d'affichage
-*/
-
 .saturn-shell {
   position:relative;
   width:100%;
@@ -209,7 +197,6 @@ img {max-width:100%;display:block}
       transparent 65%
     );
 }
-
 .saturn-ring {
   position:relative;
   height:470px;
@@ -220,10 +207,7 @@ img {max-width:100%;display:block}
   user-select:none;
   -webkit-user-select:none;
 }
-
 .saturn-ring.is-dragging {cursor:grabbing}
-
-/* Orbite discrète en arrière-plan */
 .saturn-ring::before {
   content:"";
   position:absolute;
@@ -239,7 +223,6 @@ img {max-width:100%;display:block}
     inset 0 0 25px rgba(214,90,255,.025);
   pointer-events:none;
 }
-
 .saturn-card {
   position:absolute;
   left:50%;
@@ -261,11 +244,7 @@ img {max-width:100%;display:block}
     filter .12s linear,
     opacity .12s linear;
 }
-
-.saturn-card.is-front {
-  pointer-events:auto;
-}
-
+.saturn-card.is-front {pointer-events:auto}
 .saturn-card.is-front .video-frame {
   border-color:var(--lime);
   box-shadow:
@@ -273,7 +252,6 @@ img {max-width:100%;display:block}
     0 20px 65px rgba(0,0,0,.45),
     0 0 35px rgba(215,255,56,.08);
 }
-
 .saturn-card .video-frame {
   width:100%;
   position:relative;
@@ -282,21 +260,10 @@ img {max-width:100%;display:block}
   border:1px solid rgba(214,90,255,.4);
   border-radius:12px;
 }
-
-.saturn-card.vertical {
-  --card-width:172px;
-}
-.saturn-card.horizontal {
-  --card-width:300px;
-}
-
-.saturn-card.vertical .video-frame {
-  aspect-ratio:9/16;
-}
-.saturn-card.horizontal .video-frame {
-  aspect-ratio:16/9;
-}
-
+.saturn-card.vertical {--card-width:172px}
+.saturn-card.horizontal {--card-width:300px}
+.saturn-card.vertical .video-frame {aspect-ratio:9/16}
+.saturn-card.horizontal .video-frame {aspect-ratio:16/9}
 .video-frame iframe {
   position:absolute;
   inset:0;
@@ -305,12 +272,8 @@ img {max-width:100%;display:block}
   border:0;
   display:block;
 }
-
-/* Les lecteurs sur les côtés sont désactivés.
-   Seul celui à l'avant est interactif. */
 .saturn-card iframe {pointer-events:none}
 .saturn-card.is-front iframe {pointer-events:auto}
-
 .video-caption {
   padding:12px 4px 0;
   text-align:center;
@@ -325,8 +288,6 @@ img {max-width:100%;display:block}
   font-size:11px;
   color:var(--muted);
 }
-
-/* Petite indication sous les anneaux */
 .saturn-hint {
   display:flex;
   justify-content:center;
@@ -348,7 +309,7 @@ img {max-width:100%;display:block}
 }
 
 /* =====================================
-   PERSONNEL — CARROUSEL SANS FLÈCHES
+   PERSONNEL — SANS FLÈCHES
 ===================================== */
 .personal-gallery {
   display:flex;
@@ -373,9 +334,7 @@ img {max-width:100%;display:block}
   overflow:hidden;
   border:1px solid rgba(214,90,255,.2);
 }
-.personal-gallery .video-caption {
-  text-align:left;
-}
+.personal-gallery .video-caption {text-align:left}
 
 /* =====================================
    À PROPOS
@@ -428,7 +387,7 @@ img {max-width:100%;display:block}
 }
 
 /* =====================================
-   MON MATÉRIEL
+   MON MATÉRIEL — 8 OBJETS
 ===================================== */
 .gear-section {
   padding-top:55px;
@@ -499,8 +458,8 @@ img {max-width:100%;display:block}
   display:flex;
   justify-content:center;
   align-items:center;
-  width:85px;
-  height:85px;
+  width:90px;
+  height:90px;
   padding:9px;
   border:1px solid rgba(215,255,56,.2);
   border-radius:15px;
@@ -521,36 +480,33 @@ img {max-width:100%;display:block}
     border-color .25s;
 }
 .backpack-object img {
-  max-width:100%;
-  max-height:100%;
+  width:100%;
+  height:100%;
   object-fit:contain;
 }
 .backpack-object:nth-child(1) {
-  --x:-280px;--y:-135px;--rotation:-12deg;--delay:100ms;
+  --x:-275px;--y:-135px;--rotation:-12deg;--delay:100ms;
 }
 .backpack-object:nth-child(2) {
-  --x:-135px;--y:-175px;--rotation:-6deg;--delay:220ms;
+  --x:-105px;--y:-185px;--rotation:-6deg;--delay:220ms;
 }
 .backpack-object:nth-child(3) {
-  --x:75px;--y:-185px;--rotation:8deg;--delay:340ms;
+  --x:105px;--y:-185px;--rotation:8deg;--delay:340ms;
 }
 .backpack-object:nth-child(4) {
   --x:275px;--y:-135px;--rotation:12deg;--delay:460ms;
 }
 .backpack-object:nth-child(5) {
-  --x:-290px;--y:35px;--rotation:-8deg;--delay:580ms;
+  --x:-275px;--y:90px;--rotation:-8deg;--delay:580ms;
 }
 .backpack-object:nth-child(6) {
-  --x:290px;--y:35px;--rotation:9deg;--delay:700ms;
+  --x:-105px;--y:180px;--rotation:-5deg;--delay:700ms;
 }
 .backpack-object:nth-child(7) {
-  --x:-220px;--y:165px;--rotation:-10deg;--delay:820ms;
+  --x:105px;--y:180px;--rotation:5deg;--delay:820ms;
 }
 .backpack-object:nth-child(8) {
-  --x:0px;--y:175px;--rotation:0deg;--delay:940ms;
-}
-.backpack-object:nth-child(9) {
-  --x:220px;--y:165px;--rotation:10deg;--delay:1060ms;
+  --x:275px;--y:90px;--rotation:8deg;--delay:940ms;
 }
 .backpack-stage.is-open .backpack-object {
   opacity:1;
@@ -713,14 +669,13 @@ img {max-width:100%;display:block}
   .backpack-object {width:76px;height:76px}
   .backpack-software {width:60px;height:60px}
   .backpack-object:nth-child(1) {--x:-205px;--y:-125px}
-  .backpack-object:nth-child(2) {--x:-100px;--y:-170px}
+  .backpack-object:nth-child(2) {--x:-75px;--y:-170px}
   .backpack-object:nth-child(3) {--x:75px;--y:-170px}
   .backpack-object:nth-child(4) {--x:205px;--y:-125px}
-  .backpack-object:nth-child(5) {--x:-215px;--y:30px}
-  .backpack-object:nth-child(6) {--x:215px;--y:30px}
-  .backpack-object:nth-child(7) {--x:-165px;--y:145px}
-  .backpack-object:nth-child(8) {--x:0px;--y:155px}
-  .backpack-object:nth-child(9) {--x:165px;--y:145px}
+  .backpack-object:nth-child(5) {--x:-205px;--y:75px}
+  .backpack-object:nth-child(6) {--x:-75px;--y:155px}
+  .backpack-object:nth-child(7) {--x:75px;--y:155px}
+  .backpack-object:nth-child(8) {--x:205px;--y:75px}
 }
 @media(max-width:700px) {
   .hero {min-height:55svh;padding:65px 6% 75px}
@@ -836,7 +791,6 @@ img {max-width:100%;display:block}
   <div class="section-heading">
     <h2>Ils m'ont fait confiance<span>.</span></h2>
   </div>
-
   <div class="trust-grid">
     <a class="trust-card" href="https://www.youtube.com/@legrandjd" target="_blank" rel="noopener noreferrer">
       <img src="https://unavatar.io/youtube/legrandjd" alt="Le Grand JD">
@@ -877,13 +831,12 @@ img {max-width:100%;display:block}
 </section>
 
 <!-- =====================================
-     JOURNALISME — ANNEAU DE SATURNE
+     JOURNALISME
 ===================================== -->
 <section class="portfolio-section journalism-section" id="journalisme">
   <div class="section-heading">
     <h2>Journalisme<span>.</span></h2>
   </div>
-
   <div class="saturn-shell">
     <div class="saturn-ring" id="journalism-ring" aria-label="Anneau de vidéos de journalisme">
 
@@ -931,7 +884,6 @@ img {max-width:100%;display:block}
 
     </div>
   </div>
-
   <div class="saturn-hint">
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4"/>
@@ -941,13 +893,12 @@ img {max-width:100%;display:block}
 </section>
 
 <!-- =====================================
-     RÉSEAUX SOCIAUX — ANNEAU DE SATURNE
+     RÉSEAUX SOCIAUX
 ===================================== -->
 <section class="portfolio-section social-section" id="reseaux">
   <div class="section-heading">
     <h2>Réseaux sociaux<span>.</span></h2>
   </div>
-
   <div class="saturn-shell">
     <div class="saturn-ring" id="social-ring" aria-label="Anneau de vidéos pour les réseaux sociaux">
 
@@ -975,23 +926,18 @@ img {max-width:100%;display:block}
         <div class="video-frame">
           <iframe src="https://www.tiktok.com/player/v1/7508349375534451990?controls=1" title="Passe D TikTok 1" loading="lazy" allowfullscreen></iframe>
         </div>
-        <div class="video-caption">
-          <h3>Passe D</h3><p>TikTok</p>
-        </div>
+        <div class="video-caption"><h3>Passe D</h3><p>TikTok</p></div>
       </article>
 
       <article class="saturn-card vertical">
         <div class="video-frame">
           <iframe src="https://www.tiktok.com/player/v1/7518007860157025538?controls=1" title="Passe D TikTok 2" loading="lazy" allowfullscreen></iframe>
         </div>
-        <div class="video-caption">
-          <h3>Passe D</h3><p>TikTok</p>
-        </div>
+        <div class="video-caption"><h3>Passe D</h3><p>TikTok</p></div>
       </article>
 
     </div>
   </div>
-
   <div class="saturn-hint">
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4"/>
@@ -1009,7 +955,6 @@ img {max-width:100%;display:block}
   </div>
 
   <div class="personal-gallery" id="personal-gallery">
-
     <article class="video-card">
       <div class="video-frame">
         <iframe src="https://www.youtube.com/embed/VYcUWn7IoPg" title="Projet personnel 1" loading="lazy" allowfullscreen></iframe>
@@ -1051,7 +996,6 @@ img {max-width:100%;display:block}
       </div>
       <div class="video-caption"><h3>Projet personnel #6</h3><p>YouTube</p></div>
     </article>
-
   </div>
 </section>
 
@@ -1092,30 +1036,42 @@ img {max-width:100%;display:block}
     <div class="backpack-stage" id="backpack-stage">
       <div class="backpack-items" id="backpack-items" inert>
 
-        <button class="backpack-object" type="button" data-gear="iphone" aria-label="iPhone">
+        <!-- iPHONE 18 PRO -->
+        <button class="backpack-object" type="button" data-gear="iphone" aria-label="iPhone 18 Pro">
           <img src="images/iphone-18-pro.png" alt="iPhone 18 Pro">
         </button>
-        <button class="backpack-object" type="button" data-gear="macbook" aria-label="MacBook">
+
+        <!-- MACBOOK PRO -->
+        <button class="backpack-object" type="button" data-gear="macbook" aria-label="MacBook Pro">
           <img src="images/macbook-pro.png" alt="MacBook Pro">
         </button>
-        <button class="backpack-object" type="button" data-gear="mouse" aria-label="Souris">
-          <img src="images/mx-master-4.png" alt="MX Master 4">
+
+        <!-- LOGITECH MX MASTER 4 -->
+        <button class="backpack-object" type="button" data-gear="mouse" aria-label="Logitech MX Master 4">
+          <img src="images/mx-master-4.png" alt="Logitech MX Master 4">
         </button>
-        <button class="backpack-object" type="button" data-gear="screen" aria-label="Écran">
-          <img src="images/msi-md271ul.png" alt="Écran MSI">
+
+        <!-- ÉCRAN MSI -->
+        <button class="backpack-object" type="button" data-gear="screen" aria-label="Écran MSI Modern MD271UL">
+          <img src="images/msi-md271ul.png" alt="Écran MSI Modern MD271UL">
         </button>
-        <button class="backpack-object" type="button" data-gear="desk" aria-label="Bureau">
-          <img src="images/triumphkey-bureau.png" alt="Bureau Triumphkey">
-        </button>
+
+        <!-- ADOBE PREMIERE PRO -->
         <button class="backpack-object backpack-software" type="button" data-gear="premiere" aria-label="Premiere Pro">
           <span class="software-logo premiere-logo">Pr</span>
         </button>
+
+        <!-- DAVINCI RESOLVE -->
         <button class="backpack-object backpack-software" type="button" data-gear="resolve" aria-label="DaVinci Resolve">
           <span class="software-logo resolve-logo">DR</span>
         </button>
+
+        <!-- ADOBE INDESIGN -->
         <button class="backpack-object backpack-software" type="button" data-gear="indesign" aria-label="InDesign">
           <span class="software-logo indesign-logo">Id</span>
         </button>
+
+        <!-- INSTA360 STUDIO -->
         <button class="backpack-object backpack-software" type="button" data-gear="insta360" aria-label="Insta360 Studio">
           <span class="software-logo insta-logo">360</span>
         </button>
@@ -1177,7 +1133,7 @@ img {max-width:100%;display:block}
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =====================================
-     COLLABORATIONS — 3 SECONDES
+     COLLABORATIONS
   ===================================== */
   const trust = document.querySelector(".trust-grid");
 
@@ -1214,6 +1170,7 @@ document.addEventListener("DOMContentLoaded", () => {
       clearInterval(timer);
       timer=null;
     }
+
     function startTrust() {
       stopTrust();
       if(reduced.matches || document.hidden || trust.matches(":hover") ||
@@ -1251,7 +1208,6 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =====================================
      ANNEAUX DE SATURNE — 3D
   ===================================== */
-
   function createSaturnRing(id, initialOffset=0) {
     const ring=document.getElementById(id);
     if(!ring) return;
@@ -1272,14 +1228,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let visible=true;
     let lastFrame=0;
     let frontIndex=-1;
-
-    /*
-      Sur l'ellipse :
-      sin(angle) = position horizontale
-      cos(angle) = profondeur
-      cos positif = devant
-      cos négatif = derrière
-    */
 
     function render() {
       const width=ring.clientWidth;
@@ -1313,28 +1261,9 @@ document.addEventListener("DOMContentLoaded", () => {
       cards.forEach((card,i)=>{
         const p=positions[i];
         const closeness=(p.depth+1)/2;
-
-        /*
-          Échelle : les cartes derrière
-          sont plus petites que celles devant.
-        */
         const scale=.47+closeness*.53;
-
-        /*
-          Inclinaison sur les côtés :
-          la rotation suit la courbe.
-        */
         const rotate=-Math.sin(p.theta)*42;
-
-        /*
-          Flou progressif en profondeur.
-        */
         const blur=Math.pow(1-closeness,1.3)*5.5;
-
-        /*
-          Les cartes du fond restent visibles
-          mais discrètes.
-        */
         const opacity=.17+closeness*.83;
 
         card.style.setProperty("--sx",p.x+"px");
@@ -1351,13 +1280,6 @@ document.addEventListener("DOMContentLoaded", () => {
         card.querySelector("iframe").tabIndex=isFront?0:-1;
       });
 
-      /*
-        Quand la vidéo centrale change,
-        on remet l'ancienne en pause
-        sans recharger tout le carrousel.
-        Les lecteurs YouTube acceptent
-        cette commande si enablejsapi=1.
-      */
       if(previousFront!==-1 && previousFront!==frontIndex) {
         const oldFrame=cards[previousFront].querySelector("iframe");
         if(oldFrame && oldFrame.src.includes("youtube.com/embed/")) {
@@ -1375,12 +1297,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    /*
-      L'anneau avance doucement.
-      Il s'arrête quand on interagit
-      avec une vidéo ou quand la souris
-      est au-dessus.
-    */
     function animate(timestamp) {
       if(!lastFrame) lastFrame=timestamp;
       const dt=Math.min(timestamp-lastFrame,50);
@@ -1401,9 +1317,6 @@ document.addEventListener("DOMContentLoaded", () => {
       requestAnimationFrame(animate);
     }
 
-    /*
-      Glisser à la souris ou au doigt.
-    */
     ring.addEventListener("pointerdown",e=>{
       if(e.target.closest("iframe")) return;
       if(e.pointerType==="mouse" && e.button!==0) return;
@@ -1442,12 +1355,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ring.classList.remove("is-dragging");
     });
 
-    /*
-      Une carte sur le côté peut être
-      amenée devant par un clic.
-      Le clic sur le lecteur central
-      reste réservé à la vidéo.
-    */
     cards.forEach((card,i)=>{
       card.addEventListener("click",e=>{
         if(dragDistance>8) {
@@ -1477,11 +1384,6 @@ document.addEventListener("DOMContentLoaded", () => {
       focused=ring.contains(document.activeElement);
     });
 
-    /*
-      Accessibilité clavier :
-      flèche gauche/droite quand
-      l'anneau lui-même a le focus.
-    */
     ring.tabIndex=0;
     ring.addEventListener("keydown",e=>{
       if(e.target!==ring) return;
@@ -1493,10 +1395,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    /*
-      On limite l'animation aux sections
-      visibles à l'écran.
-    */
     if("IntersectionObserver" in window) {
       const observer=new IntersectionObserver(entries=>{
         visible=entries[0].isIntersecting;
@@ -1515,7 +1413,7 @@ document.addEventListener("DOMContentLoaded", () => {
   createSaturnRing("social-ring",0);
 
   /* =====================================
-     SAC INTERACTIF
+     SAC INTERACTIF — 8 OBJETS
   ===================================== */
   const stage=document.getElementById("backpack-stage");
   const bag=document.getElementById("backpack-bag");
@@ -1525,16 +1423,40 @@ document.addEventListener("DOMContentLoaded", () => {
   const description=document.getElementById("backpack-detail-text");
 
   if(stage && bag && items && replay && title && description) {
+
     const gear={
-      iphone:["iPhone 18 Pro","Captation vidéo et création de contenu."],
-      macbook:["MacBook Pro M4 Max","36 Go de RAM pour le montage et la postproduction."],
-      mouse:["Logitech MX Master 4","Ma souris pour travailler sur mes projets."],
-      screen:["MSI Modern MD271UL","Mon écran externe pour travailler confortablement."],
-      desk:["Bureau Triumphkey","Mon bureau assis-debout."],
-      premiere:["Premiere Pro","Montage vidéo et création de contenus."],
-      resolve:["DaVinci Resolve","Montage et étalonnage."],
-      indesign:["InDesign","Création et mise en page."],
-      insta360:["Insta360 Studio","Traitement et export de vidéos 360°."]
+      iphone:[
+        "iPhone 18 Pro",
+        "Mon smartphone pour la captation vidéo et la création de contenu."
+      ],
+      macbook:[
+        "MacBook Pro M4 Max",
+        "Mon ordinateur principal pour le montage vidéo et la postproduction."
+      ],
+      mouse:[
+        "Logitech MX Master 4",
+        "Ma souris pour travailler avec précision sur mes projets."
+      ],
+      screen:[
+        "MSI Modern MD271UL",
+        "Mon écran externe 27 pouces 4K UHD pour le montage et la création."
+      ],
+      premiere:[
+        "Adobe Premiere Pro",
+        "Mon logiciel de montage vidéo pour les reportages et les créations."
+      ],
+      resolve:[
+        "DaVinci Resolve",
+        "Mon outil pour l'étalonnage et la postproduction."
+      ],
+      indesign:[
+        "Adobe InDesign",
+        "Création de documents et mise en page."
+      ],
+      insta360:[
+        "Insta360 Studio",
+        "Traitement et export de vidéos à 360°."
+      ]
     };
 
     function setOpen(open) {
@@ -1561,6 +1483,7 @@ document.addEventListener("DOMContentLoaded", () => {
       object.addEventListener("click",()=>{
         const info=gear[object.dataset.gear];
         if(!info) return;
+
         title.textContent=info[0];
         description.textContent=info[1];
       });
@@ -1573,6 +1496,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setOpen(false);
   }
+
 });
 </script>
 </body>
