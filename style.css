@@ -741,3 +741,118 @@ img {
         letter-spacing: -1px;
     }
 }
+
+/* ==========================================
+   MOSAÏQUE STYLE PINTEREST
+   JOURNALISME + RÉSEAUX SOCIAUX
+========================================== */
+
+/* Conteneur des mosaïques */
+.journalism-section .video-gallery,
+.social-section .video-gallery {
+    display: block;
+    columns: 3;
+    column-gap: 24px;
+
+    overflow: visible;
+    padding: 0;
+
+    scroll-snap-type: none;
+}
+
+/* Chaque vidéo devient une carte */
+.journalism-section .video-card,
+.social-section .video-card {
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 24px;
+
+    break-inside: avoid;
+    page-break-inside: avoid;
+
+    vertical-align: top;
+    scroll-snap-align: none;
+}
+
+/* Les lecteurs prennent la largeur de la carte */
+.journalism-section .video-frame,
+.social-section .video-frame {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+/* Vidéos horizontales */
+.journalism-section .youtube-frame,
+.social-section .youtube-frame {
+    aspect-ratio: 16 / 9;
+}
+
+/* Vidéos verticales */
+.journalism-section .instagram-frame,
+.social-section .instagram-frame,
+.journalism-section .tiktok-frame,
+.social-section .tiktok-frame {
+    aspect-ratio: 9 / 16;
+}
+
+/* Lecteurs intégrés */
+.journalism-section .video-frame iframe,
+.social-section .video-frame iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Légendes */
+.journalism-section .video-caption,
+.social-section .video-caption {
+    padding: 14px 4px 6px;
+}
+
+/* TABLETTE */
+@media (max-width: 1000px) {
+    .journalism-section .video-gallery,
+    .social-section .video-gallery {
+        columns: 2;
+        column-gap: 18px;
+    }
+
+    .journalism-section .video-card,
+    .social-section .video-card {
+        margin-bottom: 18px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .journalism-section .video-gallery,
+    .social-section .video-gallery {
+        columns: 2;
+        column-gap: 12px;
+    }
+
+    .journalism-section .video-card,
+    .social-section .video-card {
+        margin-bottom: 12px;
+    }
+
+    .journalism-section .video-caption h3,
+    .social-section .video-caption h3 {
+        font-size: 12px;
+    }
+
+    .journalism-section .video-caption p,
+    .social-section .video-caption p {
+        font-size: 10px;
+    }
+}
+
+/* TRÈS PETITS ÉCRANS */
+@media (max-width: 380px) {
+    .journalism-section .video-gallery,
+    .social-section .video-gallery {
+        columns: 1;
+    }
+}
