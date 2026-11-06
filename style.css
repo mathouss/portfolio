@@ -1080,3 +1080,434 @@ img {
         font-size: 10px;
     }
 }
+
+/* ==========================================
+   PORTFOLIO — NOUVELLES AMÉLIORATIONS
+========================================== */
+
+
+/* ==========================================
+   1. ANIMATION D'ACCUEIL
+========================================== */
+
+.hero {
+    overflow: hidden;
+}
+
+.hero-firstname {
+    display: inline-block;
+    animation: heroReveal 1s ease both;
+}
+
+.hero-lastname {
+    display: inline-block;
+    animation: heroReveal 1s ease 0.25s both;
+}
+
+.hero h2 {
+    animation: heroReveal 1s ease 0.65s both;
+}
+
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+
+/* INDICATION SCROLL */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--brown);
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+
+    animation: scrollAppear 1s ease 1.3s both;
+}
+
+.scroll-arrow {
+    color: var(--lime);
+    font-size: 30px;
+    line-height: 1;
+
+    animation: arrowFloat 2s ease-in-out infinite;
+}
+
+@keyframes scrollAppear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes arrowFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+
+/* ==========================================
+   2. CARTES VIDÉO
+========================================== */
+
+/* Lecteurs arrondis */
+
+.video-frame {
+    overflow: hidden;
+    border-radius: 14px;
+
+    background: #17131E;
+
+    border: 1px solid rgba(214, 90, 255, 0.15);
+
+    transition:
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Effet au survol */
+
+.video-card:hover .video-frame {
+    border-color: var(--violet);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(214, 90, 255, 0.12);
+}
+
+/* Légendes */
+
+.video-caption {
+    padding-top: 18px;
+}
+
+.video-caption h3 {
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.45;
+
+    color: var(--text-light);
+}
+
+.video-caption p {
+    margin-top: 7px;
+
+    font-size: 12px;
+    color: var(--brown);
+}
+
+/* Effet discret sur les titres */
+
+.video-card:hover .video-caption h3 {
+    color: var(--lime);
+}
+
+
+/* ==========================================
+   3. SECTION À PROPOS
+========================================== */
+
+.about-section {
+    background: var(--white);
+}
+
+.about-section .section-heading h2 {
+    color: var(--lime);
+}
+
+.about-section .section-heading h2 span {
+    color: var(--violet);
+}
+
+/* Deux colonnes */
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+
+    align-items: center;
+    gap: 75px;
+}
+
+/* Photo */
+
+.about-photo {
+    position: relative;
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    border-radius: 18px;
+    overflow: hidden;
+
+    background: #292333;
+
+    border: 1px solid var(--line);
+}
+
+.about-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.about-photo:hover img {
+    transform: scale(1.04);
+}
+
+/* Texte */
+
+.about-eyebrow {
+    color: var(--violet);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    margin-bottom: 22px;
+}
+
+.about-content h3 {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(28px, 3vw, 46px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+
+    color: var(--text-light);
+
+    margin-bottom: 28px;
+}
+
+.about-content h3 span {
+    color: var(--lime);
+}
+
+.about-content > p:not(.about-eyebrow) {
+    color: var(--brown);
+
+    font-size: 15px;
+    line-height: 1.85;
+
+    margin-bottom: 18px;
+}
+
+/* Lien vers Contact */
+
+.about-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 20px;
+    padding-bottom: 8px;
+
+    color: var(--lime);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    border-bottom: 1px solid var(--lime);
+
+    transition:
+        color 0.3s ease,
+        gap 0.3s ease;
+}
+
+.about-link:hover {
+    color: var(--violet);
+    gap: 23px;
+}
+
+
+/* ==========================================
+   4. CONTACT MODERNE
+========================================== */
+
+.contact-intro {
+    margin-bottom: 55px;
+}
+
+.contact-intro h3 {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(25px, 3vw, 42px);
+    font-weight: 700;
+    letter-spacing: -1px;
+
+    color: var(--text-light);
+
+    margin-bottom: 18px;
+}
+
+.contact-intro h3 span {
+    color: var(--violet);
+}
+
+.contact-intro p {
+    max-width: 570px;
+
+    color: var(--brown);
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Liens de contact */
+
+.contact-item {
+    padding: 18px 20px;
+
+    border: 1px solid var(--line);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.02);
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.contact-item:hover {
+    background: rgba(215, 255, 56, 0.04);
+
+    border-color: var(--lime);
+
+    transform: translateY(-3px);
+}
+
+.contact-item svg {
+    transition: stroke 0.3s ease;
+}
+
+.contact-item:hover svg {
+    stroke: var(--lime);
+}
+
+
+/* ==========================================
+   5. RESPONSIVE
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .about-layout {
+        gap: 40px;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    /* ACCUEIL */
+
+    .scroll-indicator {
+        bottom: 25px;
+        font-size: 9px;
+    }
+
+    /* À PROPOS */
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-photo {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .about-content h3 {
+        font-size: 30px;
+    }
+
+    .about-content > p:not(.about-eyebrow) {
+        font-size: 14px;
+    }
+
+    /* CONTACT */
+
+    .contact-intro {
+        margin-bottom: 35px;
+    }
+
+    .contact-intro h3 {
+        font-size: 27px;
+    }
+
+    .contact-intro p {
+        font-size: 14px;
+    }
+
+    .contact-item {
+        padding: 15px;
+    }
+
+    /* VIDÉOS */
+
+    .video-caption h3 {
+        font-size: 13px;
+    }
+
+}
+
+/* ACCESSIBILITÉ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-firstname,
+    .hero-lastname,
+    .hero h2,
+    .scroll-indicator,
+    .scroll-arrow {
+        animation: none;
+    }
+
+    .about-photo img,
+    .about-link,
+    .contact-item,
+    .contact-item svg,
+    .video-frame {
+        transition: none;
+    }
+
+}
