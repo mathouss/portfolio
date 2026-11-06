@@ -348,36 +348,8 @@ img {max-width:100%;display:block}
 }
 
 /* =====================================
-   PERSONNEL — CARROUSEL CLASSIQUE
+   PERSONNEL — CARROUSEL SANS FLÈCHES
 ===================================== */
-.personal-carousel-header {
-  display:flex;
-  justify-content:flex-end;
-  margin-bottom:18px;
-}
-.personal-carousel-controls {
-  display:flex;
-  gap:10px;
-}
-.carousel-arrow {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:43px;
-  height:43px;
-  border:1px solid var(--line);
-  border-radius:50%;
-  background:var(--panel);
-  color:var(--text);
-  font-size:20px;
-  cursor:pointer;
-  transition:.25s;
-}
-.carousel-arrow:hover {
-  background:var(--lime);
-  border-color:var(--lime);
-  color:var(--bg);
-}
 .personal-gallery {
   display:flex;
   gap:22px;
@@ -1029,18 +1001,11 @@ img {max-width:100%;display:block}
 </section>
 
 <!-- =====================================
-     PERSONNEL
+     PERSONNEL — SANS FLÈCHES
 ===================================== -->
 <section class="portfolio-section personal-section" id="personnel">
   <div class="section-heading">
     <h2>Personnel<span>.</span></h2>
-  </div>
-
-  <div class="personal-carousel-header">
-    <div class="personal-carousel-controls">
-      <button class="carousel-arrow" id="personal-prev" type="button" aria-label="Vidéo précédente">←</button>
-      <button class="carousel-arrow" id="personal-next" type="button" aria-label="Vidéo suivante">→</button>
-    </div>
   </div>
 
   <div class="personal-gallery" id="personal-gallery">
@@ -1548,29 +1513,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   createSaturnRing("journalism-ring",0);
   createSaturnRing("social-ring",0);
-
-  /* =====================================
-     PERSONNEL — FLÈCHES
-  ===================================== */
-  const gallery=document.getElementById("personal-gallery");
-  const prev=document.getElementById("personal-prev");
-  const next=document.getElementById("personal-next");
-
-  if(gallery && prev && next) {
-    function move(direction) {
-      const card=gallery.querySelector(".video-card");
-      if(!card) return;
-      const gap=parseFloat(getComputedStyle(gallery).gap)||22;
-      const distance=card.getBoundingClientRect().width+gap;
-
-      gallery.scrollBy({
-        left:distance*direction,
-        behavior:"smooth"
-      });
-    }
-    prev.addEventListener("click",()=>move(-1));
-    next.addEventListener("click",()=>move(1));
-  }
 
   /* =====================================
      SAC INTERACTIF
