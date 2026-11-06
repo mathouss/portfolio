@@ -1,6 +1,7 @@
 
 /* ==========================================
-   PORTFOLIO MATHIS — VERSION COMPACTE
+   PORTFOLIO MATHIS
+   VERSION CARROUSELS HORIZONTAUX
 ========================================== */
 
 :root {
@@ -124,7 +125,7 @@ button {
   }
 }
 
-/* SCROLL */
+/* INDICATEUR SCROLL */
 
 .scroll-indicator {
   position: absolute;
@@ -310,18 +311,19 @@ button {
 }
 
 /* ==========================================
-   VIDÉOS — BASE
+   VIDÉOS — BASE COMMUNE
 ========================================== */
 
 .video-gallery {
   display: flex;
   align-items: flex-start;
-  gap: 30px;
+  gap: 24px;
   overflow-x: auto;
   overflow-y: hidden;
   padding: 12px 4px 25px;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  scroll-padding-left: 4px;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
   scrollbar-width: thin;
@@ -348,7 +350,7 @@ button {
   transform: translateY(-5px);
 }
 
-/* HORIZONTAL 16:9 */
+/* FORMATS */
 
 .youtube-card {
   width: 440px;
@@ -358,8 +360,6 @@ button {
 .youtube-frame {
   aspect-ratio: 16 / 9;
 }
-
-/* VERTICAL 9:16 */
 
 .instagram-card,
 .tiktok-card,
@@ -382,12 +382,15 @@ button {
   border-radius: 14px;
   background: #17131E;
   border: 1px solid rgba(214, 90, 255, .15);
+
   transition:
     border-color .35s ease,
     box-shadow .35s ease;
 }
 
 .video-frame iframe {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -426,70 +429,45 @@ button {
 }
 
 /* ==========================================
-   MOSAÏQUES PINTEREST
+   JOURNALISME — CARROUSEL HORIZONTAL
 ========================================== */
 
-.journalism-section .video-gallery,
-.social-section .video-gallery {
+.journalism-section .video-gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 24px;
+  columns: auto;
+  column-gap: normal;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 12px 4px 26px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.journalism-section .video-card {
   display: block;
-  columns: 3;
-  column-gap: 24px;
-  overflow: visible;
-  padding: 0;
-  scroll-snap-type: none;
-}
-
-.journalism-section .video-card,
-.social-section .video-card {
-  display: inline-block;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 0 24px;
-  break-inside: avoid;
-  vertical-align: top;
-  scroll-snap-align: none;
-}
-
-.journalism-section .video-frame,
-.social-section .video-frame {
-  width: 100%;
-  max-width: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
   margin: 0;
+  break-inside: auto;
+  vertical-align: initial;
+  scroll-snap-align: start;
 }
 
-.journalism-section .youtube-frame,
-.social-section .youtube-frame {
-  aspect-ratio: 16 / 9;
-}
-
-.journalism-section .instagram-frame,
-.journalism-section .tiktok-frame,
-.social-section .instagram-frame,
-.social-section .tiktok-frame {
-  aspect-ratio: 9 / 16;
-}
-
-.journalism-section .video-caption,
-.social-section .video-caption {
-  padding: 14px 4px 6px;
-}
-
-/* ==========================================
-   CORRECTION SHORTS — VRAI 9:16
-========================================== */
-
-/*
-  On cible les Shorts précisément.
-  Cette règle est prioritaire sur les styles
-  généraux des mosaïques.
-*/
+/* LES 4 SHORTS : 190 PX */
 
 .journalism-section .video-card.shorts-card {
-  width: 100%;
-  max-width: 100%;
+  flex-basis: 190px;
+  width: 190px;
+  max-width: 190px;
 }
 
-.journalism-section .video-card.shorts-card .video-frame.shorts-frame {
+.journalism-section .video-card.shorts-card
+.video-frame.shorts-frame {
   position: relative;
   display: block;
   width: 100%;
@@ -498,29 +476,141 @@ button {
   overflow: hidden;
 }
 
-.journalism-section .video-card.shorts-card .shorts-frame iframe {
+.journalism-section .video-card.shorts-card
+.shorts-frame iframe {
   position: absolute;
   inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
   border: 0;
 }
 
-/* LES REPORTAGES CLASSIQUES RESTENT EN 16:9 */
+/* REPORTAGES HORIZONTAUX : 380 PX */
 
-.journalism-section .video-card.youtube-card .video-frame.youtube-frame {
+.journalism-section .video-card.youtube-card {
+  flex-basis: 380px;
+  width: 380px;
+  max-width: 380px;
+}
+
+.journalism-section .video-card.youtube-card
+.video-frame.youtube-frame {
   position: relative;
+  display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
 }
 
-.journalism-section .video-card.youtube-card .youtube-frame iframe {
+.journalism-section .video-card.youtube-card
+.youtube-frame iframe {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+.journalism-section .video-caption {
+  padding: 14px 4px 6px;
+}
+
+/* ==========================================
+   RÉSEAUX SOCIAUX — CARROUSEL HORIZONTAL
+========================================== */
+
+.social-section .video-gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 24px;
+  columns: auto;
+  column-gap: normal;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 12px 4px 26px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.social-section .video-card {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin: 0;
+  break-inside: auto;
+  vertical-align: initial;
+  scroll-snap-align: start;
+}
+
+/* LES 2 TIKTOKS : 190 PX */
+
+.social-section .video-card.tiktok-card {
+  flex-basis: 190px;
+  width: 190px;
+  max-width: 190px;
+}
+
+.social-section .video-card.tiktok-card
+.video-frame.tiktok-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+}
+
+.social-section .video-card.tiktok-card
+.tiktok-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* AUTRES VIDÉOS VERTICALES */
+
+.social-section .video-card.instagram-card,
+.social-section .video-card.shorts-card {
+  flex-basis: 190px;
+  width: 190px;
+  max-width: 190px;
+}
+
+.social-section .instagram-frame,
+.social-section .shorts-frame {
+  aspect-ratio: 9 / 16;
+}
+
+/* YOUTUBE HORIZONTAL : 380 PX */
+
+.social-section .video-card.youtube-card {
+  flex-basis: 380px;
+  width: 380px;
+  max-width: 380px;
+}
+
+.social-section .video-card.youtube-card
+.video-frame.youtube-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.social-section .video-card.youtube-card
+.youtube-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.social-section .video-caption {
+  padding: 14px 4px 6px;
 }
 
 /* ==========================================
@@ -670,7 +760,7 @@ button {
 }
 
 /* ==========================================
-   MON MATÉRIEL — PLUS PETIT
+   MON MATÉRIEL — VERSION COMPACTE
 ========================================== */
 
 .gear-section {
@@ -702,7 +792,7 @@ button {
   font-weight: 400;
 }
 
-/* SCÈNE RÉDUITE */
+/* SCÈNE */
 
 .backpack-stage {
   position: relative;
@@ -713,7 +803,7 @@ button {
   isolation: isolate;
 }
 
-/* SAC PLUS PETIT */
+/* SAC */
 
 .backpack-bag {
   position: absolute;
@@ -758,7 +848,7 @@ button {
   transform: scale(1);
 }
 
-/* OBJETS PLUS PETITS */
+/* OBJETS */
 
 .backpack-items {
   position: absolute;
@@ -811,7 +901,7 @@ button {
   object-fit: contain;
 }
 
-/* POSITIONS COMPACTES */
+/* POSITIONS */
 
 .backpack-object:nth-child(1) {
   --x: -280px;
@@ -876,7 +966,7 @@ button {
   --delay: 1060ms;
 }
 
-/* ANIMATION D'OUVERTURE */
+/* ANIMATION */
 
 .backpack-stage.is-open .backpack-object {
   opacity: 1;
@@ -953,7 +1043,7 @@ button {
   pointer-events: none;
 }
 
-/* FICHE PLUS COMPACTE */
+/* DÉTAILS */
 
 .backpack-details {
   max-width: 500px;
@@ -1124,17 +1214,6 @@ button {
     padding-right: 8%;
   }
 
-  .journalism-section .video-gallery,
-  .social-section .video-gallery {
-    columns: 2;
-    column-gap: 18px;
-  }
-
-  .journalism-section .video-card,
-  .social-section .video-card {
-    margin-bottom: 18px;
-  }
-
   .trust-grid {
     height: 340px;
   }
@@ -1290,20 +1369,36 @@ button {
     font-size: 10px;
   }
 
-  .video-gallery {
-    gap: 22px;
+  /* CARROUSELS VIDÉOS */
+
+  .video-gallery,
+  .journalism-section .video-gallery,
+  .social-section .video-gallery {
+    gap: 16px;
   }
 
-  .youtube-card {
-    width: 82vw;
-    max-width: 82vw;
+  .journalism-section .video-card.shorts-card,
+  .social-section .video-card.tiktok-card,
+  .social-section .video-card.instagram-card,
+  .social-section .video-card.shorts-card {
+    flex-basis: 155px;
+    width: 155px;
+    max-width: 155px;
   }
 
-  .instagram-card,
-  .tiktok-card,
-  .shorts-card {
-    width: 240px;
-    max-width: 75vw;
+  .journalism-section .video-card.youtube-card,
+  .social-section .video-card.youtube-card {
+    flex-basis: min(300px, 76vw);
+    width: min(300px, 76vw);
+    max-width: min(300px, 76vw);
+  }
+
+  .video-caption h3 {
+    font-size: 13px;
+  }
+
+  .video-caption p {
+    font-size: 11px;
   }
 
   .carousel-arrow {
@@ -1407,25 +1502,21 @@ button {
 
 @media (max-width: 600px) {
 
+  /* CARROUSELS : UNE SEULE LIGNE */
+
   .journalism-section .video-gallery,
   .social-section .video-gallery {
-    columns: 2;
-    column-gap: 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    columns: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 
   .journalism-section .video-card,
   .social-section .video-card {
-    margin-bottom: 12px;
-  }
-
-  .journalism-section .video-caption h3,
-  .social-section .video-caption h3 {
-    font-size: 12px;
-  }
-
-  .journalism-section .video-caption p,
-  .social-section .video-caption p {
-    font-size: 10px;
+    margin: 0;
+    flex-shrink: 0;
   }
 
   /* SAC MOBILE */
@@ -1505,7 +1596,8 @@ button {
 
   .journalism-section .video-gallery,
   .social-section .video-gallery {
-    columns: 1;
+    columns: auto;
+    display: flex;
   }
 }
 
