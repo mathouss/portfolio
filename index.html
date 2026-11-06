@@ -480,8 +480,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Espacement adapté à l'écran
         const spacing = Math.min(
-            185,
-            Math.max(90, width * 0.22)
+            260,
+            Math.max(105, width * 0.24)
         );
 
         cards.forEach((card, index) => {
@@ -568,7 +568,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (reducedMotion.matches) return;
 
-        autoPlay = setInterval(nextSlide, 10000);
+        autoPlay = setInterval(nextSlide, 5000);
     }
 
     function stopAutoPlay() {
