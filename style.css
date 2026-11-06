@@ -1,10 +1,12 @@
 
 /* ==========================================
    MATHIS SLEZAKOWA — PORTFOLIO
-   CSS HARMONISÉ
+   VERSION COMPACTE
 ========================================== */
 
-/* COULEURS */
+/* ==========================================
+   1. COULEURS
+========================================== */
 
 :root {
     --cream: #111016;
@@ -12,14 +14,19 @@
     --white: #1C1925;
     --brown: #B7AEC2;
     --line: #39333F;
+
     --lime: #D7FF38;
     --violet: #D65AFF;
     --pink: #FF4DB8;
+
     --text-light: #F4F0F7;
     --terracotta: var(--lime);
 }
 
-/* RESET */
+
+/* ==========================================
+   2. RESET
+========================================== */
 
 * {
     margin: 0;
@@ -59,18 +66,24 @@ button {
     outline-offset: 4px;
 }
 
+
 /* ==========================================
-   ACCUEIL
+   3. ACCUEIL — PLUS COMPACT
 ========================================== */
 
 .hero {
-    min-height: 85svh;
-    padding: 100px 5%;
+    min-height: 62svh;
+    min-height: 62vh;
+
+    padding: 65px 5% 85px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
     position: relative;
+
     background: var(--cream);
     overflow: hidden;
 }
@@ -114,40 +127,48 @@ button {
 }
 
 @keyframes heroReveal {
+
     from {
         opacity: 0;
         transform: translateY(35px);
         filter: blur(8px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
         filter: blur(0);
     }
+
 }
+
 
 /* INDICATEUR SCROLL */
 
 .scroll-indicator {
     position: absolute;
-    bottom: 35px;
+    bottom: 20px;
     left: 50%;
+
     transform: translateX(-50%);
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 9px;
+
     color: var(--brown);
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 2px;
     white-space: nowrap;
+
     animation: scrollAppear 1s ease 1.3s both;
 }
 
 .scroll-arrow {
     color: var(--lime);
-    font-size: 30px;
+    font-size: 26px;
     line-height: 1;
     animation: arrowFloat 2s ease-in-out infinite;
 }
@@ -158,12 +179,20 @@ button {
 }
 
 @keyframes arrowFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(8px); }
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+
 }
 
+
 /* ==========================================
-   SECTIONS ET TITRES
+   4. SECTIONS
 ========================================== */
 
 .portfolio-section {
@@ -193,6 +222,7 @@ button {
     display: none;
 }
 
+
 /* FONDS */
 
 .trust-section,
@@ -206,6 +236,7 @@ button {
 .personal-section {
     background: var(--cream);
 }
+
 
 /* TITRES VERTS */
 
@@ -221,6 +252,7 @@ button {
     color: var(--violet);
 }
 
+
 /* TITRES VIOLETS */
 
 .journalism-section h2,
@@ -235,8 +267,9 @@ button {
     color: var(--lime);
 }
 
+
 /* ==========================================
-   COLLABORATIONS — CARROUSEL 3D
+   5. COLLABORATIONS — CARROUSEL 3D
 ========================================== */
 
 .trust-section {
@@ -248,8 +281,10 @@ button {
     width: 100%;
     height: 400px;
     margin: 0 auto;
+
     perspective: 1200px;
     perspective-origin: 50% 50%;
+
     overflow: hidden;
 }
 
@@ -257,16 +292,21 @@ button {
     position: absolute;
     top: 55px;
     left: 50%;
+
     width: 210px;
     height: 300px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+
     text-align: center;
+
     opacity: 0;
     filter: blur(5px);
     pointer-events: none;
+
     z-index: var(--depth, 0);
 
     transform:
@@ -290,9 +330,12 @@ button {
     width: 180px;
     height: 180px;
     flex-shrink: 0;
+
     border-radius: 50%;
     object-fit: cover;
+
     border: 2px solid transparent;
+
     transition: border-color .6s ease;
 }
 
@@ -317,21 +360,27 @@ button {
     display: none;
 }
 
+
 /* ==========================================
-   VIDÉOS
+   6. VIDÉOS
 ========================================== */
 
 .video-gallery {
     display: flex;
     align-items: flex-start;
     gap: 30px;
+
     overflow-x: auto;
     overflow-y: hidden;
+
     padding: 12px 4px 25px;
+
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
+
     scrollbar-width: thin;
     scrollbar-color: var(--violet) transparent;
 }
@@ -356,6 +405,9 @@ button {
     transform: translateY(-5px);
 }
 
+
+/* YOUTUBE */
+
 .youtube-card {
     width: 440px;
     max-width: 75vw;
@@ -364,6 +416,9 @@ button {
 .youtube-frame {
     aspect-ratio: 16 / 9;
 }
+
+
+/* INSTAGRAM ET TIKTOK */
 
 .instagram-card,
 .tiktok-card {
@@ -378,11 +433,16 @@ button {
     background: #17131E;
 }
 
+
+/* LECTEURS */
+
 .video-frame {
     overflow: hidden;
     border-radius: 14px;
+
     background: #17131E;
     border: 1px solid rgba(214, 90, 255, .15);
+
     transition:
         border-color .35s ease,
         box-shadow .35s ease;
@@ -397,10 +457,14 @@ button {
 
 .video-card:hover .video-frame {
     border-color: var(--violet);
+
     box-shadow:
         0 12px 35px rgba(0, 0, 0, .25),
         0 0 20px rgba(214, 90, 255, .12);
 }
+
+
+/* LÉGENDES */
 
 .video-caption {
     padding-top: 18px;
@@ -423,9 +487,9 @@ button {
     color: var(--brown);
 }
 
+
 /* ==========================================
-   MOSAÏQUE PINTEREST
-   JOURNALISME ET RÉSEAUX SOCIAUX
+   7. MOSAÏQUE PINTEREST
 ========================================== */
 
 .journalism-section .video-gallery,
@@ -433,19 +497,25 @@ button {
     display: block;
     columns: 3;
     column-gap: 24px;
+
     overflow: visible;
     padding: 0;
+
     scroll-snap-type: none;
 }
 
 .journalism-section .video-card,
 .social-section .video-card {
     display: inline-block;
+
     width: 100%;
     max-width: 100%;
+
     margin: 0 0 24px;
+
     break-inside: avoid;
     vertical-align: top;
+
     scroll-snap-align: none;
 }
 
@@ -473,22 +543,46 @@ button {
     padding: 14px 4px 6px;
 }
 
+
 /* ==========================================
-   À PROPOS
+   8. À PROPOS — VERSION PLUS COMPACTE
 ========================================== */
+
+.about-section {
+    padding-top: 70px;
+    padding-bottom: 75px;
+}
+
+.about-section .section-heading {
+    margin-bottom: 35px;
+}
 
 .about-layout {
     display: grid;
-    grid-template-columns: .85fr 1.15fr;
+
+    grid-template-columns:
+        minmax(0, 280px)
+        minmax(0, 1fr);
+
     align-items: center;
-    gap: 75px;
+    gap: 45px;
+
+    max-width: 950px;
+    margin: 0 auto;
 }
+
+
+/* PHOTO PLUS PETITE */
 
 .about-photo {
     width: 100%;
+    max-width: 280px;
+
     aspect-ratio: 4 / 5;
+
     border-radius: 18px;
     overflow: hidden;
+
     background: #292333;
     border: 1px solid var(--line);
 }
@@ -497,6 +591,7 @@ button {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
     transition: transform .6s ease;
 }
 
@@ -504,44 +599,48 @@ button {
     transform: scale(1.04);
 }
 
-.about-eyebrow {
-    color: var(--violet);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 22px;
-}
+
+/* TEXTE */
 
 .about-content h3 {
     font-family: "Montserrat", sans-serif;
-    font-size: clamp(28px, 3vw, 46px);
+
+    font-size: clamp(25px, 2.7vw, 38px);
     font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -1.5px;
-    margin-bottom: 28px;
+    line-height: 1.2;
+
+    letter-spacing: -1.2px;
+    margin-bottom: 20px;
 }
 
 .about-content h3 span {
     color: var(--lime);
 }
 
-.about-content > p:not(.about-eyebrow) {
+.about-content > p {
     color: var(--brown);
-    font-size: 15px;
-    line-height: 1.85;
-    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 13px;
 }
+
+
+/* LIEN */
 
 .about-link {
     display: inline-flex;
     align-items: center;
     gap: 15px;
-    margin-top: 20px;
+
+    margin-top: 12px;
     padding-bottom: 8px;
+
     color: var(--lime);
     font-size: 14px;
     font-weight: 700;
+
     border-bottom: 1px solid var(--lime);
+
     transition:
         color .3s ease,
         gap .3s ease;
@@ -552,197 +651,26 @@ button {
     gap: 23px;
 }
 
-/* ==========================================
-   MATÉRIEL — CARTES
-========================================== */
-
-.gear-category {
-    margin-top: 55px;
-}
-
-.gear-category-heading {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    margin-bottom: 25px;
-}
-
-.gear-category-number {
-    color: var(--lime);
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.gear-category-heading h3 {
-    font-family: "Montserrat", sans-serif;
-    font-size: clamp(20px, 2.5vw, 28px);
-    font-weight: 700;
-}
-
-.gear-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-}
-
-.gear-card {
-    min-width: 0;
-    padding: 20px;
-    border: 1px solid rgba(255, 255, 255, .09);
-    border-radius: 18px;
-    background: #24202E;
-    transition:
-        transform .35s ease,
-        border-color .35s ease,
-        box-shadow .35s ease;
-}
-
-.gear-card:hover {
-    transform: translateY(-7px);
-    border-color: var(--lime);
-    box-shadow: 0 16px 35px rgba(0, 0, 0, .22);
-}
-
-.gear-card-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-}
-
-.gear-tag {
-    padding: 6px 11px;
-    border-radius: 30px;
-    background: rgba(215, 255, 56, .09);
-    color: var(--lime);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: .4px;
-}
-
-.gear-index {
-    color: #847A91;
-    font-size: 12px;
-}
-
-.gear-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 210px;
-    margin: 12px 0 20px;
-    padding: 15px;
-}
-
-.gear-image img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    transition: transform .4s ease;
-}
-
-.gear-card:hover .gear-image img {
-    transform: scale(1.06);
-}
-
-.gear-info h4 {
-    margin-bottom: 8px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 17px;
-    line-height: 1.4;
-}
-
-.gear-info p {
-    color: var(--brown);
-    font-size: 12px;
-    line-height: 1.6;
-}
-
-.gear-software-category {
-    margin-top: 70px;
-}
-
-.software-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
-}
-
-.software-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    min-width: 0;
-    padding: 22px 16px;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, .09);
-    background: #24202E;
-    transition:
-        transform .3s ease,
-        border-color .3s ease;
-}
-
-.software-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--violet);
-}
-
-.software-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    border-radius: 10px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 19px;
-    font-weight: 800;
-}
-
-.premiere-logo {
-    color: #9999FF;
-    background: #252052;
-}
-
-.resolve-logo {
-    color: var(--text-light);
-    background: #353D55;
-    font-size: 16px;
-}
-
-.indesign-logo {
-    color: #FF71A8;
-    background: #4B1831;
-}
-
-.insta-logo {
-    color: var(--lime);
-    background: #33383A;
-    font-size: 14px;
-}
-
-.software-card h4 {
-    font-size: 13px;
-    line-height: 1.4;
-}
-
-.software-card p {
-    margin-top: 5px;
-    color: var(--brown);
-    font-size: 11px;
-    line-height: 1.4;
-}
 
 /* ==========================================
-   SAC À DOS INTERACTIF
+   9. MON MATÉRIEL — SAC UNIQUEMENT
 ========================================== */
+
+.gear-section {
+    padding-top: 80px;
+    padding-bottom: 85px;
+}
+
+.gear-section .section-heading {
+    margin-bottom: 35px;
+}
+
+
+/* INTRODUCTION */
 
 .backpack-experience {
     width: 100%;
-    margin: 55px auto 80px;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -755,34 +683,47 @@ button {
 .backpack-intro span {
     display: block;
     margin-top: 7px;
+
     color: var(--brown);
     font-size: 13px;
     font-weight: 400;
 }
 
+
+/* SCÈNE */
+
 .backpack-stage {
     position: relative;
+
     width: 100%;
     max-width: 1050px;
     height: 590px;
+
     margin: 0 auto;
     isolation: isolate;
 }
 
-/* LE SAC */
+
+/* SAC */
 
 .backpack-bag {
     position: absolute;
     z-index: 5;
+
     left: 50%;
     top: 52%;
+
     transform: translate(-50%, -50%);
+
     width: 260px;
     height: 310px;
     padding: 0;
+
     background: none;
     border: 0;
+
     cursor: pointer;
+
     transition: transform .5s ease;
 }
 
@@ -793,9 +734,12 @@ button {
 .backpack-bag img {
     position: absolute;
     inset: 0;
+
     width: 100%;
     height: 100%;
+
     object-fit: contain;
+
     transition:
         opacity .45s ease,
         transform .45s ease;
@@ -816,11 +760,13 @@ button {
     transform: scale(1);
 }
 
+
 /* OBJETS */
 
 .backpack-items {
     position: absolute;
     inset: 0;
+
     z-index: 6;
     pointer-events: none;
 }
@@ -845,6 +791,7 @@ button {
 
     border: 1px solid rgba(215, 255, 56, .2);
     border-radius: 18px;
+
     background: rgba(36, 32, 46, .94);
     box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
 
@@ -873,7 +820,8 @@ button {
     object-fit: contain;
 }
 
-/* POSITIONS DES 9 OBJETS */
+
+/* POSITIONS */
 
 .backpack-object:nth-child(1) {
     --x: -340px;
@@ -938,7 +886,8 @@ button {
     --delay: 1060ms;
 }
 
-/* ANIMATION D'OUVERTURE */
+
+/* OUVERTURE */
 
 .backpack-stage.is-open .backpack-object {
     opacity: 1;
@@ -968,31 +917,77 @@ button {
         rotate(0);
 }
 
+
+/* LOGICIELS DANS LE SAC */
+
 .backpack-software {
     width: 82px;
     height: 82px;
     border-radius: 18px;
 }
 
+.software-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 10px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.premiere-logo {
+    color: #9999FF;
+    background: #252052;
+}
+
+.resolve-logo {
+    color: var(--text-light);
+    background: #353D55;
+    font-size: 16px;
+}
+
+.indesign-logo {
+    color: #FF71A8;
+    background: #4B1831;
+}
+
+.insta-logo {
+    color: var(--lime);
+    background: #33383A;
+    font-size: 14px;
+}
+
 .backpack-software .software-logo {
     pointer-events: none;
 }
+
 
 /* FICHE D'INFORMATION */
 
 .backpack-details {
     max-width: 550px;
     min-height: 135px;
+
     margin: 0 auto;
     padding: 25px;
+
     border: 1px solid rgba(214, 90, 255, .22);
     border-radius: 18px;
+
     background: #24202E;
 }
 
 .backpack-details-label {
     display: block;
     margin-bottom: 12px;
+
     color: var(--violet);
     font-size: 10px;
     font-weight: 700;
@@ -1007,24 +1002,34 @@ button {
 
 .backpack-details p {
     margin-top: 10px;
+
     color: var(--brown);
     font-size: 13px;
     line-height: 1.7;
 }
 
+
+/* BOUTON RANGER */
+
 .backpack-replay {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+
     margin-top: 25px;
     padding: 12px 22px;
+
     border: 1px solid var(--lime);
     border-radius: 30px;
+
     color: var(--lime);
     background: transparent;
+
     font-weight: 700;
     font-size: 12px;
+
     cursor: pointer;
+
     transition:
         background .3s ease,
         color .3s ease;
@@ -1039,8 +1044,9 @@ button {
     color: var(--dark);
 }
 
+
 /* ==========================================
-   CONTACT
+   10. CONTACT
 ========================================== */
 
 .site-footer {
@@ -1090,10 +1096,14 @@ button {
     display: flex;
     align-items: center;
     gap: 20px;
+
     padding: 18px 20px;
+
     border: 1px solid var(--line);
     border-radius: 12px;
+
     background: rgba(255, 255, 255, .02);
+
     font-size: 15px;
     overflow-wrap: anywhere;
 
@@ -1115,11 +1125,14 @@ button {
     width: 27px;
     height: 27px;
     flex-shrink: 0;
+
     fill: none;
     stroke: var(--violet);
     stroke-width: 1.8;
+
     stroke-linecap: round;
     stroke-linejoin: round;
+
     transition: stroke .3s ease;
 }
 
@@ -1130,16 +1143,20 @@ button {
 .footer-bottom {
     margin-top: 85px;
     padding-top: 22px;
+
     display: flex;
     justify-content: space-between;
     gap: 20px;
+
     border-top: 1px solid var(--line);
+
     color: var(--brown);
     font-size: 10px;
 }
 
+
 /* ==========================================
-   TABLETTES
+   11. TABLETTES
 ========================================== */
 
 @media (max-width: 1000px) {
@@ -1178,12 +1195,11 @@ button {
     }
 
     .about-layout {
-        gap: 40px;
-    }
+        grid-template-columns:
+            minmax(0, 230px)
+            minmax(0, 1fr);
 
-    .gear-grid,
-    .software-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
     }
 
     .backpack-stage {
@@ -1242,15 +1258,18 @@ button {
 
 }
 
+
 /* ==========================================
-   MOBILES
+   12. MOBILES
 ========================================== */
 
 @media (max-width: 700px) {
 
+    /* ACCUEIL */
+
     .hero {
-        min-height: 75svh;
-        padding: 80px 6%;
+        min-height: 55svh;
+        padding: 65px 6% 75px;
     }
 
     .hero h1 {
@@ -1262,6 +1281,14 @@ button {
     .hero h2 {
         font-size: 15px;
     }
+
+    .scroll-indicator {
+        bottom: 15px;
+        font-size: 9px;
+    }
+
+
+    /* SECTIONS */
 
     .portfolio-section {
         padding: 75px 7%;
@@ -1281,6 +1308,9 @@ button {
         white-space: normal;
         overflow-wrap: anywhere;
     }
+
+
+    /* COLLABORATIONS */
 
     .trust-grid {
         height: 280px;
@@ -1305,6 +1335,9 @@ button {
         font-size: 10px;
     }
 
+
+    /* VIDÉOS */
+
     .video-gallery {
         gap: 22px;
     }
@@ -1320,23 +1353,57 @@ button {
         max-width: 75vw;
     }
 
+
+    /* À PROPOS COMPACT */
+
+    .about-section {
+        padding-top: 55px;
+        padding-bottom: 60px;
+    }
+
+    .about-section .section-heading {
+        margin-bottom: 28px;
+    }
+
     .about-layout {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 25px;
     }
 
     .about-photo {
-        max-width: 400px;
+        max-width: 230px;
         margin: 0 auto;
     }
 
     .about-content h3 {
-        font-size: 30px;
+        font-size: 27px;
+        margin-bottom: 15px;
     }
 
-    .about-content > p:not(.about-eyebrow) {
-        font-size: 14px;
+    .about-content > p {
+        font-size: 13px;
+        line-height: 1.65;
+        margin-bottom: 11px;
     }
+
+    .about-link {
+        margin-top: 8px;
+    }
+
+
+    /* MATÉRIEL */
+
+    .gear-section {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .gear-section .section-heading {
+        margin-bottom: 30px;
+    }
+
+
+    /* CONTACT */
 
     .site-footer {
         padding: 65px 7% 25px;
@@ -1373,18 +1440,16 @@ button {
         margin-top: 65px;
     }
 
-    .scroll-indicator {
-        bottom: 25px;
-        font-size: 9px;
-    }
-
 }
 
+
 /* ==========================================
-   PETITS MOBILES
+   13. PETITS MOBILES
 ========================================== */
 
 @media (max-width: 600px) {
+
+    /* MOSAÏQUE */
 
     .journalism-section .video-gallery,
     .social-section .video-gallery {
@@ -1407,33 +1472,8 @@ button {
         font-size: 10px;
     }
 
-    .gear-category {
-        margin-top: 35px;
-    }
 
-    .gear-grid,
-    .software-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .gear-image {
-        height: 190px;
-    }
-
-    .gear-software-category {
-        margin-top: 50px;
-    }
-
-    .software-card {
-        padding: 16px;
-    }
-
-    /* SAC À DOS SUR MOBILE */
-
-    .backpack-experience {
-        margin: 35px auto 60px;
-    }
+    /* SAC À DOS MOBILE */
 
     .backpack-intro {
         font-size: 15px;
@@ -1453,8 +1493,10 @@ button {
     .backpack-items {
         position: relative;
         inset: auto;
+
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
+
         gap: 10px;
         padding-top: 300px;
     }
@@ -1464,9 +1506,11 @@ button {
         position: relative;
         left: auto;
         top: auto;
+
         width: 100%;
         height: 90px;
         padding: 10px;
+
         transform: translateY(-100px) scale(.2);
     }
 
@@ -1478,7 +1522,8 @@ button {
         transform: translateY(-4px) scale(1.03);
     }
 
-    /* GRILLE CACHÉE LORSQUE LE SAC EST FERMÉ */
+
+    /* SAC FERMÉ : GRILLE MASQUÉE */
 
     .backpack-stage:not(.is-open) .backpack-items {
         height: 300px;
@@ -1494,6 +1539,9 @@ button {
         border: 0;
     }
 
+
+    /* INFORMATIONS */
+
     .backpack-details {
         margin-top: 25px;
         padding: 20px;
@@ -1504,6 +1552,11 @@ button {
     }
 
 }
+
+
+/* ==========================================
+   14. TRÈS PETITS ÉCRANS
+========================================== */
 
 @media (max-width: 380px) {
 
@@ -1518,8 +1571,9 @@ button {
 
 }
 
+
 /* ==========================================
-   ACCESSIBILITÉ
+   15. ACCESSIBILITÉ
 ========================================== */
 
 @media (prefers-reduced-motion: reduce) {
@@ -1544,9 +1598,6 @@ button {
     .about-link,
     .contact-item,
     .contact-item svg,
-    .gear-card,
-    .gear-image img,
-    .software-card,
     .backpack-bag,
     .backpack-bag img,
     .backpack-object {
