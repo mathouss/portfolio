@@ -858,83 +858,148 @@ img {
 }
 
 /* ==========================================
-   COLLABORATIONS — FOCUS CENTRAL
+   COLLABORATIONS — CARROUSEL 3D
 ========================================== */
 
-.trust-grid {
-    /* Fondu progressif sur les côtés */
-    -webkit-mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        black 12%,
-        black 88%,
-        transparent 100%
-    );
-
-    mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        black 12%,
-        black 88%,
-        transparent 100%
-    );
-
-    /* Espace pour agrandir les profils */
-    padding-top: 30px;
-    padding-bottom: 35px;
+.trust-section {
+    overflow: hidden;
 }
 
-/* Profils par défaut */
+.trust-grid {
+    position: relative;
+    display: block;
+
+    width: 100%;
+    height: 290px;
+    margin: 0 auto;
+    padding: 0;
+
+    overflow: hidden;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+/* Tous les profils sont positionnés
+   par rapport au centre du carrousel */
+
 .trust-grid .trust-card {
-    opacity: 0.55;
-    filter: blur(1.2px);
-    transform: scale(0.88);
+    position: absolute;
+    top: 30px;
+    left: 50%;
+
+    width: 155px;
+    min-width: 0;
+    height: 225px;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    opacity: 0;
+    filter: blur(5px);
+
+    pointer-events: none;
+
+    transform:
+        translateX(-50%)
+        translateX(var(--x, 0px))
+        translateZ(var(--z, -300px))
+        scale(var(--scale, 0.6))
+        rotateY(var(--rotate, 0deg));
+
+    z-index: var(--depth, 0);
 
     transition:
-        opacity 0.35s ease,
-        filter 0.35s ease,
-        transform 0.35s ease;
+        transform 1.2s cubic-bezier(.22, 1, .36, 1),
+        opacity 1.2s ease,
+        filter 1.2s ease;
+
+    will-change: transform, opacity, filter;
 }
 
-/* Profil mis en avant */
-.trust-grid .trust-card.is-focused {
-    opacity: 1;
-    filter: blur(0);
-    transform: scale(1.08);
+/* Images */
+
+.trust-grid .trust-card img {
+    width: 130px;
+    height: 130px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 2px solid transparent;
+
+    transition: border-color 0.6s ease;
 }
 
-/* Cercle du profil sélectionné */
+/* Profil au premier plan */
+
 .trust-grid .trust-card.is-focused img {
     border-color: var(--lime);
 }
 
-/* Survol avec la souris */
+/* Neutralisation des anciens effets hover */
+
 .trust-grid .trust-card:hover {
-    opacity: 1;
-    filter: blur(0);
-    transform: scale(1.08);
+    transform:
+        translateX(-50%)
+        translateX(var(--x, 0px))
+        translateZ(var(--z, -300px))
+        scale(var(--scale, 0.6))
+        rotateY(var(--rotate, 0deg));
 }
 
-/* Adaptation mobile */
+.trust-grid .trust-card:hover img {
+    transform: none;
+}
+
+/* Les profils visibles restent cliquables */
+
+.trust-grid .trust-card.is-visible {
+    pointer-events: auto;
+}
+
+/* Textes */
+
+.trust-grid .trust-card span {
+    color: var(--text-light);
+    text-align: center;
+}
+
+.trust-grid .trust-card .follower-count {
+    color: var(--brown);
+    text-align: center;
+}
+
+/* MOBILE */
+
 @media (max-width: 700px) {
     .trust-grid {
-        -webkit-mask-image: linear-gradient(
-            to right,
-            transparent,
-            black 8%,
-            black 92%,
-            transparent
-        );
+        height: 245px;
+    }
 
-        mask-image: linear-gradient(
-            to right,
-            transparent,
-            black 8%,
-            black 92%,
-            transparent
-        );
+    .trust-grid .trust-card {
+        top: 25px;
+        width: 125px;
+        height: 200px;
+    }
+
+    .trust-grid .trust-card img {
+        width: 105px;
+        height: 105px;
     }
 }
+
+/* ACCESSIBILITÉ */
 
 @media (prefers-reduced-motion: reduce) {
     .trust-grid .trust-card {
