@@ -1782,3 +1782,442 @@ img {
         transition: none;
     }
 }
+
+/* ==========================================
+   SAC À DOS INTERACTIF
+========================================== */
+
+.backpack-experience {
+    width: 100%;
+    margin: 55px auto 80px;
+    text-align: center;
+}
+
+.backpack-intro {
+    color: #F4F0F7;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.backpack-intro span {
+    display: block;
+    margin-top: 7px;
+    color: #B7AEC2;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* SCÈNE */
+
+.backpack-stage {
+    position: relative;
+    width: 100%;
+    max-width: 1050px;
+    height: 590px;
+    margin: 0 auto;
+    isolation: isolate;
+}
+
+/* SAC */
+
+.backpack-bag {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+
+    width: 260px;
+    height: 310px;
+    padding: 0;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    transition: transform 0.5s ease;
+}
+
+.backpack-bag:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.backpack-bag:focus-visible,
+.backpack-object:focus-visible,
+.backpack-replay:focus-visible {
+    outline: 3px solid #D7FF38;
+    outline-offset: 5px;
+}
+
+.backpack-bag img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease;
+}
+
+.bag-open {
+    opacity: 0;
+    transform: scale(0.92);
+}
+
+.backpack-stage.is-open .bag-closed {
+    opacity: 0;
+    transform: scale(0.92);
+}
+
+.backpack-stage.is-open .bag-open {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* OBJETS */
+
+.backpack-items {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    pointer-events: none;
+}
+
+.backpack-object {
+    --x: 0px;
+    --y: 0px;
+    --rotation: 0deg;
+    --delay: 0ms;
+
+    position: absolute;
+    left: 50%;
+    top: 48%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 115px;
+    height: 115px;
+    padding: 10px;
+
+    border: 1px solid rgba(215,255,56,0.2);
+    border-radius: 18px;
+
+    background: rgba(36,32,46,0.94);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform:
+        translate(-50%, -50%)
+        translate(0, 40px)
+        scale(0.15)
+        rotate(-20deg);
+
+    transition:
+        transform 1s cubic-bezier(.22,1,.36,1),
+        opacity 0.5s ease,
+        visibility 0s linear 1s,
+        border-color 0.25s ease;
+
+    transition-delay: 0ms;
+
+    cursor: pointer;
+}
+
+.backpack-object img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* POSITION FINALE DES OBJETS */
+
+.backpack-object:nth-child(1) {
+    --x: -340px;
+    --y: -180px;
+    --rotation: -12deg;
+    --delay: 100ms;
+}
+
+.backpack-object:nth-child(2) {
+    --x: -160px;
+    --y: -230px;
+    --rotation: -6deg;
+    --delay: 220ms;
+}
+
+.backpack-object:nth-child(3) {
+    --x: 80px;
+    --y: -240px;
+    --rotation: 8deg;
+    --delay: 340ms;
+}
+
+.backpack-object:nth-child(4) {
+    --x: 300px;
+    --y: -180px;
+    --rotation: 12deg;
+    --delay: 460ms;
+}
+
+.backpack-object:nth-child(5) {
+    --x: -350px;
+    --y: 50px;
+    --rotation: -8deg;
+    --delay: 580ms;
+}
+
+.backpack-object:nth-child(6) {
+    --x: 340px;
+    --y: 40px;
+    --rotation: 9deg;
+    --delay: 700ms;
+}
+
+.backpack-object:nth-child(7) {
+    --x: -280px;
+    --y: 200px;
+    --rotation: -10deg;
+    --delay: 820ms;
+}
+
+.backpack-object:nth-child(8) {
+    --x: 0px;
+    --y: 210px;
+    --rotation: 0deg;
+    --delay: 940ms;
+}
+
+.backpack-object:nth-child(9) {
+    --x: 280px;
+    --y: 200px;
+    --rotation: 10deg;
+    --delay: 1060ms;
+}
+
+/* ANIMATION D'OUVERTURE */
+
+.backpack-stage.is-open .backpack-object {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform:
+        translate(-50%, -50%)
+        translate(var(--x), var(--y))
+        scale(1)
+        rotate(var(--rotation));
+
+    transition-delay: var(--delay);
+}
+
+/* HOVER DES OBJETS */
+
+.backpack-stage.is-open .backpack-object:hover {
+    border-color: #D7FF38;
+
+    transform:
+        translate(-50%, -50%)
+        translate(var(--x), var(--y))
+        scale(1.12)
+        rotate(0deg);
+}
+
+/* LOGICIELS */
+
+.backpack-software {
+    width: 82px;
+    height: 82px;
+    border-radius: 18px;
+}
+
+.backpack-software .software-logo {
+    pointer-events: none;
+}
+
+/* FICHE D'INFORMATION */
+
+.backpack-details {
+    max-width: 550px;
+    min-height: 135px;
+
+    margin: 0 auto;
+    padding: 25px;
+
+    border: 1px solid rgba(214,90,255,0.22);
+    border-radius: 18px;
+
+    background: #24202E;
+}
+
+.backpack-details-label {
+    display: block;
+    margin-bottom: 12px;
+
+    color: #D65AFF;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.backpack-details h3 {
+    color: #F4F0F7;
+    font-family: "Montserrat", sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.backpack-details p {
+    margin-top: 10px;
+    color: #B7AEC2;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* BOUTON RANGER */
+
+.backpack-replay {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 25px;
+    padding: 12px 22px;
+
+    border: 1px solid #D7FF38;
+    border-radius: 30px;
+
+    color: #D7FF38;
+    background: transparent;
+
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+
+    cursor: pointer;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.backpack-replay[hidden] {
+    display: none;
+}
+
+.backpack-replay:hover {
+    background: #D7FF38;
+    color: #111016;
+}
+
+/* TABLETTE */
+
+@media (max-width: 1000px) {
+
+    .backpack-stage {
+        height: 550px;
+    }
+
+    .backpack-bag {
+        width: 200px;
+        height: 260px;
+    }
+
+    .backpack-object {
+        --factor: 0.7;
+    }
+
+    .backpack-object:nth-child(1) { --x: -240px; --y: -170px; }
+    .backpack-object:nth-child(2) { --x: -110px; --y: -220px; }
+    .backpack-object:nth-child(3) { --x: 80px; --y: -210px; }
+    .backpack-object:nth-child(4) { --x: 240px; --y: -160px; }
+    .backpack-object:nth-child(5) { --x: -250px; --y: 40px; }
+    .backpack-object:nth-child(6) { --x: 240px; --y: 30px; }
+    .backpack-object:nth-child(7) { --x: -190px; --y: 180px; }
+    .backpack-object:nth-child(8) { --x: 0px; --y: 190px; }
+    .backpack-object:nth-child(9) { --x: 190px; --y: 180px; }
+
+}
+
+/* MOBILE : DISPOSITION EN GRILLE */
+
+@media (max-width: 600px) {
+
+    .backpack-experience {
+        margin: 35px auto 60px;
+    }
+
+    .backpack-intro {
+        font-size: 15px;
+    }
+
+    .backpack-stage {
+        height: auto;
+        min-height: 310px;
+        padding-bottom: 0;
+    }
+
+    .backpack-bag {
+        top: 150px;
+        width: 180px;
+        height: 240px;
+    }
+
+    .backpack-items {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        padding-top: 300px;
+    }
+
+    .backpack-object,
+    .backpack-software {
+        position: relative;
+        left: auto;
+        top: auto;
+
+        width: 100%;
+        height: 90px;
+        padding: 10px;
+
+        transform: translateY(-100px) scale(0.2);
+    }
+
+    .backpack-stage.is-open .backpack-object {
+        transform: translateY(0) scale(1) rotate(0);
+    }
+
+    .backpack-stage.is-open .backpack-object:hover {
+        transform: translateY(-4px) scale(1.03);
+    }
+
+    .backpack-details {
+        margin-top: 25px;
+        padding: 20px;
+    }
+
+    .backpack-details h3 {
+        font-size: 17px;
+    }
+
+}
+
+/* ACCESSIBILITÉ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .backpack-bag,
+    .backpack-bag img,
+    .backpack-object {
+        transition-duration: 0.01ms;
+        transition-delay: 0ms;
+    }
+
+}
