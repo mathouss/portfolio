@@ -453,5 +453,49 @@
 
     </footer>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.querySelector(".trust-grid");
+
+    if (!carousel) return;
+
+    const cards = [...carousel.querySelectorAll(".trust-card")];
+
+    function updateFocus() {
+        const carouselRect = carousel.getBoundingClientRect();
+        const center = carouselRect.left + carouselRect.width / 2;
+
+        let closestCard = null;
+        let smallestDistance = Infinity;
+
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const cardCenter = rect.left + rect.width / 2;
+            const distance = Math.abs(cardCenter - center);
+
+            if (distance < smallestDistance) {
+                smallestDistance = distance;
+                closestCard = card;
+            }
+        });
+
+        cards.forEach(card => {
+            card.classList.toggle(
+                "is-focused",
+                card === closestCard
+            );
+        });
+    }
+
+    carousel.addEventListener("scroll", updateFocus, {
+        passive: true
+    });
+
+    window.addEventListener("resize", updateFocus);
+
+    updateFocus();
+});
+</script>
+
 </body>
 </html>
