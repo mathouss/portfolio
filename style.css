@@ -1,32 +1,25 @@
 
 /* ==========================================
    MATHIS SLEZAKOWA — PORTFOLIO
-   STYLE CSS NETTOYÉ
+   CSS HARMONISÉ
 ========================================== */
 
-
-/* ==========================================
-   1. COULEURS ET VARIABLES
-========================================== */
+/* COULEURS */
 
 :root {
     --cream: #111016;
-    --terracotta: #D7FF38;
     --dark: #111016;
+    --white: #1C1925;
     --brown: #B7AEC2;
     --line: #39333F;
-    --white: #1C1925;
-
     --lime: #D7FF38;
     --violet: #D65AFF;
     --pink: #FF4DB8;
     --text-light: #F4F0F7;
+    --terracotta: var(--lime);
 }
 
-
-/* ==========================================
-   2. RESET ET STYLES GÉNÉRAUX
-========================================== */
+/* RESET */
 
 * {
     margin: 0;
@@ -36,7 +29,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+    scroll-padding-top: 60px;
 }
 
 body {
@@ -44,6 +37,7 @@ body {
     color: var(--text-light);
     font-family: "DM Sans", sans-serif;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 a {
@@ -56,13 +50,21 @@ img {
     max-width: 100%;
 }
 
+button {
+    font: inherit;
+}
+
+:focus-visible {
+    outline: 3px solid var(--lime);
+    outline-offset: 4px;
+}
 
 /* ==========================================
-   3. ACCUEIL — HERO
+   ACCUEIL
 ========================================== */
 
 .hero {
-    min-height: 85vh;
+    min-height: 85svh;
     padding: 100px 5%;
     display: flex;
     align-items: center;
@@ -70,6 +72,7 @@ img {
     text-align: center;
     position: relative;
     background: var(--cream);
+    overflow: hidden;
 }
 
 .hero-content {
@@ -77,54 +80,90 @@ img {
 }
 
 .hero h1 {
-    font-family: "DM Sans", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: clamp(38px, 6.5vw, 105px);
-    font-weight: 500;
     line-height: 1.1;
     letter-spacing: -3px;
     white-space: nowrap;
-    color: var(--text-light);
 }
 
-/* MATHIS — MONTSERRAT THIN */
-
-.hero h1 .hero-firstname {
-    font-family: "Montserrat", sans-serif;
+.hero-firstname {
+    display: inline-block;
     font-weight: 100;
     color: var(--lime);
-    -webkit-text-stroke: 0;
-    text-shadow: none;
+    animation: heroReveal 1s ease both;
 }
 
-/* SLEZAKOWA — MONTSERRAT EXTRABOLD */
-
-.hero h1 .hero-lastname {
-    font-family: "Montserrat", sans-serif;
+.hero-lastname {
+    display: inline-block;
     font-weight: 800;
     color: var(--violet);
-    -webkit-text-stroke: 0;
+    animation: heroReveal 1s ease .25s both;
 }
 
-/* POINT VERT LIME */
-
-.hero h1 .hero-dot {
+.hero-dot {
     color: var(--lime);
-    -webkit-text-stroke: 0;
 }
-
-/* SOUS-TITRE */
 
 .hero h2 {
     margin-top: 18px;
     font-size: clamp(14px, 1.6vw, 22px);
     font-weight: 400;
-    letter-spacing: -0.3px;
-    color: var(--text-light);
+    letter-spacing: -.3px;
+    animation: heroReveal 1s ease .65s both;
 }
 
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+        filter: blur(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* INDICATEUR SCROLL */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: var(--brown);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    animation: scrollAppear 1s ease 1.3s both;
+}
+
+.scroll-arrow {
+    color: var(--lime);
+    font-size: 30px;
+    line-height: 1;
+    animation: arrowFloat 2s ease-in-out infinite;
+}
+
+@keyframes scrollAppear {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes arrowFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
 
 /* ==========================================
-   4. SECTIONS DU PORTFOLIO
+   SECTIONS ET TITRES
 ========================================== */
 
 .portfolio-section {
@@ -140,721 +179,60 @@ img {
     margin-bottom: 65px;
 }
 
-.section-heading h2 {
+.section-heading h2,
+.site-footer .contact-title {
     font-family: "Montserrat", sans-serif;
-    font-size: clamp(48px, 6vw, 76px);
+    font-size: clamp(30px, 3.5vw, 52px);
     font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -2px;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    white-space: nowrap;
 }
-
-/* TEXTES EXPLICATIFS MASQUÉS */
 
 .section-heading .section-intro {
     display: none;
 }
 
+/* FONDS */
 
-/* ==========================================
-   5. COULEURS DES SECTIONS
-========================================== */
-
-/* COLLABORATIONS */
-
-.trust-section {
+.trust-section,
+.social-section,
+.about-section,
+.gear-section {
     background: var(--white);
 }
 
-.trust-section .section-heading h2 {
-    color: var(--lime);
-}
-
-.trust-section .section-heading h2 span {
-    color: var(--violet);
-}
-
-/* JOURNALISME */
-
-.journalism-section {
-    background: var(--cream);
-}
-
-.journalism-section .section-heading h2 {
-    color: var(--violet);
-}
-
-.journalism-section .section-heading h2 span {
-    color: var(--lime);
-}
-
-/* RÉSEAUX SOCIAUX */
-
-.social-section {
-    background: var(--white);
-}
-
-.social-section .section-heading h2 {
-    color: var(--lime);
-}
-
-.social-section .section-heading h2 span {
-    color: var(--violet);
-}
-
-/* PERSONNEL */
-
+.journalism-section,
 .personal-section {
     background: var(--cream);
 }
 
-.personal-section .section-heading h2 {
+/* TITRES VERTS */
+
+.trust-section h2,
+.social-section h2,
+.about-section h2 {
+    color: var(--lime);
+}
+
+.trust-section h2 span,
+.social-section h2 span,
+.about-section h2 span {
     color: var(--violet);
 }
 
-.personal-section .section-heading h2 span {
-    color: var(--lime);
-}
-
-
-/* ==========================================
-   6. CARROUSEL DES COLLABORATIONS
-========================================== */
-
-.trust-grid {
-    display: flex;
-    align-items: flex-start;
-    gap: 35px;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    padding: 12px 4px 25px;
-
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior-x: contain;
-
-    scrollbar-width: thin;
-    scrollbar-color: var(--violet) transparent;
-}
-
-.trust-card {
-    flex: 0 0 155px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    gap: 10px;
-    padding: 0;
-
-    background: transparent;
-    border: none;
-    box-shadow: none;
-
-    text-align: center;
-    scroll-snap-align: center;
-
-    transition: transform 0.3s ease;
-}
-
-.trust-card:hover {
-    transform: translateY(-5px);
-}
-
-.trust-card img {
-    width: 130px;
-    height: 130px;
-    max-width: 100%;
-
-    border-radius: 50%;
-    border: 2px solid transparent;
-
-    object-fit: cover;
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
-}
-
-.trust-card:hover img {
-    border-color: var(--violet);
-    transform: scale(1.08);
-}
-
-.trust-card span {
-    margin-top: 5px;
-    color: var(--text-light);
-    font-size: 13px;
-    font-weight: 700;
-    text-align: center;
-}
-
-.trust-card .follower-count {
-    color: var(--brown);
-    font-size: 11px;
-    font-weight: 400;
-}
-
-/* PHRASE SOUS LES COLLABORATIONS */
-
-.trust-note {
-    display: none;
-}
-
-
-/* ==========================================
-   7. CARROUSELS VIDÉOS
-========================================== */
-
-.video-gallery {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-
-    gap: 30px;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    padding: 12px 4px 25px;
-
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior-x: contain;
-
-    scrollbar-width: thin;
-    scrollbar-color: var(--violet) transparent;
-}
-
-.video-card {
-    flex: 0 0 auto;
-    min-width: 0;
-    scroll-snap-align: start;
-    transition: transform 0.3s ease;
-}
-
-.video-card:hover {
-    transform: translateY(-5px);
-}
-
-
-/* ==========================================
-   8. VIDÉOS YOUTUBE
-========================================== */
-
-.youtube-card {
-    width: 440px;
-    max-width: 75vw;
-}
-
-.youtube-frame {
-    aspect-ratio: 16 / 9;
-}
-
-.youtube-frame iframe {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-
-/* ==========================================
-   9. VIDÉOS INSTAGRAM
-========================================== */
-
-.instagram-card {
-    width: 240px;
-    max-width: 75vw;
-}
-
-.instagram-frame {
-    width: 100%;
-    aspect-ratio: 9 / 16;
-    background: #171513;
-}
-
-.instagram-frame iframe {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-
-/* ==========================================
-   10. VIDÉOS TIKTOK
-========================================== */
-
-.tiktok-card {
-    width: 240px;
-    max-width: 75vw;
-}
-
-.tiktok-frame {
-    width: 220px;
-    max-width: 100%;
-    aspect-ratio: 9 / 16;
-    margin: 0 auto;
-    background: #000;
-}
-
-.tiktok-frame iframe {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-
-/* ==========================================
-   11. LÉGENDES DES VIDÉOS
-========================================== */
-
-.video-caption {
-    padding-top: 17px;
-}
-
-.video-caption h3 {
-    color: var(--text-light);
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1.5;
-}
-
-.video-caption p {
-    margin-top: 6px;
-    color: var(--brown);
-    font-size: 11px;
-}
-
-
-/* ==========================================
-   12. BARRES DE DÉFILEMENT
-========================================== */
-
-.trust-grid::-webkit-scrollbar,
-.video-gallery::-webkit-scrollbar {
-    height: 6px;
-}
-
-.trust-grid::-webkit-scrollbar-track,
-.video-gallery::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.trust-grid::-webkit-scrollbar-thumb,
-.video-gallery::-webkit-scrollbar-thumb {
-    background: var(--violet);
-    border-radius: 20px;
-}
-
-.trust-grid::-webkit-scrollbar-thumb:hover,
-.video-gallery::-webkit-scrollbar-thumb:hover {
-    background: var(--lime);
-}
-
-
-/* ==========================================
-   13. FOOTER — CONTACT
-========================================== */
-
-.site-footer {
-    padding: 85px 12% 30px;
-    background: #17131E;
-    color: var(--text-light);
-}
-
-.site-footer .contact-title {
-    margin-top: 0;
-    margin-bottom: 55px;
-
-    font-family: "Montserrat", sans-serif;
-    font-size: clamp(48px, 6vw, 75px);
-    font-weight: 700;
-
-    line-height: 1;
-    letter-spacing: -3px;
-
-    color: var(--lime);
-}
-
-.site-footer .contact-title span {
+/* TITRES VIOLETS */
+
+.journalism-section h2,
+.personal-section h2,
+.gear-section h2 {
     color: var(--violet);
 }
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 35px 60px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    color: var(--text-light);
-    font-size: 15px;
-
-    overflow-wrap: anywhere;
-    transition: color 0.25s ease;
-}
-
-.contact-item:hover {
+.journalism-section h2 span,
+.personal-section h2 span,
+.gear-section h2 span {
     color: var(--lime);
-}
-
-.contact-item svg {
-    width: 27px;
-    height: 27px;
-    flex-shrink: 0;
-
-    fill: none;
-    stroke: var(--violet);
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-
-/* ==========================================
-   14. BAS DU FOOTER
-========================================== */
-
-.footer-bottom {
-    margin-top: 85px;
-    padding-top: 22px;
-
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-
-    border-top: 1px solid var(--line);
-
-    color: var(--brown);
-    font-size: 10px;
-}
-
-
-/* ==========================================
-   15. TABLETTES
-========================================== */
-
-@media (max-width: 1000px) {
-
-    .hero {
-        padding-left: 8%;
-        padding-right: 8%;
-    }
-
-    .portfolio-section {
-        padding-left: 8%;
-        padding-right: 8%;
-    }
-
-    .trust-card {
-        flex-basis: 145px;
-    }
-
-    .site-footer {
-        padding-left: 8%;
-        padding-right: 8%;
-    }
-
-}
-
-
-/* ==========================================
-   16. MOBILES
-========================================== */
-
-@media (max-width: 700px) {
-
-    /* ACCUEIL */
-
-    .hero {
-        min-height: 75vh;
-        padding: 80px 6%;
-    }
-
-    .hero h1 {
-        font-size: clamp(32px, 8vw, 56px);
-        letter-spacing: -1.5px;
-        white-space: normal;
-    }
-
-    .hero h2 {
-        font-size: 15px;
-    }
-
-    /* SECTIONS */
-
-    .portfolio-section {
-        padding: 75px 7%;
-    }
-
-    .section-heading {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 20px;
-        margin-bottom: 40px;
-    }
-
-    .section-heading h2 {
-        font-size: 54px;
-        letter-spacing: -1.5px;
-    }
-
-    /* COLLABORATIONS */
-
-    .trust-grid {
-        gap: 25px;
-    }
-
-    .trust-card {
-        flex-basis: 125px;
-    }
-
-    .trust-card img {
-        width: 105px;
-        height: 105px;
-    }
-
-    /* VIDÉOS */
-
-    .video-gallery {
-        gap: 22px;
-    }
-
-    .youtube-card {
-        width: 82vw;
-        max-width: 82vw;
-    }
-
-    .instagram-card,
-    .tiktok-card {
-        width: 240px;
-        max-width: 75vw;
-    }
-
-    /* CONTACT */
-
-    .site-footer {
-        padding: 65px 7% 25px;
-    }
-
-    .site-footer .contact-title {
-        margin-bottom: 40px;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .contact-item {
-        font-size: 14px;
-        gap: 16px;
-    }
-
-    .footer-bottom {
-        margin-top: 65px;
-    }
-
-}
-
-
-/* ==========================================
-   17. PETITS ÉCRANS
-========================================== */
-
-@media (max-width: 380px) {
-
-    .hero h1 {
-        font-size: clamp(28px, 8vw, 40px);
-    }
-
-    .section-heading h2 {
-        font-size: 46px;
-    }
-
-}
-
-
-/* ==========================================
-   18. ACCESSIBILITÉ
-========================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-    html,
-    .trust-grid,
-    .video-gallery {
-        scroll-behavior: auto;
-    }
-
-    .trust-card,
-    .trust-card img,
-    .video-card {
-        transition: none;
-    }
-
-}
-
-/* ==========================================
-   TITRES DES SECTIONS — PLUS PETITS
-========================================== */
-
-.section-heading h2 {
-    font-family: "Montserrat", sans-serif;
-    font-size: clamp(30px, 3.5vw, 52px);
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -1.5px;
-    white-space: nowrap;
-}
-
-/* TITRE CONTACT */
-
-.site-footer .contact-title {
-    font-family: "Montserrat", sans-serif;
-    font-size: clamp(30px, 3.5vw, 52px);
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -1.5px;
-    white-space: nowrap;
-}
-
-/* ADAPTATION SUR MOBILE */
-
-@media (max-width: 700px) {
-    .section-heading h2,
-    .site-footer .contact-title {
-        font-size: clamp(22px, 5vw, 34px);
-        letter-spacing: -1px;
-    }
-}
-
-/* ==========================================
-   MOSAÏQUE STYLE PINTEREST
-   JOURNALISME + RÉSEAUX SOCIAUX
-========================================== */
-
-/* Conteneur des mosaïques */
-.journalism-section .video-gallery,
-.social-section .video-gallery {
-    display: block;
-    columns: 3;
-    column-gap: 24px;
-
-    overflow: visible;
-    padding: 0;
-
-    scroll-snap-type: none;
-}
-
-/* Chaque vidéo devient une carte */
-.journalism-section .video-card,
-.social-section .video-card {
-    display: inline-block;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 0 24px;
-
-    break-inside: avoid;
-    page-break-inside: avoid;
-
-    vertical-align: top;
-    scroll-snap-align: none;
-}
-
-/* Les lecteurs prennent la largeur de la carte */
-.journalism-section .video-frame,
-.social-section .video-frame {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-}
-
-/* Vidéos horizontales */
-.journalism-section .youtube-frame,
-.social-section .youtube-frame {
-    aspect-ratio: 16 / 9;
-}
-
-/* Vidéos verticales */
-.journalism-section .instagram-frame,
-.social-section .instagram-frame,
-.journalism-section .tiktok-frame,
-.social-section .tiktok-frame {
-    aspect-ratio: 9 / 16;
-}
-
-/* Lecteurs intégrés */
-.journalism-section .video-frame iframe,
-.social-section .video-frame iframe {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-/* Légendes */
-.journalism-section .video-caption,
-.social-section .video-caption {
-    padding: 14px 4px 6px;
-}
-
-/* TABLETTE */
-@media (max-width: 1000px) {
-    .journalism-section .video-gallery,
-    .social-section .video-gallery {
-        columns: 2;
-        column-gap: 18px;
-    }
-
-    .journalism-section .video-card,
-    .social-section .video-card {
-        margin-bottom: 18px;
-    }
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-    .journalism-section .video-gallery,
-    .social-section .video-gallery {
-        columns: 2;
-        column-gap: 12px;
-    }
-
-    .journalism-section .video-card,
-    .social-section .video-card {
-        margin-bottom: 12px;
-    }
-
-    .journalism-section .video-caption h3,
-    .social-section .video-caption h3 {
-        font-size: 12px;
-    }
-
-    .journalism-section .video-caption p,
-    .social-section .video-caption p {
-        font-size: 10px;
-    }
-}
-
-/* TRÈS PETITS ÉCRANS */
-@media (max-width: 380px) {
-    .journalism-section .video-gallery,
-    .social-section .video-gallery {
-        columns: 1;
-    }
 }
 
 /* ==========================================
@@ -867,451 +245,279 @@ img {
 
 .trust-grid {
     position: relative;
-    display: block;
-
     width: 100%;
-    height: 290px;
+    height: 400px;
     margin: 0 auto;
-    padding: 0;
-
-    overflow: hidden;
-    scroll-snap-type: none;
-    scroll-behavior: auto;
-
-    perspective: 1000px;
+    perspective: 1200px;
     perspective-origin: 50% 50%;
-
-    -webkit-mask-image: none;
-    mask-image: none;
+    overflow: hidden;
 }
-
-/* Tous les profils sont positionnés
-   par rapport au centre du carrousel */
 
 .trust-grid .trust-card {
     position: absolute;
-    top: 30px;
+    top: 55px;
     left: 50%;
-
-    width: 155px;
-    min-width: 0;
-    height: 225px;
-    padding: 0;
-
+    width: 210px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     gap: 10px;
-
+    text-align: center;
     opacity: 0;
     filter: blur(5px);
-
     pointer-events: none;
+    z-index: var(--depth, 0);
 
     transform:
         translateX(-50%)
         translateX(var(--x, 0px))
         translateZ(var(--z, -300px))
-        scale(var(--scale, 0.6))
+        scale(var(--scale, .6))
         rotateY(var(--rotate, 0deg));
-
-    z-index: var(--depth, 0);
 
     transition:
         transform 1.2s cubic-bezier(.22, 1, .36, 1),
         opacity 1.2s ease,
         filter 1.2s ease;
-
-    will-change: transform, opacity, filter;
 }
-
-/* Images */
-
-.trust-grid .trust-card img {
-    width: 130px;
-    height: 130px;
-    flex-shrink: 0;
-
-    border-radius: 50%;
-    object-fit: cover;
-
-    border: 2px solid transparent;
-
-    transition: border-color 0.6s ease;
-}
-
-/* Profil au premier plan */
-
-.trust-grid .trust-card.is-focused img {
-    border-color: var(--lime);
-}
-
-/* Neutralisation des anciens effets hover */
-
-.trust-grid .trust-card:hover {
-    transform:
-        translateX(-50%)
-        translateX(var(--x, 0px))
-        translateZ(var(--z, -300px))
-        scale(var(--scale, 0.6))
-        rotateY(var(--rotate, 0deg));
-}
-
-.trust-grid .trust-card:hover img {
-    transform: none;
-}
-
-/* Les profils visibles restent cliquables */
 
 .trust-grid .trust-card.is-visible {
     pointer-events: auto;
 }
 
-/* Textes */
-
-.trust-grid .trust-card span {
-    color: var(--text-light);
-    text-align: center;
-}
-
-.trust-grid .trust-card .follower-count {
-    color: var(--brown);
-    text-align: center;
-}
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-    .trust-grid {
-        height: 245px;
-    }
-
-    .trust-grid .trust-card {
-        top: 25px;
-        width: 125px;
-        height: 200px;
-    }
-
-    .trust-grid .trust-card img {
-        width: 105px;
-        height: 105px;
-    }
-}
-
-/* ACCESSIBILITÉ */
-
-@media (prefers-reduced-motion: reduce) {
-    .trust-grid .trust-card {
-        transition: none;
-    }
-}
-
-/* ==========================================
-   CARROUSEL 3D — VERSION AGRANDIE
-========================================== */
-
-.trust-grid {
-    height: 400px;
-    perspective: 1200px;
-}
-
-.trust-grid .trust-card {
-    top: 55px;
-    width: 210px;
-    height: 300px;
-}
-
 .trust-grid .trust-card img {
     width: 180px;
     height: 180px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid transparent;
+    transition: border-color .6s ease;
+}
+
+.trust-grid .trust-card.is-focused img {
+    border-color: var(--lime);
 }
 
 .trust-grid .trust-card span {
+    margin-top: 5px;
+    color: var(--text-light);
     font-size: 16px;
+    font-weight: 700;
 }
 
 .trust-grid .trust-card .follower-count {
-    font-size: 13px;
-}
-
-/* TABLETTES */
-
-@media (max-width: 1000px) {
-    .trust-grid {
-        height: 340px;
-    }
-
-    .trust-grid .trust-card {
-        top: 45px;
-        width: 170px;
-        height: 260px;
-    }
-
-    .trust-grid .trust-card img {
-        width: 145px;
-        height: 145px;
-    }
-}
-
-/* MOBILES */
-
-@media (max-width: 700px) {
-    .trust-grid {
-        height: 280px;
-    }
-
-    .trust-grid .trust-card {
-        top: 35px;
-        width: 135px;
-        height: 210px;
-    }
-
-    .trust-grid .trust-card img {
-        width: 115px;
-        height: 115px;
-    }
-
-    .trust-grid .trust-card span {
-        font-size: 12px;
-    }
-
-    .trust-grid .trust-card .follower-count {
-        font-size: 10px;
-    }
-}
-
-/* ==========================================
-   PORTFOLIO — NOUVELLES AMÉLIORATIONS
-========================================== */
-
-
-/* ==========================================
-   1. ANIMATION D'ACCUEIL
-========================================== */
-
-.hero {
-    overflow: hidden;
-}
-
-.hero-firstname {
-    display: inline-block;
-    animation: heroReveal 1s ease both;
-}
-
-.hero-lastname {
-    display: inline-block;
-    animation: heroReveal 1s ease 0.25s both;
-}
-
-.hero h2 {
-    animation: heroReveal 1s ease 0.65s both;
-}
-
-@keyframes heroReveal {
-    from {
-        opacity: 0;
-        transform: translateY(35px);
-        filter: blur(8px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-    }
-}
-
-
-/* INDICATION SCROLL */
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 35px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-
     color: var(--brown);
-    font-family: "DM Sans", sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-
-    white-space: nowrap;
-
-    animation: scrollAppear 1s ease 1.3s both;
+    font-size: 13px;
+    font-weight: 400;
 }
 
-.scroll-arrow {
-    color: var(--lime);
-    font-size: 30px;
-    line-height: 1;
-
-    animation: arrowFloat 2s ease-in-out infinite;
+.trust-note {
+    display: none;
 }
-
-@keyframes scrollAppear {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes arrowFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(8px);
-    }
-}
-
 
 /* ==========================================
-   2. CARTES VIDÉO
+   VIDÉOS
 ========================================== */
 
-/* Lecteurs arrondis */
+.video-gallery {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 12px 4px 25px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--violet) transparent;
+}
+
+.video-gallery::-webkit-scrollbar {
+    height: 6px;
+}
+
+.video-gallery::-webkit-scrollbar-thumb {
+    background: var(--violet);
+    border-radius: 20px;
+}
+
+.video-card {
+    flex: 0 0 auto;
+    min-width: 0;
+    scroll-snap-align: start;
+    transition: transform .3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+}
+
+.youtube-card {
+    width: 440px;
+    max-width: 75vw;
+}
+
+.youtube-frame {
+    aspect-ratio: 16 / 9;
+}
+
+.instagram-card,
+.tiktok-card {
+    width: 240px;
+    max-width: 75vw;
+}
+
+.instagram-frame,
+.tiktok-frame {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background: #17131E;
+}
 
 .video-frame {
     overflow: hidden;
     border-radius: 14px;
-
     background: #17131E;
-
-    border: 1px solid rgba(214, 90, 255, 0.15);
-
+    border: 1px solid rgba(214, 90, 255, .15);
     transition:
-        border-color 0.35s ease,
-        box-shadow 0.35s ease;
+        border-color .35s ease,
+        box-shadow .35s ease;
 }
 
-/* Effet au survol */
+.video-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
 
 .video-card:hover .video-frame {
     border-color: var(--violet);
-
     box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.25),
-        0 0 20px rgba(214, 90, 255, 0.12);
+        0 12px 35px rgba(0, 0, 0, .25),
+        0 0 20px rgba(214, 90, 255, .12);
 }
-
-/* Légendes */
 
 .video-caption {
     padding-top: 18px;
 }
 
 .video-caption h3 {
-    font-family: "DM Sans", sans-serif;
     font-size: 15px;
     font-weight: 700;
     line-height: 1.45;
-
-    color: var(--text-light);
+    transition: color .2s;
 }
-
-.video-caption p {
-    margin-top: 7px;
-
-    font-size: 12px;
-    color: var(--brown);
-}
-
-/* Effet discret sur les titres */
 
 .video-card:hover .video-caption h3 {
     color: var(--lime);
 }
 
+.video-caption p {
+    margin-top: 7px;
+    font-size: 12px;
+    color: var(--brown);
+}
 
 /* ==========================================
-   3. SECTION À PROPOS
+   MOSAÏQUE PINTEREST
+   JOURNALISME ET RÉSEAUX SOCIAUX
 ========================================== */
 
-.about-section {
-    background: var(--white);
+.journalism-section .video-gallery,
+.social-section .video-gallery {
+    display: block;
+    columns: 3;
+    column-gap: 24px;
+    overflow: visible;
+    padding: 0;
+    scroll-snap-type: none;
 }
 
-.about-section .section-heading h2 {
-    color: var(--lime);
+.journalism-section .video-card,
+.social-section .video-card {
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 24px;
+    break-inside: avoid;
+    vertical-align: top;
+    scroll-snap-align: none;
 }
 
-.about-section .section-heading h2 span {
-    color: var(--violet);
+.journalism-section .video-frame,
+.social-section .video-frame {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
 }
 
-/* Deux colonnes */
+.journalism-section .youtube-frame,
+.social-section .youtube-frame {
+    aspect-ratio: 16 / 9;
+}
+
+.journalism-section .instagram-frame,
+.social-section .instagram-frame,
+.journalism-section .tiktok-frame,
+.social-section .tiktok-frame {
+    aspect-ratio: 9 / 16;
+}
+
+.journalism-section .video-caption,
+.social-section .video-caption {
+    padding: 14px 4px 6px;
+}
+
+/* ==========================================
+   À PROPOS
+========================================== */
 
 .about-layout {
     display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
-
+    grid-template-columns: .85fr 1.15fr;
     align-items: center;
     gap: 75px;
 }
 
-/* Photo */
-
 .about-photo {
-    position: relative;
     width: 100%;
-
     aspect-ratio: 4 / 5;
-
     border-radius: 18px;
     overflow: hidden;
-
     background: #292333;
-
     border: 1px solid var(--line);
 }
 
 .about-photo img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
-    transition: transform 0.6s ease;
+    transition: transform .6s ease;
 }
 
 .about-photo:hover img {
     transform: scale(1.04);
 }
 
-/* Texte */
-
 .about-eyebrow {
     color: var(--violet);
-
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 2px;
-
     margin-bottom: 22px;
 }
 
 .about-content h3 {
     font-family: "Montserrat", sans-serif;
-
     font-size: clamp(28px, 3vw, 46px);
     font-weight: 700;
     line-height: 1.15;
     letter-spacing: -1.5px;
-
-    color: var(--text-light);
-
     margin-bottom: 28px;
 }
 
@@ -1321,33 +527,24 @@ img {
 
 .about-content > p:not(.about-eyebrow) {
     color: var(--brown);
-
     font-size: 15px;
     line-height: 1.85;
-
     margin-bottom: 18px;
 }
-
-/* Lien vers Contact */
 
 .about-link {
     display: inline-flex;
     align-items: center;
     gap: 15px;
-
     margin-top: 20px;
     padding-bottom: 8px;
-
     color: var(--lime);
-
     font-size: 14px;
     font-weight: 700;
-
     border-bottom: 1px solid var(--lime);
-
     transition:
-        color 0.3s ease,
-        gap 0.3s ease;
+        color .3s ease,
+        gap .3s ease;
 }
 
 .about-link:hover {
@@ -1355,180 +552,9 @@ img {
     gap: 23px;
 }
 
-
 /* ==========================================
-   4. CONTACT MODERNE
+   MATÉRIEL — CARTES
 ========================================== */
-
-.contact-intro {
-    margin-bottom: 55px;
-}
-
-.contact-intro h3 {
-    font-family: "Montserrat", sans-serif;
-
-    font-size: clamp(25px, 3vw, 42px);
-    font-weight: 700;
-    letter-spacing: -1px;
-
-    color: var(--text-light);
-
-    margin-bottom: 18px;
-}
-
-.contact-intro h3 span {
-    color: var(--violet);
-}
-
-.contact-intro p {
-    max-width: 570px;
-
-    color: var(--brown);
-
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-/* Liens de contact */
-
-.contact-item {
-    padding: 18px 20px;
-
-    border: 1px solid var(--line);
-    border-radius: 12px;
-
-    background: rgba(255, 255, 255, 0.02);
-
-    transition:
-        background 0.3s ease,
-        border-color 0.3s ease,
-        transform 0.3s ease,
-        color 0.3s ease;
-}
-
-.contact-item:hover {
-    background: rgba(215, 255, 56, 0.04);
-
-    border-color: var(--lime);
-
-    transform: translateY(-3px);
-}
-
-.contact-item svg {
-    transition: stroke 0.3s ease;
-}
-
-.contact-item:hover svg {
-    stroke: var(--lime);
-}
-
-
-/* ==========================================
-   5. RESPONSIVE
-========================================== */
-
-@media (max-width: 1000px) {
-
-    .about-layout {
-        gap: 40px;
-    }
-
-}
-
-@media (max-width: 700px) {
-
-    /* ACCUEIL */
-
-    .scroll-indicator {
-        bottom: 25px;
-        font-size: 9px;
-    }
-
-    /* À PROPOS */
-
-    .about-layout {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .about-photo {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
-    .about-content h3 {
-        font-size: 30px;
-    }
-
-    .about-content > p:not(.about-eyebrow) {
-        font-size: 14px;
-    }
-
-    /* CONTACT */
-
-    .contact-intro {
-        margin-bottom: 35px;
-    }
-
-    .contact-intro h3 {
-        font-size: 27px;
-    }
-
-    .contact-intro p {
-        font-size: 14px;
-    }
-
-    .contact-item {
-        padding: 15px;
-    }
-
-    /* VIDÉOS */
-
-    .video-caption h3 {
-        font-size: 13px;
-    }
-
-}
-
-/* ACCESSIBILITÉ */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .hero-firstname,
-    .hero-lastname,
-    .hero h2,
-    .scroll-indicator,
-    .scroll-arrow {
-        animation: none;
-    }
-
-    .about-photo img,
-    .about-link,
-    .contact-item,
-    .contact-item svg,
-    .video-frame {
-        transition: none;
-    }
-
-}
-
-/* ==========================================
-   SECTION MON MATÉRIEL
-========================================== */
-
-.gear-section {
-    background: #1C1925;
-}
-
-.gear-section .section-heading h2 {
-    color: #D65AFF;
-}
-
-.gear-section .section-heading h2 span {
-    color: #D7FF38;
-}
-
-/* CATÉGORIES */
 
 .gear-category {
     margin-top: 55px;
@@ -1542,20 +568,16 @@ img {
 }
 
 .gear-category-number {
-    color: #D7FF38;
-    font-family: "DM Sans", sans-serif;
+    color: var(--lime);
     font-size: 13px;
     font-weight: 700;
 }
 
 .gear-category-heading h3 {
-    color: #F4F0F7;
     font-family: "Montserrat", sans-serif;
     font-size: clamp(20px, 2.5vw, 28px);
     font-weight: 700;
 }
-
-/* GRILLE MATÉRIEL */
 
 .gear-grid {
     display: grid;
@@ -1566,20 +588,19 @@ img {
 .gear-card {
     min-width: 0;
     padding: 20px;
-    border: 1px solid rgba(255,255,255,0.09);
+    border: 1px solid rgba(255, 255, 255, .09);
     border-radius: 18px;
     background: #24202E;
-
     transition:
-        transform 0.35s ease,
-        border-color 0.35s ease,
-        box-shadow 0.35s ease;
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
 }
 
 .gear-card:hover {
     transform: translateY(-7px);
-    border-color: #D7FF38;
-    box-shadow: 0 16px 35px rgba(0,0,0,0.22);
+    border-color: var(--lime);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, .22);
 }
 
 .gear-card-top {
@@ -1592,12 +613,11 @@ img {
 .gear-tag {
     padding: 6px 11px;
     border-radius: 30px;
-    background: rgba(215,255,56,0.09);
-    color: #D7FF38;
-    font-family: "DM Sans", sans-serif;
+    background: rgba(215, 255, 56, .09);
+    color: var(--lime);
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: 0.4px;
+    letter-spacing: .4px;
 }
 
 .gear-index {
@@ -1605,52 +625,40 @@ img {
     font-size: 12px;
 }
 
-/* PHOTOS */
-
 .gear-image {
     display: flex;
     align-items: center;
     justify-content: center;
-
     height: 210px;
     margin: 12px 0 20px;
     padding: 15px;
 }
 
 .gear-image img {
-    display: block;
     max-width: 100%;
     max-height: 100%;
     width: auto;
     height: auto;
     object-fit: contain;
-
-    transition: transform 0.4s ease;
+    transition: transform .4s ease;
 }
 
 .gear-card:hover .gear-image img {
     transform: scale(1.06);
 }
 
-/* TEXTES */
-
 .gear-info h4 {
     margin-bottom: 8px;
-    color: #F4F0F7;
     font-family: "Montserrat", sans-serif;
     font-size: 17px;
-    font-weight: 700;
     line-height: 1.4;
 }
 
 .gear-info p {
-    color: #B7AEC2;
-    font-family: "DM Sans", sans-serif;
+    color: var(--brown);
     font-size: 12px;
     line-height: 1.6;
 }
-
-/* LOGICIELS */
 
 .gear-software-category {
     margin-top: 70px;
@@ -1667,20 +675,18 @@ img {
     align-items: center;
     gap: 15px;
     min-width: 0;
-
     padding: 22px 16px;
     border-radius: 14px;
-    border: 1px solid rgba(255,255,255,0.09);
+    border: 1px solid rgba(255, 255, 255, .09);
     background: #24202E;
-
     transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
+        transform .3s ease,
+        border-color .3s ease;
 }
 
 .software-card:hover {
     transform: translateY(-5px);
-    border-color: #D65AFF;
+    border-color: var(--violet);
 }
 
 .software-logo {
@@ -1688,11 +694,9 @@ img {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-
     width: 48px;
     height: 48px;
     border-radius: 10px;
-
     font-family: "Montserrat", sans-serif;
     font-size: 19px;
     font-weight: 800;
@@ -1704,7 +708,7 @@ img {
 }
 
 .resolve-logo {
-    color: #F4F0F7;
+    color: var(--text-light);
     background: #353D55;
     font-size: 16px;
 }
@@ -1715,72 +719,21 @@ img {
 }
 
 .insta-logo {
-    color: #D7FF38;
+    color: var(--lime);
     background: #33383A;
     font-size: 14px;
 }
 
 .software-card h4 {
-    color: #F4F0F7;
-    font-family: "DM Sans", sans-serif;
     font-size: 13px;
-    font-weight: 700;
     line-height: 1.4;
 }
 
 .software-card p {
     margin-top: 5px;
-    color: #B7AEC2;
+    color: var(--brown);
     font-size: 11px;
     line-height: 1.4;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 1000px) {
-    .gear-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .software-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 600px) {
-    .gear-category {
-        margin-top: 35px;
-    }
-
-    .gear-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .gear-image {
-        height: 190px;
-    }
-
-    .gear-software-category {
-        margin-top: 50px;
-    }
-
-    .software-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .software-card {
-        padding: 16px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .gear-card,
-    .gear-image img,
-    .software-card {
-        transition: none;
-    }
 }
 
 /* ==========================================
@@ -1794,7 +747,6 @@ img {
 }
 
 .backpack-intro {
-    color: #F4F0F7;
     font-size: 18px;
     font-weight: 700;
     line-height: 1.6;
@@ -1803,12 +755,10 @@ img {
 .backpack-intro span {
     display: block;
     margin-top: 7px;
-    color: #B7AEC2;
+    color: var(--brown);
     font-size: 13px;
     font-weight: 400;
 }
-
-/* SCÈNE */
 
 .backpack-stage {
     position: relative;
@@ -1819,7 +769,7 @@ img {
     isolation: isolate;
 }
 
-/* SAC */
+/* LE SAC */
 
 .backpack-bag {
     position: absolute;
@@ -1827,27 +777,17 @@ img {
     left: 50%;
     top: 52%;
     transform: translate(-50%, -50%);
-
     width: 260px;
     height: 310px;
     padding: 0;
-
     background: none;
-    border: none;
+    border: 0;
     cursor: pointer;
-
-    transition: transform 0.5s ease;
+    transition: transform .5s ease;
 }
 
 .backpack-bag:hover {
     transform: translate(-50%, -50%) scale(1.05);
-}
-
-.backpack-bag:focus-visible,
-.backpack-object:focus-visible,
-.backpack-replay:focus-visible {
-    outline: 3px solid #D7FF38;
-    outline-offset: 5px;
 }
 
 .backpack-bag img {
@@ -1856,20 +796,19 @@ img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-
     transition:
-        opacity 0.45s ease,
-        transform 0.45s ease;
+        opacity .45s ease,
+        transform .45s ease;
 }
 
 .bag-open {
     opacity: 0;
-    transform: scale(0.92);
+    transform: scale(.92);
 }
 
 .backpack-stage.is-open .bag-closed {
     opacity: 0;
-    transform: scale(0.92);
+    transform: scale(.92);
 }
 
 .backpack-stage.is-open .bag-open {
@@ -1904,11 +843,10 @@ img {
     height: 115px;
     padding: 10px;
 
-    border: 1px solid rgba(215,255,56,0.2);
+    border: 1px solid rgba(215, 255, 56, .2);
     border-radius: 18px;
-
-    background: rgba(36,32,46,0.94);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    background: rgba(36, 32, 46, .94);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
 
     opacity: 0;
     visibility: hidden;
@@ -1917,16 +855,14 @@ img {
     transform:
         translate(-50%, -50%)
         translate(0, 40px)
-        scale(0.15)
+        scale(.15)
         rotate(-20deg);
 
     transition:
-        transform 1s cubic-bezier(.22,1,.36,1),
-        opacity 0.5s ease,
+        transform 1s cubic-bezier(.22, 1, .36, 1),
+        opacity .5s ease,
         visibility 0s linear 1s,
-        border-color 0.25s ease;
-
-    transition-delay: 0ms;
+        border-color .25s ease;
 
     cursor: pointer;
 }
@@ -1937,7 +873,7 @@ img {
     object-fit: contain;
 }
 
-/* POSITION FINALE DES OBJETS */
+/* POSITIONS DES 9 OBJETS */
 
 .backpack-object:nth-child(1) {
     --x: -340px;
@@ -2015,22 +951,22 @@ img {
         scale(1)
         rotate(var(--rotation));
 
-    transition-delay: var(--delay);
+    transition-delay:
+        var(--delay),
+        var(--delay),
+        0ms,
+        var(--delay);
 }
 
-/* HOVER DES OBJETS */
-
 .backpack-stage.is-open .backpack-object:hover {
-    border-color: #D7FF38;
+    border-color: var(--lime);
 
     transform:
         translate(-50%, -50%)
         translate(var(--x), var(--y))
         scale(1.12)
-        rotate(0deg);
+        rotate(0);
 }
-
-/* LOGICIELS */
 
 .backpack-software {
     width: 82px;
@@ -2047,28 +983,23 @@ img {
 .backpack-details {
     max-width: 550px;
     min-height: 135px;
-
     margin: 0 auto;
     padding: 25px;
-
-    border: 1px solid rgba(214,90,255,0.22);
+    border: 1px solid rgba(214, 90, 255, .22);
     border-radius: 18px;
-
     background: #24202E;
 }
 
 .backpack-details-label {
     display: block;
     margin-bottom: 12px;
-
-    color: #D65AFF;
+    color: var(--violet);
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 2px;
 }
 
 .backpack-details h3 {
-    color: #F4F0F7;
     font-family: "Montserrat", sans-serif;
     font-size: 21px;
     font-weight: 700;
@@ -2076,35 +1007,27 @@ img {
 
 .backpack-details p {
     margin-top: 10px;
-    color: #B7AEC2;
+    color: var(--brown);
     font-size: 13px;
     line-height: 1.7;
 }
-
-/* BOUTON RANGER */
 
 .backpack-replay {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
     margin-top: 25px;
     padding: 12px 22px;
-
-    border: 1px solid #D7FF38;
+    border: 1px solid var(--lime);
     border-radius: 30px;
-
-    color: #D7FF38;
+    color: var(--lime);
     background: transparent;
-
-    font-family: "DM Sans", sans-serif;
     font-weight: 700;
     font-size: 12px;
-
     cursor: pointer;
     transition:
-        background 0.3s ease,
-        color 0.3s ease;
+        background .3s ease,
+        color .3s ease;
 }
 
 .backpack-replay[hidden] {
@@ -2112,13 +1035,156 @@ img {
 }
 
 .backpack-replay:hover {
-    background: #D7FF38;
-    color: #111016;
+    background: var(--lime);
+    color: var(--dark);
 }
 
-/* TABLETTE */
+/* ==========================================
+   CONTACT
+========================================== */
+
+.site-footer {
+    padding: 85px 12% 30px;
+    background: #17131E;
+}
+
+.site-footer .contact-title {
+    margin-bottom: 55px;
+    color: var(--lime);
+}
+
+.site-footer .contact-title span {
+    color: var(--violet);
+}
+
+.contact-intro {
+    margin-bottom: 55px;
+}
+
+.contact-intro h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(25px, 3vw, 42px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+}
+
+.contact-intro h3 span {
+    color: var(--violet);
+}
+
+.contact-intro p {
+    max-width: 570px;
+    color: var(--brown);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px 60px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .02);
+    font-size: 15px;
+    overflow-wrap: anywhere;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        transform .3s ease,
+        color .3s ease;
+}
+
+.contact-item:hover {
+    color: var(--lime);
+    background: rgba(215, 255, 56, .04);
+    border-color: var(--lime);
+    transform: translateY(-3px);
+}
+
+.contact-item svg {
+    width: 27px;
+    height: 27px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: var(--violet);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke .3s ease;
+}
+
+.contact-item:hover svg {
+    stroke: var(--lime);
+}
+
+.footer-bottom {
+    margin-top: 85px;
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--brown);
+    font-size: 10px;
+}
+
+/* ==========================================
+   TABLETTES
+========================================== */
 
 @media (max-width: 1000px) {
+
+    .hero,
+    .portfolio-section,
+    .site-footer {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .journalism-section .video-gallery,
+    .social-section .video-gallery {
+        columns: 2;
+        column-gap: 18px;
+    }
+
+    .journalism-section .video-card,
+    .social-section .video-card {
+        margin-bottom: 18px;
+    }
+
+    .trust-grid {
+        height: 340px;
+    }
+
+    .trust-grid .trust-card {
+        top: 45px;
+        width: 170px;
+        height: 260px;
+    }
+
+    .trust-grid .trust-card img {
+        width: 145px;
+        height: 145px;
+    }
+
+    .about-layout {
+        gap: 40px;
+    }
+
+    .gear-grid,
+    .software-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
     .backpack-stage {
         height: 550px;
@@ -2129,25 +1195,241 @@ img {
         height: 260px;
     }
 
-    .backpack-object {
-        --factor: 0.7;
+    .backpack-object:nth-child(1) {
+        --x: -240px;
+        --y: -170px;
     }
 
-    .backpack-object:nth-child(1) { --x: -240px; --y: -170px; }
-    .backpack-object:nth-child(2) { --x: -110px; --y: -220px; }
-    .backpack-object:nth-child(3) { --x: 80px; --y: -210px; }
-    .backpack-object:nth-child(4) { --x: 240px; --y: -160px; }
-    .backpack-object:nth-child(5) { --x: -250px; --y: 40px; }
-    .backpack-object:nth-child(6) { --x: 240px; --y: 30px; }
-    .backpack-object:nth-child(7) { --x: -190px; --y: 180px; }
-    .backpack-object:nth-child(8) { --x: 0px; --y: 190px; }
-    .backpack-object:nth-child(9) { --x: 190px; --y: 180px; }
+    .backpack-object:nth-child(2) {
+        --x: -110px;
+        --y: -220px;
+    }
+
+    .backpack-object:nth-child(3) {
+        --x: 80px;
+        --y: -210px;
+    }
+
+    .backpack-object:nth-child(4) {
+        --x: 240px;
+        --y: -160px;
+    }
+
+    .backpack-object:nth-child(5) {
+        --x: -250px;
+        --y: 40px;
+    }
+
+    .backpack-object:nth-child(6) {
+        --x: 240px;
+        --y: 30px;
+    }
+
+    .backpack-object:nth-child(7) {
+        --x: -190px;
+        --y: 180px;
+    }
+
+    .backpack-object:nth-child(8) {
+        --x: 0px;
+        --y: 190px;
+    }
+
+    .backpack-object:nth-child(9) {
+        --x: 190px;
+        --y: 180px;
+    }
 
 }
 
-/* MOBILE : DISPOSITION EN GRILLE */
+/* ==========================================
+   MOBILES
+========================================== */
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 75svh;
+        padding: 80px 6%;
+    }
+
+    .hero h1 {
+        font-size: clamp(32px, 8vw, 56px);
+        letter-spacing: -1.5px;
+        white-space: normal;
+    }
+
+    .hero h2 {
+        font-size: 15px;
+    }
+
+    .portfolio-section {
+        padding: 75px 7%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2,
+    .site-footer .contact-title {
+        font-size: clamp(22px, 5vw, 34px);
+        letter-spacing: -1px;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .trust-grid {
+        height: 280px;
+    }
+
+    .trust-grid .trust-card {
+        top: 35px;
+        width: 135px;
+        height: 210px;
+    }
+
+    .trust-grid .trust-card img {
+        width: 115px;
+        height: 115px;
+    }
+
+    .trust-grid .trust-card span {
+        font-size: 12px;
+    }
+
+    .trust-grid .trust-card .follower-count {
+        font-size: 10px;
+    }
+
+    .video-gallery {
+        gap: 22px;
+    }
+
+    .youtube-card {
+        width: 82vw;
+        max-width: 82vw;
+    }
+
+    .instagram-card,
+    .tiktok-card {
+        width: 240px;
+        max-width: 75vw;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-photo {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .about-content h3 {
+        font-size: 30px;
+    }
+
+    .about-content > p:not(.about-eyebrow) {
+        font-size: 14px;
+    }
+
+    .site-footer {
+        padding: 65px 7% 25px;
+    }
+
+    .site-footer .contact-title {
+        margin-bottom: 40px;
+    }
+
+    .contact-intro {
+        margin-bottom: 35px;
+    }
+
+    .contact-intro h3 {
+        font-size: 27px;
+    }
+
+    .contact-intro p {
+        font-size: 14px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contact-item {
+        padding: 15px;
+        font-size: 14px;
+        gap: 16px;
+    }
+
+    .footer-bottom {
+        margin-top: 65px;
+    }
+
+    .scroll-indicator {
+        bottom: 25px;
+        font-size: 9px;
+    }
+
+}
+
+/* ==========================================
+   PETITS MOBILES
+========================================== */
 
 @media (max-width: 600px) {
+
+    .journalism-section .video-gallery,
+    .social-section .video-gallery {
+        columns: 2;
+        column-gap: 12px;
+    }
+
+    .journalism-section .video-card,
+    .social-section .video-card {
+        margin-bottom: 12px;
+    }
+
+    .journalism-section .video-caption h3,
+    .social-section .video-caption h3 {
+        font-size: 12px;
+    }
+
+    .journalism-section .video-caption p,
+    .social-section .video-caption p {
+        font-size: 10px;
+    }
+
+    .gear-category {
+        margin-top: 35px;
+    }
+
+    .gear-grid,
+    .software-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .gear-image {
+        height: 190px;
+    }
+
+    .gear-software-category {
+        margin-top: 50px;
+    }
+
+    .software-card {
+        padding: 16px;
+    }
+
+    /* SAC À DOS SUR MOBILE */
 
     .backpack-experience {
         margin: 35px auto 60px;
@@ -2160,7 +1442,6 @@ img {
     .backpack-stage {
         height: auto;
         min-height: 310px;
-        padding-bottom: 0;
     }
 
     .backpack-bag {
@@ -2171,6 +1452,7 @@ img {
 
     .backpack-items {
         position: relative;
+        inset: auto;
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 10px;
@@ -2182,12 +1464,10 @@ img {
         position: relative;
         left: auto;
         top: auto;
-
         width: 100%;
         height: 90px;
         padding: 10px;
-
-        transform: translateY(-100px) scale(0.2);
+        transform: translateY(-100px) scale(.2);
     }
 
     .backpack-stage.is-open .backpack-object {
@@ -2196,6 +1476,22 @@ img {
 
     .backpack-stage.is-open .backpack-object:hover {
         transform: translateY(-4px) scale(1.03);
+    }
+
+    /* GRILLE CACHÉE LORSQUE LE SAC EST FERMÉ */
+
+    .backpack-stage:not(.is-open) .backpack-items {
+        height: 300px;
+        padding-top: 300px;
+        grid-auto-rows: 0;
+        gap: 0;
+        overflow: hidden;
+    }
+
+    .backpack-stage:not(.is-open) .backpack-object {
+        height: 0;
+        padding: 0;
+        border: 0;
     }
 
     .backpack-details {
@@ -2209,15 +1505,53 @@ img {
 
 }
 
-/* ACCESSIBILITÉ */
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: clamp(28px, 8vw, 40px);
+    }
+
+    .journalism-section .video-gallery,
+    .social-section .video-gallery {
+        columns: 1;
+    }
+
+}
+
+/* ==========================================
+   ACCESSIBILITÉ
+========================================== */
 
 @media (prefers-reduced-motion: reduce) {
 
+    html,
+    .video-gallery {
+        scroll-behavior: auto;
+    }
+
+    .hero-firstname,
+    .hero-lastname,
+    .hero h2,
+    .scroll-indicator,
+    .scroll-arrow {
+        animation: none;
+    }
+
+    .trust-grid .trust-card,
+    .video-card,
+    .video-frame,
+    .about-photo img,
+    .about-link,
+    .contact-item,
+    .contact-item svg,
+    .gear-card,
+    .gear-image img,
+    .software-card,
     .backpack-bag,
     .backpack-bag img,
     .backpack-object {
-        transition-duration: 0.01ms;
-        transition-delay: 0ms;
+        transition-duration: .01ms !important;
+        transition-delay: 0ms !important;
     }
 
 }
