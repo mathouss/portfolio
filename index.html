@@ -242,8 +242,7 @@ img { max-width:100%; display:block; }
 }
 
 /* ==============================
-   SATURNE — NOUVELLE VERSION
-   SANS CADRE RECTANGULAIRE
+   SATURNE — VERSION ORDINATEUR
 ============================== */
 
 .journalism-section,
@@ -273,7 +272,6 @@ img { max-width:100%; display:block; }
     );
 }
 
-/* Étoiles discrètes */
 .orbit-decoration {
   position:absolute;
   inset:0;
@@ -297,7 +295,6 @@ img { max-width:100%; display:block; }
 .orbit-decoration .star:nth-child(5) { top:15%;left:57%;opacity:.3; }
 .orbit-decoration .star:nth-child(6) { top:71%;left:64%;opacity:.3; }
 
-/* Une seule orbite */
 .orbit-path {
   position:absolute;
   left:50%;
@@ -312,7 +309,6 @@ img { max-width:100%; display:block; }
   z-index:0;
 }
 
-/* Planète centrale */
 .orbit-center {
   position:absolute;
   left:50%;
@@ -354,7 +350,6 @@ img { max-width:100%; display:block; }
   box-shadow:0 0 22px rgba(215,255,56,.5);
 }
 
-/* Conteneur de rotation */
 .orbit-ring {
   position:absolute;
   inset:0;
@@ -367,7 +362,6 @@ img { max-width:100%; display:block; }
 
 .orbit-ring.is-dragging { cursor:grabbing; }
 
-/* Vidéos en orbite */
 .orbit-card {
   position:absolute;
   left:50%;
@@ -575,7 +569,9 @@ img { max-width:100%; display:block; }
   margin:0 0 20px;
 }
 
-.about-content h3 span { color:var(--lime); }
+.about-content h3 span {
+  color:var(--lime);
+}
 
 .about-content p {
   font-size:14px;
@@ -610,9 +606,13 @@ img { max-width:100%; display:block; }
   padding-bottom:70px;
 }
 
-.gear-section .section-heading { margin-bottom:10px; }
+.gear-section .section-heading {
+  margin-bottom:10px;
+}
 
-.backpack-experience { text-align:center; }
+.backpack-experience {
+  text-align:center;
+}
 
 .backpack-instruction {
   display:inline-flex;
@@ -693,10 +693,17 @@ img { max-width:100%; display:block; }
     drop-shadow(0 -3px 0 var(--lime));
 }
 
-.bag-open { opacity:0; }
+.bag-open {
+  opacity:0;
+}
 
-.backpack-stage.is-open .bag-open { opacity:1; }
-.backpack-stage.is-open .bag-closed { opacity:0; }
+.backpack-stage.is-open .bag-open {
+  opacity:1;
+}
+
+.backpack-stage.is-open .bag-closed {
+  opacity:0;
+}
 
 .backpack-items {
   position:absolute;
@@ -710,6 +717,7 @@ img { max-width:100%; display:block; }
   --y:0px;
   --rotation:0deg;
   --delay:0ms;
+
   position:absolute;
   left:50%;
   top:50%;
@@ -770,28 +778,59 @@ img { max-width:100%; display:block; }
 }
 
 .backpack-object:nth-child(1) {
-  --x:-345px;--y:-170px;--rotation:-11deg;--delay:40ms;
+  --x:-345px;
+  --y:-170px;
+  --rotation:-11deg;
+  --delay:40ms;
 }
+
 .backpack-object:nth-child(2) {
-  --x:-125px;--y:-240px;--rotation:-6deg;--delay:90ms;
+  --x:-125px;
+  --y:-240px;
+  --rotation:-6deg;
+  --delay:90ms;
 }
+
 .backpack-object:nth-child(3) {
-  --x:125px;--y:-240px;--rotation:7deg;--delay:140ms;
+  --x:125px;
+  --y:-240px;
+  --rotation:7deg;
+  --delay:140ms;
 }
+
 .backpack-object:nth-child(4) {
-  --x:345px;--y:-170px;--rotation:11deg;--delay:190ms;
+  --x:345px;
+  --y:-170px;
+  --rotation:11deg;
+  --delay:190ms;
 }
+
 .backpack-object:nth-child(5) {
-  --x:-345px;--y:135px;--rotation:-6deg;--delay:240ms;
+  --x:-345px;
+  --y:135px;
+  --rotation:-6deg;
+  --delay:240ms;
 }
+
 .backpack-object:nth-child(6) {
-  --x:-125px;--y:245px;--rotation:-3deg;--delay:290ms;
+  --x:-125px;
+  --y:245px;
+  --rotation:-3deg;
+  --delay:290ms;
 }
+
 .backpack-object:nth-child(7) {
-  --x:125px;--y:245px;--rotation:3deg;--delay:340ms;
+  --x:125px;
+  --y:245px;
+  --rotation:3deg;
+  --delay:340ms;
 }
+
 .backpack-object:nth-child(8) {
-  --x:345px;--y:135px;--rotation:6deg;--delay:390ms;
+  --x:345px;
+  --y:135px;
+  --rotation:6deg;
+  --delay:390ms;
 }
 
 .backpack-stage.is-open .backpack-object {
@@ -839,10 +878,27 @@ img { max-width:100%; display:block; }
   border-color:var(--lime);
 }
 
-.premiere-logo { color:#9999FF;background:#252052; }
-.resolve-logo { color:#fff;background:#353D55;font-size:16px; }
-.indesign-logo { color:#FF71A8;background:#4B1831; }
-.insta-logo { color:var(--lime);background:#33383A;font-size:15px; }
+.premiere-logo {
+  color:#9999FF;
+  background:#252052;
+}
+
+.resolve-logo {
+  color:#fff;
+  background:#353D55;
+  font-size:16px;
+}
+
+.indesign-logo {
+  color:#FF71A8;
+  background:#4B1831;
+}
+
+.insta-logo {
+  color:var(--lime);
+  background:#33383A;
+  font-size:15px;
+}
 
 .software-name {
   display:block;
@@ -874,9 +930,13 @@ img { max-width:100%; display:block; }
   margin-bottom:55px;
 }
 
-.contact-title span { color:var(--violet); }
+.contact-title span {
+  color:var(--violet);
+}
 
-.contact-intro { margin-bottom:55px; }
+.contact-intro {
+  margin-bottom:55px;
+}
 
 .contact-intro h3 {
   font-family:Montserrat,sans-serif;
@@ -885,7 +945,9 @@ img { max-width:100%; display:block; }
   margin:0 0 18px;
 }
 
-.contact-intro h3 span { color:var(--violet); }
+.contact-intro h3 span {
+  color:var(--violet);
+}
 
 .contact-intro p {
   max-width:570px;
@@ -930,7 +992,9 @@ img { max-width:100%; display:block; }
   transition:stroke .3s;
 }
 
-.contact-item:hover svg { stroke:var(--lime); }
+.contact-item:hover svg {
+  stroke:var(--lime);
+}
 
 .footer-bottom {
   margin-top:85px;
@@ -941,19 +1005,31 @@ img { max-width:100%; display:block; }
 }
 
 /* ==============================
-   RESPONSIVE
+   TABLETTES
 ============================== */
 
 @media(max-width:1000px) {
+
   .portfolio-section,
   .site-footer {
     padding-left:8%;
     padding-right:8%;
   }
 
-  .trust-grid { height:340px; }
-  .trust-card { top:45px;width:170px;height:260px; }
-  .trust-card img { width:145px;height:145px; }
+  .trust-grid {
+    height:340px;
+  }
+
+  .trust-card {
+    top:45px;
+    width:170px;
+    height:260px;
+  }
+
+  .trust-card img {
+    width:145px;
+    height:145px;
+  }
 
   .about-layout {
     grid-template-columns:230px minmax(0,1fr);
@@ -966,16 +1042,46 @@ img { max-width:100%; display:block; }
     padding-right:4%;
   }
 
-  .orbit-scene { height:660px; }
-  .orbit-card.vertical { --card-width:180px; }
-  .orbit-card.horizontal { --card-width:300px; }
-  .orbit-center { width:140px;height:140px; }
+  .orbit-scene {
+    height:660px;
+  }
 
-  .backpack-stage { height:530px; }
-  .backpack-bag { width:245px;height:315px; }
-  .backpack-object { width:120px;height:120px; }
-  .backpack-object[data-gear="iphone"] { width:160px;height:160px; }
-  .backpack-software { width:135px;height:105px; }
+  .orbit-card.vertical {
+    --card-width:180px;
+  }
+
+  .orbit-card.horizontal {
+    --card-width:300px;
+  }
+
+  .orbit-center {
+    width:140px;
+    height:140px;
+  }
+
+  .backpack-stage {
+    height:530px;
+  }
+
+  .backpack-bag {
+    width:245px;
+    height:315px;
+  }
+
+  .backpack-object {
+    width:120px;
+    height:120px;
+  }
+
+  .backpack-object[data-gear="iphone"] {
+    width:160px;
+    height:160px;
+  }
+
+  .backpack-software {
+    width:135px;
+    height:105px;
+  }
 
   .backpack-object:nth-child(1) { --x:-235px;--y:-155px; }
   .backpack-object:nth-child(2) { --x:-85px;--y:-210px; }
@@ -987,94 +1093,366 @@ img { max-width:100%; display:block; }
   .backpack-object:nth-child(8) { --x:235px;--y:120px; }
 }
 
+/* =========================================
+   NOUVELLE VERSION MOBILE
+   ORDINATEUR INCHANGÉ
+========================================= */
+
 @media(max-width:700px) {
-  .hero {
-    min-height:55svh;
-    padding:65px 6% 75px;
+
+  /* ESPACEMENT GÉNÉRAL */
+
+  .portfolio-section {
+    padding:80px 0;
   }
 
-  .hero h1 {
-    font-size:clamp(30px,8vw,56px);
-    letter-spacing:-1.5px;
-    white-space:normal;
+  .section-heading {
+    margin:0 0 30px;
+    padding:0 6%;
   }
-
-  .portfolio-section { padding:75px 7%; }
-  .section-heading { margin-bottom:30px; }
 
   .section-heading h2,
   .contact-title {
-    font-size:clamp(22px,5vw,34px);
-    letter-spacing:-1px;
+    font-size:clamp(30px,8vw,43px);
+    letter-spacing:-1.4px;
+    line-height:1.16;
   }
 
-  .trust-grid { height:280px; }
-  .trust-card { top:35px;width:135px;height:210px; }
-  .trust-card img { width:115px;height:115px; }
-  .trust-card span { font-size:12px; }
-  .follower-count { font-size:10px; }
+  /* ACCUEIL GRAND FORMAT */
+
+  .hero {
+    min-height:83svh;
+    padding:85px 6% 110px;
+    text-align:left;
+    justify-content:flex-start;
+    align-items:center;
+  }
+
+  .hero-content {
+    width:100%;
+  }
+
+  .hero h1 {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:3px;
+    font-size:clamp(37px,10vw,70px);
+    line-height:1.04;
+    letter-spacing:-2.5px;
+    white-space:normal;
+  }
+
+  .hero-firstname,
+  .hero-lastname {
+    display:block;
+  }
+
+  .hero-lastname {
+    font-size:clamp(35px,9.3vw,65px);
+    overflow-wrap:anywhere;
+  }
+
+  .hero h2 {
+    margin-top:25px;
+    font-size:clamp(17px,4.4vw,22px);
+    line-height:1.5;
+    color:var(--text);
+  }
+
+  .scroll-indicator {
+    bottom:40px;
+    font-size:10px;
+  }
+
+  /* COLLABORATIONS :
+     CARROUSEL HORIZONTAL TACTILE */
+
+  .trust-section {
+    padding-bottom:75px;
+  }
+
+  .trust-grid {
+    position:relative;
+    display:flex;
+    align-items:flex-start;
+    gap:22px;
+    height:auto;
+    min-height:260px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:20px 6% 30px;
+    perspective:none;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    touch-action:pan-x;
+  }
+
+  .trust-grid::-webkit-scrollbar {
+    display:none;
+  }
+
+  .trust-card {
+    position:relative;
+    top:auto;
+    left:auto;
+    flex:0 0 175px;
+    width:175px;
+    height:auto;
+    min-height:225px;
+    gap:12px;
+    opacity:1 !important;
+    filter:none !important;
+    transform:none !important;
+    pointer-events:auto !important;
+    scroll-snap-align:center;
+    z-index:auto !important;
+    will-change:auto;
+  }
+
+  .trust-card img {
+    width:165px;
+    height:165px;
+    border:3px solid rgba(214,90,255,.3);
+  }
+
+  .trust-card span {
+    font-size:15px;
+    line-height:1.35;
+  }
+
+  .follower-count {
+    font-size:12px;
+  }
+
+  /* JOURNALISME ET RÉSEAUX SOCIAUX :
+     FIN DES PETITES ORBITES SUR MOBILE */
 
   .journalism-section,
   .social-section {
-    padding-left:3%;
-    padding-right:3%;
+    padding:80px 0;
+    overflow:hidden;
   }
 
   .journalism-section .section-heading,
   .social-section .section-heading {
-    padding:0 4%;
+    padding:0 6%;
+    margin-bottom:25px;
   }
 
-  .orbit-scene { height:540px; }
-  .orbit-card.vertical { --card-width:140px; }
-  .orbit-card.horizontal { --card-width:215px; }
-  .orbit-center { width:95px;height:95px; }
-  .orbit-center::before { inset:20px; }
-  .orbit-path { width:87%;height:38%; }
+  .orbit-scene {
+    position:relative;
+    width:100%;
+    height:auto;
+    min-height:0;
+    overflow:visible;
+    background:none;
+  }
 
-  .video-caption h3 { font-size:11px; }
-  .video-caption p { font-size:10px; }
+  .orbit-decoration,
+  .orbit-path,
+  .orbit-center {
+    display:none;
+  }
 
-  .personal-gallery .video-card { flex-basis:82vw; }
+  .orbit-ring {
+    position:relative;
+    inset:auto;
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    width:100%;
+    height:auto;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:12px 6% 30px;
+    cursor:auto;
+    touch-action:pan-x;
+    user-select:auto;
+    -webkit-user-select:auto;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;
+  }
+
+  .orbit-ring::-webkit-scrollbar {
+    display:none;
+  }
+
+  .orbit-ring.is-dragging {
+    cursor:auto;
+  }
+
+  .orbit-card,
+  .orbit-card.vertical,
+  .orbit-card.horizontal {
+    position:relative;
+    left:auto;
+    top:auto;
+    flex-shrink:0;
+    z-index:auto !important;
+    opacity:1 !important;
+    filter:none !important;
+    transform:none !important;
+    pointer-events:auto !important;
+    will-change:auto;
+    scroll-snap-align:center;
+  }
+
+  .orbit-card.vertical {
+    width:min(70vw,290px);
+  }
+
+  .orbit-card.horizontal {
+    width:min(88vw,420px);
+  }
+
+  .orbit-card .video-frame {
+    border-radius:18px;
+    border:2px solid rgba(214,90,255,.45);
+    box-shadow:0 14px 35px rgba(0,0,0,.35);
+  }
+
+  .orbit-card.vertical .video-frame {
+    aspect-ratio:9/16;
+  }
+
+  .orbit-card.horizontal .video-frame {
+    aspect-ratio:16/9;
+  }
+
+  .orbit-card.is-front:hover .video-frame,
+  .orbit-card.is-front:focus-within .video-frame {
+    transform:none;
+  }
+
+  .orbit-card iframe {
+    pointer-events:auto;
+  }
+
+  .video-caption {
+    padding:15px 4px 0;
+    text-align:left;
+  }
+
+  .video-caption h3 {
+    font-size:15px;
+    line-height:1.45;
+  }
+
+  .video-caption p {
+    font-size:13px;
+    margin-top:7px;
+  }
+
+  /* PERSONNEL :
+     VIDÉO PRINCIPALE PRESQUE PLEINE LARGEUR */
+
+  .personal-gallery {
+    gap:16px;
+    padding:12px 6% 35px;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .personal-gallery::-webkit-scrollbar {
+    display:none;
+  }
+
+  .personal-gallery .video-card {
+    flex:0 0 86vw;
+    max-width:430px;
+    scroll-snap-align:center;
+  }
+
+  .personal-gallery .video-frame {
+    border-radius:18px;
+  }
+
+  .personal-gallery .video-caption {
+    padding-top:16px;
+  }
+
+  .personal-gallery .video-caption h3 {
+    font-size:16px;
+  }
+
+  .personal-gallery .video-caption p {
+    font-size:13px;
+  }
+
+  /* À PROPOS :
+     GRANDE PHOTO ET TEXTE AÉRÉ */
 
   .about-section {
-    padding-top:55px;
-    padding-bottom:60px;
+    padding:80px 6%;
+  }
+
+  .about-section .section-heading {
+    padding:0;
   }
 
   .about-layout {
     grid-template-columns:1fr;
-    gap:25px;
+    gap:35px;
   }
 
-  .about-photo { max-width:230px;margin:auto; }
-  .about-content h3 { font-size:27px; }
-  .about-content p { font-size:13px; }
+  .about-photo {
+    width:100%;
+    max-width:390px;
+    margin:0 auto;
+    border-radius:20px;
+  }
 
-  .site-footer { padding:65px 7% 25px; }
-  .contact-grid { grid-template-columns:1fr;gap:20px; }
-  .contact-intro { margin-bottom:35px; }
-  .contact-item { font-size:14px;padding:15px; }
-  .footer-bottom { margin-top:65px; }
-}
+  .about-content h3 {
+    font-size:clamp(29px,7.5vw,40px);
+    line-height:1.25;
+    margin-bottom:22px;
+  }
 
-@media(max-width:600px) {
+  .about-content p {
+    font-size:16px;
+    line-height:1.85;
+    margin-bottom:18px;
+  }
+
+  .about-link {
+    font-size:16px;
+    margin-top:20px;
+  }
+
+  /* MATÉRIEL :
+     SAC PUIS GRILLE D'OBJETS */
+
+  .gear-section {
+    padding:75px 6%;
+  }
+
+  .gear-section .section-heading {
+    padding:0;
+    margin-bottom:25px;
+  }
+
   .backpack-instruction {
     max-width:100%;
-    padding:11px 15px;
-    font-size:11px;
+    padding:13px 18px;
+    font-size:13px;
     line-height:1.5;
   }
 
   .backpack-stage {
     height:auto;
-    min-height:320px;
+    min-height:330px;
+    padding-top:320px;
   }
 
   .backpack-bag {
-    top:145px;
-    width:230px;
-    height:290px;
+    top:160px;
+    width:250px;
+    height:310px;
   }
 
   .backpack-items {
@@ -1083,23 +1461,33 @@ img { max-width:100%; display:block; }
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
     gap:16px;
-    padding-top:300px;
+    padding:15px 0 0;
   }
 
   .backpack-object,
   .backpack-object[data-gear="iphone"],
   .backpack-software {
     position:relative;
-    left:auto;
     top:auto;
+    left:auto;
     width:100%;
-    height:145px;
-    transform:translateY(-80px) scale(.2);
+    height:160px;
+    padding:12px;
+    border:1px solid rgba(214,90,255,.25);
+    border-radius:16px;
+    background:rgba(255,255,255,.025);
+    transform:translateY(-30px) scale(.8);
+  }
+
+  .backpack-object img {
+    width:100%;
+    height:100%;
+    max-height:140px;
+    object-fit:contain;
   }
 
   .backpack-object[data-gear="iphone"] img {
-    max-width:155px;
-    max-height:155px;
+    max-height:145px;
   }
 
   .backpack-stage.is-open .backpack-object {
@@ -1107,31 +1495,147 @@ img { max-width:100%; display:block; }
   }
 
   .backpack-stage.is-open .backpack-object:hover {
-    transform:translateY(-4px) scale(1.06);
+    transform:translateY(-4px) scale(1.03);
   }
 
   .backpack-stage:not(.is-open) .backpack-items {
-    height:300px;
-    padding-top:300px;
-    grid-auto-rows:0;
-    gap:0;
-    overflow:hidden;
+    display:none;
   }
 
-  .backpack-stage:not(.is-open) .backpack-object {
-    height:0;
-    padding:0;
-    border:0;
+  .backpack-stage:not(.is-open) {
+    min-height:330px;
   }
 
-  .software-name { font-size:11px; }
+  .backpack-software {
+    justify-content:center;
+    gap:12px;
+  }
+
+  .software-logo {
+    width:68px;
+    height:68px;
+  }
+
+  .software-name {
+    font-size:12px;
+  }
+
+  /* CONTACT :
+     GRANDS BOUTONS FACILES À TOUCHER */
+
+  .site-footer {
+    padding:85px 6% 30px;
+  }
+
+  .contact-title {
+    margin-bottom:40px;
+  }
+
+  .contact-intro {
+    margin-bottom:35px;
+  }
+
+  .contact-intro h3 {
+    font-size:clamp(28px,7vw,38px);
+    line-height:1.25;
+  }
+
+  .contact-intro p {
+    font-size:16px;
+    line-height:1.8;
+  }
+
+  .contact-grid {
+    grid-template-columns:1fr;
+    gap:15px;
+  }
+
+  .contact-item {
+    min-height:72px;
+    gap:18px;
+    padding:20px;
+    font-size:15px;
+    border-radius:15px;
+  }
+
+  .contact-item svg {
+    width:28px;
+    height:28px;
+  }
+
+  .footer-bottom {
+    margin-top:65px;
+    padding-top:25px;
+    font-size:12px;
+  }
 }
+
+/* ==============================
+   TRÈS PETITS TÉLÉPHONES
+============================== */
+
+@media(max-width:360px) {
+
+  .hero h1 {
+    font-size:36px;
+  }
+
+  .hero-lastname {
+    font-size:34px;
+  }
+
+  .section-heading h2,
+  .contact-title {
+    font-size:29px;
+  }
+
+  .trust-card {
+    flex-basis:155px;
+    width:155px;
+  }
+
+  .trust-card img {
+    width:145px;
+    height:145px;
+  }
+
+  .orbit-card.vertical {
+    width:74vw;
+  }
+
+  .orbit-card.horizontal {
+    width:88vw;
+  }
+
+  .backpack-items {
+    gap:10px;
+  }
+
+  .contact-item {
+    padding:16px;
+    font-size:13px;
+  }
+}
+
+/* ==============================
+   ACCESSIBILITÉ
+============================== */
 
 @media(prefers-reduced-motion:reduce) {
-  html { scroll-behavior:auto; }
-  .scroll-arrow { animation:none; }
-  .backpack-object { transition-duration:.01ms!important; }
+
+  html {
+    scroll-behavior:auto;
+  }
+
+  .scroll-arrow {
+    animation:none;
+  }
+
+  .backpack-object {
+    transition-duration:.01ms !important;
+  }
 }
+
 </style>
 </head>
 
@@ -1535,350 +2039,925 @@ img { max-width:100%; display:block; }
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  /* ========================================
+     PARAMÈTRES GÉNÉRAUX
+  ======================================== */
+
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+
+  const mobileMode = window.matchMedia(
+    "(max-width: 700px)"
+  );
+
+  const isMobile = () => mobileMode.matches;
+
+  const TWO_PI = Math.PI * 2;
 
   /* ========================================
-     COLLABORATIONS — ROTATION CONTINUE
+     COLLABORATIONS
+     ORDINATEUR : ROTATION 3D
+     MOBILE : CARROUSEL TACTILE
   ======================================== */
 
   const trust = document.querySelector(".trust-grid");
 
   if (trust) {
-    const cards = [...trust.querySelectorAll(".trust-card")];
+
+    const cards = [
+      ...trust.querySelectorAll(".trust-card")
+    ];
+
     const count = cards.length;
-    const TWO_PI = Math.PI * 2;
 
     let angle = 0;
     let lastFrame = 0;
     let visible = true;
     let paused = false;
+    let wasMobile = null;
+
+    function resetTrustMobile() {
+
+      cards.forEach(card => {
+
+        card.style.removeProperty("--x");
+        card.style.removeProperty("--z");
+        card.style.removeProperty("--scale");
+        card.style.removeProperty("--rotate");
+        card.style.removeProperty("--depth");
+
+        card.style.opacity = "";
+        card.style.filter = "";
+
+        card.classList.remove("is-focused");
+        card.classList.add("is-visible");
+
+        card.tabIndex = 0;
+
+      });
+
+    }
 
     function drawTrust() {
+
+      if (isMobile()) {
+        return;
+      }
+
       const width = trust.clientWidth;
-      const spacing = Math.min(260, Math.max(105, width * .24));
+
+      const spacing = Math.min(
+        260,
+        Math.max(105, width * 0.24)
+      );
+
       const radius = spacing * 1.9;
 
       cards.forEach((card, i) => {
-        const theta = angle + i * TWO_PI / count;
+
+        const theta =
+          angle + i * TWO_PI / count;
+
         const horizontal = Math.sin(theta);
         const depth = Math.cos(theta);
-        const closeness = (depth + 1) / 2;
 
-        card.style.setProperty("--x", horizontal * radius + "px");
-        card.style.setProperty("--z", -260 * (1 - closeness) + "px");
-        card.style.setProperty("--scale", .55 + closeness * .63);
-        card.style.setProperty("--rotate", -horizontal * 28 + "deg");
-        card.style.setProperty("--depth", Math.round(closeness * 100));
-        card.style.opacity = Math.max(0, .12 + closeness * .88);
-        card.style.filter = `blur(${(1 - closeness) * 3}px)`;
+        const closeness =
+          (depth + 1) / 2;
 
-        const isVisible = closeness > .3;
+        card.style.setProperty(
+          "--x",
+          horizontal * radius + "px"
+        );
 
-        card.classList.toggle("is-visible", isVisible);
-        card.classList.toggle("is-focused", closeness > .96);
+        card.style.setProperty(
+          "--z",
+          -260 * (1 - closeness) + "px"
+        );
+
+        card.style.setProperty(
+          "--scale",
+          0.55 + closeness * 0.63
+        );
+
+        card.style.setProperty(
+          "--rotate",
+          -horizontal * 28 + "deg"
+        );
+
+        card.style.setProperty(
+          "--depth",
+          Math.round(closeness * 100)
+        );
+
+        card.style.opacity = Math.max(
+          0,
+          0.12 + closeness * 0.88
+        );
+
+        card.style.filter =
+          `blur(${(1 - closeness) * 3}px)`;
+
+        const isVisible = closeness > 0.3;
+
+        card.classList.toggle(
+          "is-visible",
+          isVisible
+        );
+
+        card.classList.toggle(
+          "is-focused",
+          closeness > 0.96
+        );
+
         card.tabIndex = isVisible ? 0 : -1;
+
       });
+
     }
 
-    function animateTrust(timestamp) {
-      if (!lastFrame) lastFrame = timestamp;
+    function updateTrustMode() {
 
-      const dt = Math.min(timestamp - lastFrame, 50);
-      lastFrame = timestamp;
+      const mobile = isMobile();
 
-      if (!paused && visible && !document.hidden && !reducedMotion.matches) {
-        angle += dt * .00020;
+      if (wasMobile === mobile) {
+        return;
+      }
+
+      wasMobile = mobile;
+
+      if (mobile) {
+        resetTrustMobile();
+      } else {
         drawTrust();
       }
 
-      requestAnimationFrame(animateTrust);
     }
 
-    trust.addEventListener("mouseenter", () => paused = true);
-    trust.addEventListener("mouseleave", () => paused = false);
-    trust.addEventListener("focusin", () => paused = true);
-    trust.addEventListener("focusout", () => {
-      paused = trust.contains(document.activeElement);
-    });
+    function animateTrust(timestamp) {
 
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(entries => {
-        visible = entries[0].isIntersecting;
-      }, { threshold:.05 }).observe(trust);
-    }
+      if (!lastFrame) {
+        lastFrame = timestamp;
+      }
 
-    window.addEventListener("resize", drawTrust);
+      const dt = Math.min(
+        timestamp - lastFrame,
+        50
+      );
 
-    drawTrust();
-    requestAnimationFrame(animateTrust);
-  }
-
-  /* ========================================
-     SATURNE — ROTATION FLUIDE CONTINUE
-  ======================================== */
-
-  function createOrbit(id) {
-    const ring = document.getElementById(id);
-    if (!ring) return;
-
-    const scene = ring.closest(".orbit-scene");
-    const cards = [...ring.querySelectorAll(".orbit-card")];
-    const count = cards.length;
-    const TWO_PI = Math.PI * 2;
-
-    let angle = 0;
-    let lastFrame = 0;
-    let dragging = false;
-    let lastX = 0;
-    let hovering = false;
-    let focused = false;
-    let visible = true;
-
-    function render() {
-      const width = scene.clientWidth;
-      const height = scene.clientHeight;
-      const mobile = width < 700;
-
-      /* Rayons adaptés pour éviter les débordements */
-      const radiusX = mobile
-        ? width * .27
-        : Math.min(width * .32, 460);
-
-      const radiusY = mobile
-        ? height * .18
-        : height * .23;
-
-      const positions = cards.map((card, i) => {
-        const theta = angle + i * TWO_PI / count;
-        const depth = Math.sin(theta);
-
-        return {
-          x:Math.cos(theta) * radiusX,
-          y:Math.sin(theta) * radiusY,
-          depth,
-          theta
-        };
-      });
-
-      let frontIndex = 0;
-      let bestDepth = -Infinity;
-
-      positions.forEach((p, i) => {
-        if (p.depth > bestDepth) {
-          bestDepth = p.depth;
-          frontIndex = i;
-        }
-      });
-
-      cards.forEach((card, i) => {
-        const p = positions[i];
-        const near = (p.depth + 1) / 2;
-
-        const scale = .50 + near * .55;
-        const rotation = -Math.cos(p.theta) * 10;
-        const blur = (1 - near) * 1.5;
-
-        card.style.setProperty("--x", p.x + "px");
-        card.style.setProperty("--y", p.y + "px");
-        card.style.setProperty("--scale", scale);
-        card.style.setProperty("--rotate", rotation + "deg");
-        card.style.setProperty("--blur", blur + "px");
-        card.style.setProperty("--opacity", .3 + near * .7);
-        card.style.setProperty("--z", Math.round(near * 100) + 2);
-
-        const isFront = i === frontIndex;
-
-        card.classList.toggle("is-front", isFront);
-
-        const iframe = card.querySelector("iframe");
-        if (iframe) iframe.tabIndex = isFront ? 0 : -1;
-      });
-    }
-
-    function animate(timestamp) {
-      if (!lastFrame) lastFrame = timestamp;
-
-      const dt = Math.min(timestamp - lastFrame, 50);
       lastFrame = timestamp;
 
+      updateTrustMode();
+
       if (
-        !dragging &&
-        !hovering &&
-        !focused &&
+        !isMobile() &&
+        !paused &&
         visible &&
         !document.hidden &&
         !reducedMotion.matches
       ) {
-        angle += dt * .00012;
-        render();
+
+        angle += dt * 0.00020;
+
+        drawTrust();
+
       }
 
-      requestAnimationFrame(animate);
+      requestAnimationFrame(animateTrust);
+
     }
 
-    ring.addEventListener("mouseenter", () => hovering = true);
-    ring.addEventListener("mouseleave", () => hovering = false);
+    trust.addEventListener(
+      "mouseenter",
+      () => paused = true
+    );
 
-    ring.addEventListener("focusin", () => focused = true);
-    ring.addEventListener("focusout", () => {
-      focused = ring.contains(document.activeElement);
-    });
+    trust.addEventListener(
+      "mouseleave",
+      () => paused = false
+    );
 
-    ring.addEventListener("pointerdown", e => {
-      if (e.target.closest("iframe")) return;
-      if (e.pointerType === "mouse" && e.button !== 0) return;
+    trust.addEventListener(
+      "focusin",
+      () => paused = true
+    );
 
-      dragging = true;
-      lastX = e.clientX;
-
-      ring.classList.add("is-dragging");
-      ring.setPointerCapture?.(e.pointerId);
-    });
-
-    ring.addEventListener("pointermove", e => {
-      if (!dragging) return;
-
-      const dx = e.clientX - lastX;
-      lastX = e.clientX;
-
-      angle += dx * .009;
-      render();
-    });
-
-    function endDrag() {
-      dragging = false;
-      ring.classList.remove("is-dragging");
-    }
-
-    ring.addEventListener("pointerup", endDrag);
-    ring.addEventListener("pointercancel", endDrag);
-    ring.addEventListener("lostpointercapture", endDrag);
-
-    ring.tabIndex = 0;
-
-    ring.addEventListener("keydown", e => {
-      if (e.target !== ring) return;
-
-      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
-        e.preventDefault();
-
-        angle += (e.key === "ArrowRight" ? 1 : -1) * TWO_PI / count;
-        render();
-      }
-    });
+    trust.addEventListener(
+      "focusout",
+      () => paused = false
+    );
 
     if ("IntersectionObserver" in window) {
-      new IntersectionObserver(entries => {
-        visible = entries[0].isIntersecting;
-      }, { threshold:.05 }).observe(scene);
+
+      const observer = new IntersectionObserver(
+        entries => {
+
+          visible = entries[0].isIntersecting;
+
+        },
+        {
+          threshold: 0.05
+        }
+      );
+
+      observer.observe(trust);
+
     }
 
-    window.addEventListener("resize", render);
+    window.addEventListener(
+      "resize",
+      () => {
 
-    render();
-    requestAnimationFrame(animate);
+        updateTrustMode();
+
+        if (!isMobile()) {
+          drawTrust();
+        }
+
+      },
+      {
+        passive: true
+      }
+    );
+
+    updateTrustMode();
+
+    requestAnimationFrame(animateTrust);
+
   }
+
+  /* ========================================
+     SATURNE / ORBITES VIDÉO
+
+     ORDINATEUR :
+     - Rotation automatique
+     - Profondeur 3D
+     - Rotation avec la souris
+     - Pause au survol
+
+     MOBILE :
+     - Carrousel horizontal
+     - Toutes les vidéos accessibles
+     - Aucun déplacement 3D
+  ======================================== */
+
+  function createOrbit(ringId) {
+
+    const ring = document.getElementById(ringId);
+
+    if (!ring) {
+      return;
+    }
+
+    const scene = ring.closest(".orbit-scene");
+
+    const cards = [
+      ...ring.querySelectorAll(".orbit-card")
+    ];
+
+    const count = cards.length;
+
+    if (!count) {
+      return;
+    }
+
+    let angle = 0;
+    let lastFrame = 0;
+
+    let paused = false;
+    let visible = true;
+    let dragging = false;
+
+    let pointerStartX = 0;
+    let previousPointerX = 0;
+
+    let wasMobile = null;
+
+    /* ----------------------------------------
+       RÉINITIALISATION MOBILE
+    ---------------------------------------- */
+
+    function resetOrbitMobile() {
+
+      ring.classList.remove("is-dragging");
+
+      dragging = false;
+
+      cards.forEach(card => {
+
+        card.style.removeProperty("--x");
+        card.style.removeProperty("--y");
+        card.style.removeProperty("--z");
+        card.style.removeProperty("--scale");
+        card.style.removeProperty("--rotate");
+        card.style.removeProperty("--opacity");
+        card.style.removeProperty("--blur");
+
+        card.classList.remove("is-front");
+
+        card.tabIndex = 0;
+
+        card.querySelectorAll("iframe").forEach(
+          iframe => {
+
+            iframe.style.pointerEvents = "auto";
+            iframe.tabIndex = 0;
+
+          }
+        );
+
+      });
+
+    }
+
+    /* ----------------------------------------
+       DESSIN DE L'ORBITE ORDINATEUR
+    ---------------------------------------- */
+
+    function drawOrbit() {
+
+      if (isMobile()) {
+        return;
+      }
+
+      const sceneWidth = scene.clientWidth;
+      const sceneHeight = scene.clientHeight;
+
+      const radiusX = Math.min(
+        sceneWidth * 0.38,
+        570
+      );
+
+      const radiusY = Math.min(
+        sceneHeight * 0.23,
+        175
+      );
+
+      const frontDepth = 0.5;
+
+      cards.forEach((card, i) => {
+
+        const theta =
+          angle + i * TWO_PI / count;
+
+        const horizontal = Math.sin(theta);
+        const depth = Math.cos(theta);
+
+        const closeness =
+          (depth + 1) / 2;
+
+        const x = horizontal * radiusX;
+        const y = -depth * radiusY * 0.30;
+
+        const scale =
+          0.55 + closeness * 0.55;
+
+        const opacity =
+          0.20 + closeness * 0.80;
+
+        const blur =
+          (1 - closeness) * 2.5;
+
+        const rotate =
+          -horizontal * 13;
+
+        card.style.setProperty(
+          "--x",
+          x + "px"
+        );
+
+        card.style.setProperty(
+          "--y",
+          y + "px"
+        );
+
+        card.style.setProperty(
+          "--scale",
+          scale
+        );
+
+        card.style.setProperty(
+          "--opacity",
+          opacity
+        );
+
+        card.style.setProperty(
+          "--blur",
+          blur + "px"
+        );
+
+        card.style.setProperty(
+          "--rotate",
+          rotate + "deg"
+        );
+
+        card.style.setProperty(
+          "--z",
+          Math.round(closeness * 100)
+        );
+
+        const isFront =
+          closeness > frontDepth;
+
+        card.classList.toggle(
+          "is-front",
+          isFront
+        );
+
+        card.tabIndex = isFront ? 0 : -1;
+
+        card.querySelectorAll("iframe").forEach(
+          iframe => {
+
+            iframe.style.pointerEvents =
+              isFront ? "auto" : "none";
+
+            iframe.tabIndex =
+              isFront ? 0 : -1;
+
+          }
+        );
+
+      });
+
+    }
+
+    /* ----------------------------------------
+       BASCULE ORDINATEUR / MOBILE
+    ---------------------------------------- */
+
+    function updateOrbitMode() {
+
+      const mobile = isMobile();
+
+      if (wasMobile === mobile) {
+        return;
+      }
+
+      wasMobile = mobile;
+
+      if (mobile) {
+
+        resetOrbitMobile();
+
+      } else {
+
+        drawOrbit();
+
+      }
+
+    }
+
+    /* ----------------------------------------
+       ANIMATION AUTOMATIQUE
+    ---------------------------------------- */
+
+    function animateOrbit(timestamp) {
+
+      if (!lastFrame) {
+        lastFrame = timestamp;
+      }
+
+      const dt = Math.min(
+        timestamp - lastFrame,
+        50
+      );
+
+      lastFrame = timestamp;
+
+      updateOrbitMode();
+
+      if (
+        !isMobile() &&
+        !paused &&
+        !dragging &&
+        visible &&
+        !document.hidden &&
+        !reducedMotion.matches
+      ) {
+
+        angle += dt * 0.00017;
+
+        drawOrbit();
+
+      }
+
+      requestAnimationFrame(animateOrbit);
+
+    }
+
+    /* ----------------------------------------
+       PAUSE AU SURVOL
+    ---------------------------------------- */
+
+    ring.addEventListener(
+      "mouseenter",
+      () => {
+
+        if (!isMobile()) {
+          paused = true;
+        }
+
+      }
+    );
+
+    ring.addEventListener(
+      "mouseleave",
+      () => {
+
+        if (!isMobile() && !dragging) {
+          paused = false;
+        }
+
+      }
+    );
+
+    ring.addEventListener(
+      "focusin",
+      () => {
+
+        if (!isMobile()) {
+          paused = true;
+        }
+
+      }
+    );
+
+    ring.addEventListener(
+      "focusout",
+      event => {
+
+        if (
+          !isMobile() &&
+          !ring.contains(event.relatedTarget)
+        ) {
+
+          paused = false;
+
+        }
+
+      }
+    );
+
+    /* ----------------------------------------
+       ROTATION MANUELLE À LA SOURIS
+       UNIQUEMENT SUR ORDINATEUR
+    ---------------------------------------- */
+
+    ring.addEventListener(
+      "pointerdown",
+      event => {
+
+        if (isMobile()) {
+          return;
+        }
+
+        if (event.pointerType === "touch") {
+          return;
+        }
+
+        if (
+          event.target.closest(
+            "iframe, button, a"
+          )
+        ) {
+          return;
+        }
+
+        dragging = true;
+        paused = true;
+
+        pointerStartX = event.clientX;
+        previousPointerX = event.clientX;
+
+        ring.classList.add("is-dragging");
+
+        if (ring.setPointerCapture) {
+
+          ring.setPointerCapture(
+            event.pointerId
+          );
+
+        }
+
+      }
+    );
+
+    ring.addEventListener(
+      "pointermove",
+      event => {
+
+        if (
+          !dragging ||
+          isMobile()
+        ) {
+          return;
+        }
+
+        const deltaX =
+          event.clientX - previousPointerX;
+
+        previousPointerX = event.clientX;
+
+        angle += deltaX * 0.005;
+
+        drawOrbit();
+
+      }
+    );
+
+    function stopDragging() {
+
+      if (!dragging) {
+        return;
+      }
+
+      dragging = false;
+
+      ring.classList.remove("is-dragging");
+
+      if (!ring.matches(":hover")) {
+        paused = false;
+      }
+
+    }
+
+    ring.addEventListener(
+      "pointerup",
+      stopDragging
+    );
+
+    ring.addEventListener(
+      "pointercancel",
+      stopDragging
+    );
+
+    ring.addEventListener(
+      "lostpointercapture",
+      stopDragging
+    );
+
+    /* ----------------------------------------
+       VISIBILITÉ À L'ÉCRAN
+    ---------------------------------------- */
+
+    if ("IntersectionObserver" in window) {
+
+      const observer = new IntersectionObserver(
+        entries => {
+
+          visible = entries[0].isIntersecting;
+
+        },
+        {
+          threshold: 0.05
+        }
+      );
+
+      observer.observe(scene);
+
+    }
+
+    /* ----------------------------------------
+       REDIMENSIONNEMENT
+    ---------------------------------------- */
+
+    window.addEventListener(
+      "resize",
+      () => {
+
+        updateOrbitMode();
+
+        if (!isMobile()) {
+          drawOrbit();
+        }
+
+      },
+      {
+        passive: true
+      }
+    );
+
+    /* ----------------------------------------
+       LANCEMENT
+    ---------------------------------------- */
+
+    updateOrbitMode();
+
+    requestAnimationFrame(animateOrbit);
+
+  }
+
+  /* Création des deux orbites */
 
   createOrbit("journalism-ring");
   createOrbit("social-ring");
 
   /* ========================================
-     PERSONNEL — DÉFILEMENT AUTOMATIQUE
+     PROJETS PERSONNELS
+     DÉFILEMENT AUTOMATIQUE
+
+     ORDINATEUR :
+     Défilement lent et continu.
+
+     MOBILE :
+     Défilement manuel avec le doigt.
   ======================================== */
 
-  const personalGallery = document.getElementById("personal-gallery");
+  const gallery = document.getElementById(
+    "personal-gallery"
+  );
 
-  if (personalGallery) {
+  if (gallery) {
+
     let lastFrame = 0;
     let paused = false;
     let visible = true;
-    let interacting = false;
-    let resumeTimer = null;
 
-    function pauseTemporarily() {
-      interacting = true;
-      clearTimeout(resumeTimer);
+    let userInteracting = false;
 
-      resumeTimer = setTimeout(() => {
-        interacting = false;
-      }, 1800);
-    }
+    const speed = 0.035;
 
-    personalGallery.addEventListener("mouseenter", () => paused = true);
-    personalGallery.addEventListener("mouseleave", () => paused = false);
-    personalGallery.addEventListener("focusin", () => paused = true);
-    personalGallery.addEventListener("focusout", () => {
-      paused = personalGallery.contains(document.activeElement);
-    });
+    function animateGallery(timestamp) {
 
-    personalGallery.addEventListener("wheel", pauseTemporarily, { passive:true });
-    personalGallery.addEventListener("touchstart", pauseTemporarily, { passive:true });
-    personalGallery.addEventListener("touchmove", pauseTemporarily, { passive:true });
-    personalGallery.addEventListener("pointerdown", pauseTemporarily);
+      if (!lastFrame) {
+        lastFrame = timestamp;
+      }
 
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(entries => {
-        visible = entries[0].isIntersecting;
-      }, { threshold:.05 }).observe(personalGallery);
-    }
+      const dt = Math.min(
+        timestamp - lastFrame,
+        50
+      );
 
-    function animatePersonal(timestamp) {
-      if (!lastFrame) lastFrame = timestamp;
-
-      const dt = Math.min(timestamp - lastFrame, 50);
       lastFrame = timestamp;
 
       if (
+        !isMobile() &&
         !paused &&
-        !interacting &&
+        !userInteracting &&
         visible &&
         !document.hidden &&
         !reducedMotion.matches
       ) {
+
         const maxScroll =
-          personalGallery.scrollWidth - personalGallery.clientWidth;
+          gallery.scrollWidth -
+          gallery.clientWidth;
 
         if (maxScroll > 0) {
-          const speed = .035;
 
-          if (personalGallery.scrollLeft >= maxScroll - 1) {
-            personalGallery.scrollLeft = 0;
-          } else {
-            personalGallery.scrollLeft += dt * speed;
+          gallery.scrollLeft += dt * speed;
+
+          if (
+            gallery.scrollLeft >= maxScroll - 1
+          ) {
+
+            gallery.scrollLeft = 0;
+
           }
+
         }
+
       }
 
-      requestAnimationFrame(animatePersonal);
+      requestAnimationFrame(animateGallery);
+
     }
 
-    requestAnimationFrame(animatePersonal);
+    gallery.addEventListener(
+      "mouseenter",
+      () => paused = true
+    );
+
+    gallery.addEventListener(
+      "mouseleave",
+      () => paused = false
+    );
+
+    gallery.addEventListener(
+      "focusin",
+      () => paused = true
+    );
+
+    gallery.addEventListener(
+      "focusout",
+      event => {
+
+        if (
+          !gallery.contains(event.relatedTarget)
+        ) {
+
+          paused = false;
+
+        }
+
+      }
+    );
+
+    gallery.addEventListener(
+      "pointerdown",
+      () => userInteracting = true
+    );
+
+    window.addEventListener(
+      "pointerup",
+      () => userInteracting = false
+    );
+
+    window.addEventListener(
+      "pointercancel",
+      () => userInteracting = false
+    );
+
+    if ("IntersectionObserver" in window) {
+
+      const observer = new IntersectionObserver(
+        entries => {
+
+          visible = entries[0].isIntersecting;
+
+        },
+        {
+          threshold: 0.05
+        }
+      );
+
+      observer.observe(gallery);
+
+    }
+
+    requestAnimationFrame(animateGallery);
+
   }
 
   /* ========================================
-     SAC INTERACTIF
+     SAC À DOS INTERACTIF
+
+     ORDINATEUR :
+     Les objets sortent autour du sac.
+
+     MOBILE :
+     Les objets apparaissent en grille.
   ======================================== */
 
-  const stage = document.getElementById("backpack-stage");
-  const bag = document.getElementById("backpack-bag");
-  const items = document.getElementById("backpack-items");
+  const backpackStage = document.getElementById(
+    "backpack-stage"
+  );
 
-  if (stage && bag && items) {
-    bag.addEventListener("click", () => {
-      const open = !stage.classList.contains("is-open");
+  const backpackBag = document.getElementById(
+    "backpack-bag"
+  );
 
-      stage.classList.toggle("is-open", open);
-      bag.setAttribute("aria-expanded", String(open));
-      bag.setAttribute(
+  const backpackItems = document.getElementById(
+    "backpack-items"
+  );
+
+  if (
+    backpackStage &&
+    backpackBag &&
+    backpackItems
+  ) {
+
+    function setBackpackState(open) {
+
+      backpackStage.classList.toggle(
+        "is-open",
+        open
+      );
+
+      backpackBag.setAttribute(
+        "aria-expanded",
+        String(open)
+      );
+
+      backpackBag.setAttribute(
         "aria-label",
         open ? "Fermer le sac" : "Ouvrir le sac"
       );
 
-      items.inert = !open;
-    });
+      backpackItems.inert = !open;
+
+    }
+
+    backpackBag.addEventListener(
+      "click",
+      () => {
+
+        const open = !backpackStage.classList.contains(
+          "is-open"
+        );
+
+        setBackpackState(open);
+
+      }
+    );
+
+    setBackpackState(false);
+
   }
 
 });
 </script>
+
 </body>
 </html>
