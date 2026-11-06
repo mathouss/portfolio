@@ -7,14 +7,17 @@
 <meta name="theme-color" content="#111016">
 <meta name="description" content="Portfolio de Mathis Slezakowa, journaliste et monteur vidéo.">
 <title>Mathis Slezakowa — Journaliste & Monteur vidéo</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@100;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 /* =====================================
    COULEURS ET BASE
 ===================================== */
+
 :root {
   --bg:#111016;
   --panel:#1C1925;
@@ -24,8 +27,15 @@
   --muted:#B7AEC2;
   --line:#39333F;
 }
-* {box-sizing:border-box}
-html {scroll-behavior:smooth}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
 body {
   margin:0;
   background:var(--bg);
@@ -33,15 +43,34 @@ body {
   font-family:"DM Sans",sans-serif;
   overflow-x:hidden;
 }
-a {color:inherit;text-decoration:none}
-button {font:inherit}
-img {max-width:100%;display:block}
-:focus-visible {outline:3px solid var(--lime);outline-offset:4px}
-[hidden] {display:none!important}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+button {
+  font:inherit;
+}
+
+img {
+  max-width:100%;
+  display:block;
+}
+
+:focus-visible {
+  outline:3px solid var(--lime);
+  outline-offset:4px;
+}
+
+[hidden] {
+  display:none!important;
+}
 
 /* =====================================
    ACCUEIL
 ===================================== */
+
 .hero {
   min-height:62svh;
   padding:65px 5% 85px;
@@ -51,6 +80,7 @@ img {max-width:100%;display:block}
   position:relative;
   text-align:center;
 }
+
 .hero h1 {
   font-family:Montserrat,sans-serif;
   font-size:clamp(35px,6.5vw,105px);
@@ -59,20 +89,27 @@ img {max-width:100%;display:block}
   white-space:nowrap;
   margin:0;
 }
+
 .hero-firstname {
   font-weight:100;
   color:var(--lime);
 }
+
 .hero-lastname {
   font-weight:800;
   color:var(--violet);
 }
-.hero-dot {color:var(--lime)}
+
+.hero-dot {
+  color:var(--lime);
+}
+
 .hero h2 {
   font-size:clamp(14px,1.6vw,22px);
   font-weight:400;
   margin:18px 0 0;
 }
+
 .scroll-indicator {
   position:absolute;
   bottom:20px;
@@ -88,29 +125,39 @@ img {max-width:100%;display:block}
   letter-spacing:2px;
   white-space:nowrap;
 }
+
 .scroll-arrow {
   color:var(--lime);
   font-size:26px;
   animation:arrowFloat 2s ease-in-out infinite;
 }
+
 @keyframes arrowFloat {
-  50% {transform:translateY(8px)}
+  50% {
+    transform:translateY(8px);
+  }
 }
 
 /* =====================================
    SECTIONS
 ===================================== */
+
 .portfolio-section {
   padding:100px 12%;
   border-top:1px solid var(--line);
 }
+
 .trust-section,
 .social-section,
 .about-section,
 .gear-section {
   background:var(--panel);
 }
-.section-heading {margin-bottom:45px}
+
+.section-heading {
+  margin-bottom:45px;
+}
+
 .section-heading h2,
 .contact-title {
   font-family:Montserrat,sans-serif;
@@ -120,22 +167,37 @@ img {max-width:100%;display:block}
   line-height:1.15;
   margin:0;
 }
-.section-intro {display:none}
+
 .trust-section h2,
 .social-section h2,
-.about-section h2 {color:var(--lime)}
+.about-section h2 {
+  color:var(--lime);
+}
+
 .journalism-section h2,
 .personal-section h2,
-.gear-section h2 {color:var(--violet)}
-.section-heading h2 span {color:var(--lime)}
+.gear-section h2 {
+  color:var(--violet);
+}
+
+.section-heading h2 span {
+  color:var(--lime);
+}
+
 .trust-section h2 span,
 .social-section h2 span,
-.about-section h2 span {color:var(--violet)}
+.about-section h2 span {
+  color:var(--violet);
+}
 
 /* =====================================
    ILS M'ONT FAIT CONFIANCE
 ===================================== */
-.trust-section {overflow:hidden}
+
+.trust-section {
+  overflow:hidden;
+}
+
 .trust-grid {
   position:relative;
   height:400px;
@@ -143,6 +205,7 @@ img {max-width:100%;display:block}
   perspective:1200px;
   overflow:hidden;
 }
+
 .trust-card {
   position:absolute;
   left:50%;
@@ -157,18 +220,24 @@ img {max-width:100%;display:block}
   opacity:0;
   pointer-events:none;
   z-index:var(--depth,0);
+
   transform:
     translateX(-50%)
     translateX(var(--x,0px))
     translateZ(var(--z,-300px))
     scale(var(--scale,.6))
     rotateY(var(--rotate,0deg));
+
   transition:
     transform 1.2s cubic-bezier(.22,1,.36,1),
     opacity 1.2s,
     filter 1.2s;
 }
-.trust-card.is-visible {pointer-events:auto}
+
+.trust-card.is-visible {
+  pointer-events:auto;
+}
+
 .trust-card img {
   width:180px;
   height:180px;
@@ -176,20 +245,31 @@ img {max-width:100%;display:block}
   object-fit:cover;
   border:2px solid transparent;
 }
-.trust-card.is-focused img {border-color:var(--lime)}
-.trust-card span {font-weight:700}
-.follower-count {color:var(--muted);font-size:13px}
-.trust-note {display:none}
+
+.trust-card.is-focused img {
+  border-color:var(--lime);
+}
+
+.trust-card span {
+  font-weight:700;
+}
+
+.follower-count {
+  color:var(--muted);
+  font-size:13px;
+}
 
 /* =====================================
    ANNEAUX DE SATURNE
 ===================================== */
+
 .saturn-shell {
   position:relative;
   width:100%;
   margin:0 auto;
   overflow:hidden;
   border-radius:24px;
+
   background:
     radial-gradient(
       ellipse at 50% 57%,
@@ -197,6 +277,7 @@ img {max-width:100%;display:block}
       transparent 65%
     );
 }
+
 .saturn-ring {
   position:relative;
   height:470px;
@@ -207,7 +288,11 @@ img {max-width:100%;display:block}
   user-select:none;
   -webkit-user-select:none;
 }
-.saturn-ring.is-dragging {cursor:grabbing}
+
+.saturn-ring.is-dragging {
+  cursor:grabbing;
+}
+
 .saturn-ring::before {
   content:"";
   position:absolute;
@@ -218,40 +303,52 @@ img {max-width:100%;display:block}
   transform:translate(-50%,-50%);
   border:1px solid rgba(214,90,255,.18);
   border-radius:50%;
+
   box-shadow:
     0 0 45px rgba(214,90,255,.035),
     inset 0 0 25px rgba(214,90,255,.025);
+
   pointer-events:none;
 }
+
 .saturn-card {
   position:absolute;
   left:50%;
   top:50%;
   width:var(--card-width,190px);
   opacity:0;
+
   transform:
     translate(-50%,-50%)
     translate(var(--sx,0px),var(--sy,0px))
     scale(var(--ss,.5))
     rotateY(var(--sr,0deg));
+
   transform-origin:center center;
   filter:blur(var(--sb,0px));
   z-index:var(--sz,1);
   will-change:transform,filter,opacity;
   pointer-events:none;
+
   transition:
     transform .12s linear,
     filter .12s linear,
     opacity .12s linear;
 }
-.saturn-card.is-front {pointer-events:auto}
+
+.saturn-card.is-front {
+  pointer-events:auto;
+}
+
 .saturn-card.is-front .video-frame {
   border-color:var(--lime);
+
   box-shadow:
     0 0 0 1px rgba(215,255,56,.15),
     0 20px 65px rgba(0,0,0,.45),
     0 0 35px rgba(215,255,56,.08);
 }
+
 .saturn-card .video-frame {
   width:100%;
   position:relative;
@@ -260,10 +357,23 @@ img {max-width:100%;display:block}
   border:1px solid rgba(214,90,255,.4);
   border-radius:12px;
 }
-.saturn-card.vertical {--card-width:172px}
-.saturn-card.horizontal {--card-width:300px}
-.saturn-card.vertical .video-frame {aspect-ratio:9/16}
-.saturn-card.horizontal .video-frame {aspect-ratio:16/9}
+
+.saturn-card.vertical {
+  --card-width:172px;
+}
+
+.saturn-card.horizontal {
+  --card-width:300px;
+}
+
+.saturn-card.vertical .video-frame {
+  aspect-ratio:9/16;
+}
+
+.saturn-card.horizontal .video-frame {
+  aspect-ratio:16/9;
+}
+
 .video-frame iframe {
   position:absolute;
   inset:0;
@@ -272,22 +382,32 @@ img {max-width:100%;display:block}
   border:0;
   display:block;
 }
-.saturn-card iframe {pointer-events:none}
-.saturn-card.is-front iframe {pointer-events:auto}
+
+.saturn-card iframe {
+  pointer-events:none;
+}
+
+.saturn-card.is-front iframe {
+  pointer-events:auto;
+}
+
 .video-caption {
   padding:12px 4px 0;
   text-align:center;
 }
+
 .video-caption h3 {
   margin:0;
   font-size:13px;
   font-weight:700;
 }
+
 .video-caption p {
   margin:5px 0 0;
   font-size:11px;
   color:var(--muted);
 }
+
 .saturn-hint {
   display:flex;
   justify-content:center;
@@ -298,6 +418,7 @@ img {max-width:100%;display:block}
   font-size:11px;
   letter-spacing:.3px;
 }
+
 .saturn-hint svg {
   width:18px;
   height:18px;
@@ -311,6 +432,7 @@ img {max-width:100%;display:block}
 /* =====================================
    PERSONNEL — SANS FLÈCHES
 ===================================== */
+
 .personal-gallery {
   display:flex;
   gap:22px;
@@ -322,10 +444,12 @@ img {max-width:100%;display:block}
   scrollbar-width:thin;
   scrollbar-color:var(--violet) transparent;
 }
+
 .personal-gallery .video-card {
   flex:0 0 clamp(270px,38vw,440px);
   scroll-snap-align:start;
 }
+
 .personal-gallery .video-frame {
   aspect-ratio:16/9;
   position:relative;
@@ -334,15 +458,20 @@ img {max-width:100%;display:block}
   overflow:hidden;
   border:1px solid rgba(214,90,255,.2);
 }
-.personal-gallery .video-caption {text-align:left}
+
+.personal-gallery .video-caption {
+  text-align:left;
+}
 
 /* =====================================
    À PROPOS
 ===================================== */
+
 .about-section {
   padding-top:70px;
   padding-bottom:75px;
 }
+
 .about-layout {
   display:grid;
   grid-template-columns:minmax(0,280px) minmax(0,1fr);
@@ -351,17 +480,20 @@ img {max-width:100%;display:block}
   max-width:950px;
   margin:auto;
 }
+
 .about-photo {
   aspect-ratio:4/5;
   border-radius:18px;
   overflow:hidden;
   background:#292333;
 }
+
 .about-photo img {
   width:100%;
   height:100%;
   object-fit:cover;
 }
+
 .about-content h3 {
   font-family:Montserrat,sans-serif;
   font-size:clamp(25px,2.7vw,38px);
@@ -369,12 +501,17 @@ img {max-width:100%;display:block}
   letter-spacing:-1px;
   margin:0 0 20px;
 }
-.about-content h3 span {color:var(--lime)}
+
+.about-content h3 span {
+  color:var(--lime);
+}
+
 .about-content p {
   font-size:14px;
   line-height:1.75;
   color:var(--muted);
 }
+
 .about-link {
   display:inline-flex;
   gap:15px;
@@ -387,25 +524,26 @@ img {max-width:100%;display:block}
 }
 
 /* =====================================
-   MON MATÉRIEL — 8 OBJETS
+   MON MATÉRIEL — NOUVELLE VERSION
 ===================================== */
+
 .gear-section {
   padding-top:55px;
-  padding-bottom:55px;
+  padding-bottom:65px;
 }
-.gear-section .section-heading {margin-bottom:18px}
-.backpack-experience {text-align:center}
-.backpack-intro {
-  font-size:15px;
-  font-weight:700;
+
+.gear-section .section-heading {
+  margin-bottom:15px;
 }
-.backpack-intro span {
-  display:block;
-  margin-top:5px;
-  color:var(--muted);
-  font-size:12px;
-  font-weight:400;
+
+.backpack-experience {
+  text-align:center;
 }
+
+/*
+  Plus aucune phrase au-dessus du sac.
+*/
+
 .backpack-stage {
   position:relative;
   max-width:900px;
@@ -413,6 +551,9 @@ img {max-width:100%;display:block}
   margin:auto;
   isolation:isolate;
 }
+
+/* LE SAC */
+
 .backpack-bag {
   position:absolute;
   z-index:5;
@@ -427,9 +568,11 @@ img {max-width:100%;display:block}
   cursor:pointer;
   transition:transform .4s;
 }
+
 .backpack-bag:hover {
   transform:translate(-50%,-50%) scale(1.05);
 }
+
 .backpack-bag img {
   position:absolute;
   inset:0;
@@ -438,150 +581,304 @@ img {max-width:100%;display:block}
   object-fit:contain;
   transition:opacity .4s;
 }
-.bag-open {opacity:0}
-.backpack-stage.is-open .bag-open {opacity:1}
-.backpack-stage.is-open .bag-closed {opacity:0}
+
+.bag-open {
+  opacity:0;
+}
+
+.backpack-stage.is-open .bag-open {
+  opacity:1;
+}
+
+.backpack-stage.is-open .bag-closed {
+  opacity:0;
+}
+
+/* OBJETS AUTOUR DU SAC */
+
 .backpack-items {
   position:absolute;
   inset:0;
   z-index:6;
   pointer-events:none;
 }
+
 .backpack-object {
   --x:0px;
   --y:0px;
   --rotation:0deg;
   --delay:0ms;
+
   position:absolute;
   left:50%;
   top:49%;
+
   display:flex;
   justify-content:center;
   align-items:center;
-  width:90px;
-  height:90px;
-  padding:9px;
-  border:1px solid rgba(215,255,56,.2);
-  border-radius:15px;
-  background:rgba(36,32,46,.94);
-  box-shadow:0 10px 24px rgba(0,0,0,.25);
+
+  width:105px;
+  height:105px;
+  padding:0;
+
+  /* SUPPRESSION DES ENCADRÉS */
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+
   opacity:0;
   visibility:hidden;
   pointer-events:none;
   cursor:pointer;
+  overflow:visible;
+
   transform:
     translate(-50%,-50%)
     translate(0,40px)
     scale(.15);
+
   transition:
     transform 1s cubic-bezier(.22,1,.36,1),
     opacity .5s,
-    visibility 0s linear 1s,
-    border-color .25s;
+    visibility 0s linear 1s;
 }
+
+/*
+  CONTOURS VERTS ET VIOLETS
+  Directement autour des images PNG.
+*/
+
 .backpack-object img {
   width:100%;
   height:100%;
   object-fit:contain;
+
+  filter:
+    drop-shadow(1px 0 0 var(--lime))
+    drop-shadow(-1px 0 0 var(--lime))
+    drop-shadow(0 1px 0 var(--lime))
+    drop-shadow(0 -1px 0 var(--lime))
+    drop-shadow(0 0 8px rgba(215,255,56,.55));
+
+  transition:filter .3s ease;
 }
+
+/* Images paires : violet */
+
+.backpack-object:nth-child(even) img {
+  filter:
+    drop-shadow(1px 0 0 var(--violet))
+    drop-shadow(-1px 0 0 var(--violet))
+    drop-shadow(0 1px 0 var(--violet))
+    drop-shadow(0 -1px 0 var(--violet))
+    drop-shadow(0 0 8px rgba(214,90,255,.55));
+}
+
+/* Survol vert */
+
+.backpack-object:nth-child(odd):hover img {
+  filter:
+    drop-shadow(0 0 4px var(--lime))
+    drop-shadow(0 0 15px rgba(215,255,56,.85));
+}
+
+/* Survol violet */
+
+.backpack-object:nth-child(even):hover img {
+  filter:
+    drop-shadow(0 0 4px var(--violet))
+    drop-shadow(0 0 15px rgba(214,90,255,.85));
+}
+
+/* RÉPARTITION DES 8 OBJETS */
+
 .backpack-object:nth-child(1) {
-  --x:-275px;--y:-135px;--rotation:-12deg;--delay:100ms;
+  --x:-275px;
+  --y:-135px;
+  --rotation:-12deg;
+  --delay:100ms;
 }
+
 .backpack-object:nth-child(2) {
-  --x:-105px;--y:-185px;--rotation:-6deg;--delay:220ms;
+  --x:-105px;
+  --y:-185px;
+  --rotation:-6deg;
+  --delay:220ms;
 }
+
 .backpack-object:nth-child(3) {
-  --x:105px;--y:-185px;--rotation:8deg;--delay:340ms;
+  --x:105px;
+  --y:-185px;
+  --rotation:8deg;
+  --delay:340ms;
 }
+
 .backpack-object:nth-child(4) {
-  --x:275px;--y:-135px;--rotation:12deg;--delay:460ms;
+  --x:275px;
+  --y:-135px;
+  --rotation:12deg;
+  --delay:460ms;
 }
+
 .backpack-object:nth-child(5) {
-  --x:-275px;--y:90px;--rotation:-8deg;--delay:580ms;
+  --x:-275px;
+  --y:90px;
+  --rotation:-8deg;
+  --delay:580ms;
 }
+
 .backpack-object:nth-child(6) {
-  --x:-105px;--y:180px;--rotation:-5deg;--delay:700ms;
+  --x:-105px;
+  --y:180px;
+  --rotation:-5deg;
+  --delay:700ms;
 }
+
 .backpack-object:nth-child(7) {
-  --x:105px;--y:180px;--rotation:5deg;--delay:820ms;
+  --x:105px;
+  --y:180px;
+  --rotation:5deg;
+  --delay:820ms;
 }
+
 .backpack-object:nth-child(8) {
-  --x:275px;--y:90px;--rotation:8deg;--delay:940ms;
+  --x:275px;
+  --y:90px;
+  --rotation:8deg;
+  --delay:940ms;
 }
+
+/* APPARITION DES OBJETS */
+
 .backpack-stage.is-open .backpack-object {
   opacity:1;
   visibility:visible;
   pointer-events:auto;
+
   transform:
     translate(-50%,-50%)
     translate(var(--x),var(--y))
     scale(1)
     rotate(var(--rotation));
+
   transition-delay:
-    var(--delay),var(--delay),0ms,var(--delay);
+    var(--delay),
+    var(--delay),
+    0ms;
 }
+
+/* SURVOL DES OBJETS */
+
 .backpack-stage.is-open .backpack-object:hover {
-  border-color:var(--lime);
   transform:
     translate(-50%,-50%)
     translate(var(--x),var(--y))
-    scale(1.12);
+    scale(1.15)
+    rotate(var(--rotation));
 }
+
+/* LOGICIELS SANS ENCADRÉS EXTÉRIEURS */
+
 .backpack-software {
-  width:65px;
-  height:65px;
+  width:75px;
+  height:75px;
+  background:transparent;
+  border:0;
+  box-shadow:none;
 }
+
 .software-logo {
   display:flex;
   align-items:center;
   justify-content:center;
-  width:40px;
-  height:40px;
+
+  width:48px;
+  height:48px;
+
   border-radius:9px;
+
   font-family:Montserrat,sans-serif;
-  font-size:16px;
+  font-size:18px;
   font-weight:800;
+
+  filter:drop-shadow(0 0 8px rgba(215,255,56,.35));
 }
-.premiere-logo {color:#9999FF;background:#252052}
-.resolve-logo {color:#fff;background:#353D55;font-size:13px}
-.indesign-logo {color:#FF71A8;background:#4B1831}
-.insta-logo {color:var(--lime);background:#33383A;font-size:12px}
+
+.premiere-logo {
+  color:#9999FF;
+  background:#252052;
+}
+
+.resolve-logo {
+  color:#fff;
+  background:#353D55;
+  font-size:14px;
+}
+
+.indesign-logo {
+  color:#FF71A8;
+  background:#4B1831;
+}
+
+.insta-logo {
+  color:var(--lime);
+  background:#33383A;
+  font-size:12px;
+}
+
+/* ENCADRÉ DE DESCRIPTION */
+
 .backpack-details {
   max-width:500px;
-  min-height:110px;
+  min-height:105px;
   margin:auto;
-  padding:18px 22px;
+  padding:20px 22px;
+
   background:#24202E;
   border:1px solid rgba(214,90,255,.22);
   border-radius:16px;
 }
+
 .backpack-details-label {
   color:var(--violet);
   font-size:10px;
   font-weight:700;
   letter-spacing:2px;
 }
+
 .backpack-details h3 {
   font-family:Montserrat,sans-serif;
   font-size:18px;
-  margin:8px 0;
+  line-height:1.45;
+  margin:10px 0 0;
 }
+
 .backpack-details p {
   color:var(--muted);
   font-size:12px;
   line-height:1.6;
+  margin:8px 0 0;
 }
+
+.backpack-details p:empty {
+  display:none;
+}
+
 .backpack-replay {
   margin-top:18px;
   padding:10px 19px;
+
   border:1px solid var(--lime);
   border-radius:30px;
   background:transparent;
   color:var(--lime);
+
   font-size:12px;
   font-weight:700;
   cursor:pointer;
 }
+
 .backpack-replay:hover {
   background:var(--lime);
   color:var(--bg);
@@ -590,34 +887,49 @@ img {max-width:100%;display:block}
 /* =====================================
    CONTACT
 ===================================== */
+
 .site-footer {
   padding:85px 12% 30px;
   background:#17131E;
 }
+
 .contact-title {
   color:var(--lime);
   margin-bottom:55px;
 }
-.contact-title span {color:var(--violet)}
-.contact-intro {margin-bottom:55px}
+
+.contact-title span {
+  color:var(--violet);
+}
+
+.contact-intro {
+  margin-bottom:55px;
+}
+
 .contact-intro h3 {
   font-family:Montserrat,sans-serif;
   font-size:clamp(25px,3vw,42px);
   letter-spacing:-1px;
   margin:0 0 18px;
 }
-.contact-intro h3 span {color:var(--violet)}
+
+.contact-intro h3 span {
+  color:var(--violet);
+}
+
 .contact-intro p {
   max-width:570px;
   color:var(--muted);
   line-height:1.8;
   font-size:15px;
 }
+
 .contact-grid {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:35px 60px;
 }
+
 .contact-item {
   display:flex;
   align-items:center;
@@ -629,11 +941,13 @@ img {max-width:100%;display:block}
   overflow-wrap:anywhere;
   transition:.3s;
 }
+
 .contact-item:hover {
   color:var(--lime);
   border-color:var(--lime);
   transform:translateY(-3px);
 }
+
 .contact-item svg {
   width:27px;
   height:27px;
@@ -644,6 +958,7 @@ img {max-width:100%;display:block}
   stroke-linecap:round;
   stroke-linejoin:round;
 }
+
 .footer-bottom {
   margin-top:85px;
   padding-top:22px;
@@ -655,90 +970,258 @@ img {max-width:100%;display:block}
 /* =====================================
    RESPONSIVE
 ===================================== */
+
 @media(max-width:1000px) {
-  .portfolio-section,.site-footer {padding-left:8%;padding-right:8%}
-  .trust-grid {height:340px}
-  .trust-card {top:45px;width:170px;height:260px}
-  .trust-card img {width:145px;height:145px}
+
+  .portfolio-section,
+  .site-footer {
+    padding-left:8%;
+    padding-right:8%;
+  }
+
+  .trust-grid {
+    height:340px;
+  }
+
+  .trust-card {
+    top:45px;
+    width:170px;
+    height:260px;
+  }
+
+  .trust-card img {
+    width:145px;
+    height:145px;
+  }
+
   .about-layout {
     grid-template-columns:230px minmax(0,1fr);
     gap:30px;
   }
-  .backpack-stage {height:420px}
-  .backpack-bag {width:180px;height:230px}
-  .backpack-object {width:76px;height:76px}
-  .backpack-software {width:60px;height:60px}
-  .backpack-object:nth-child(1) {--x:-205px;--y:-125px}
-  .backpack-object:nth-child(2) {--x:-75px;--y:-170px}
-  .backpack-object:nth-child(3) {--x:75px;--y:-170px}
-  .backpack-object:nth-child(4) {--x:205px;--y:-125px}
-  .backpack-object:nth-child(5) {--x:-205px;--y:75px}
-  .backpack-object:nth-child(6) {--x:-75px;--y:155px}
-  .backpack-object:nth-child(7) {--x:75px;--y:155px}
-  .backpack-object:nth-child(8) {--x:205px;--y:75px}
+
+  .backpack-stage {
+    height:420px;
+  }
+
+  .backpack-bag {
+    width:180px;
+    height:230px;
+  }
+
+  .backpack-object {
+    width:85px;
+    height:85px;
+  }
+
+  .backpack-software {
+    width:65px;
+    height:65px;
+  }
+
+  .backpack-object:nth-child(1) {
+    --x:-205px;
+    --y:-125px;
+  }
+
+  .backpack-object:nth-child(2) {
+    --x:-75px;
+    --y:-170px;
+  }
+
+  .backpack-object:nth-child(3) {
+    --x:75px;
+    --y:-170px;
+  }
+
+  .backpack-object:nth-child(4) {
+    --x:205px;
+    --y:-125px;
+  }
+
+  .backpack-object:nth-child(5) {
+    --x:-205px;
+    --y:75px;
+  }
+
+  .backpack-object:nth-child(6) {
+    --x:-75px;
+    --y:155px;
+  }
+
+  .backpack-object:nth-child(7) {
+    --x:75px;
+    --y:155px;
+  }
+
+  .backpack-object:nth-child(8) {
+    --x:205px;
+    --y:75px;
+  }
 }
+
 @media(max-width:700px) {
-  .hero {min-height:55svh;padding:65px 6% 75px}
+
+  .hero {
+    min-height:55svh;
+    padding:65px 6% 75px;
+  }
+
   .hero h1 {
     font-size:clamp(30px,8vw,56px);
     letter-spacing:-1.5px;
     white-space:normal;
   }
-  .portfolio-section {padding:75px 7%}
-  .section-heading {margin-bottom:30px}
-  .section-heading h2,.contact-title {
+
+  .portfolio-section {
+    padding:75px 7%;
+  }
+
+  .section-heading {
+    margin-bottom:30px;
+  }
+
+  .section-heading h2,
+  .contact-title {
     font-size:clamp(22px,5vw,34px);
     letter-spacing:-1px;
   }
-  .trust-grid {height:280px}
-  .trust-card {top:35px;width:135px;height:210px}
-  .trust-card img {width:115px;height:115px}
-  .trust-card span {font-size:12px}
-  .follower-count {font-size:10px}
-  .saturn-ring {height:370px}
-  .saturn-card.vertical {--card-width:135px}
-  .saturn-card.horizontal {--card-width:230px}
-  .saturn-hint {font-size:10px}
-  .personal-gallery .video-card {flex-basis:82vw}
-  .about-section {padding-top:55px;padding-bottom:60px}
-  .about-layout {grid-template-columns:1fr;gap:25px}
-  .about-photo {max-width:230px;margin:auto}
-  .about-content h3 {font-size:27px}
-  .about-content p {font-size:13px}
-  .gear-section {padding-top:50px;padding-bottom:50px}
-  .site-footer {padding:65px 7% 25px}
-  .contact-grid {grid-template-columns:1fr;gap:20px}
-  .contact-intro {margin-bottom:35px}
-  .contact-item {font-size:14px;padding:15px}
-  .footer-bottom {margin-top:65px}
+
+  .trust-grid {
+    height:280px;
+  }
+
+  .trust-card {
+    top:35px;
+    width:135px;
+    height:210px;
+  }
+
+  .trust-card img {
+    width:115px;
+    height:115px;
+  }
+
+  .trust-card span {
+    font-size:12px;
+  }
+
+  .follower-count {
+    font-size:10px;
+  }
+
+  .saturn-ring {
+    height:370px;
+  }
+
+  .saturn-card.vertical {
+    --card-width:135px;
+  }
+
+  .saturn-card.horizontal {
+    --card-width:230px;
+  }
+
+  .saturn-hint {
+    font-size:10px;
+  }
+
+  .personal-gallery .video-card {
+    flex-basis:82vw;
+  }
+
+  .about-section {
+    padding-top:55px;
+    padding-bottom:60px;
+  }
+
+  .about-layout {
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .about-photo {
+    max-width:230px;
+    margin:auto;
+  }
+
+  .about-content h3 {
+    font-size:27px;
+  }
+
+  .about-content p {
+    font-size:13px;
+  }
+
+  .gear-section {
+    padding-top:50px;
+    padding-bottom:50px;
+  }
+
+  .site-footer {
+    padding:65px 7% 25px;
+  }
+
+  .contact-grid {
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .contact-intro {
+    margin-bottom:35px;
+  }
+
+  .contact-item {
+    font-size:14px;
+    padding:15px;
+  }
+
+  .footer-bottom {
+    margin-top:65px;
+  }
 }
+
 @media(max-width:600px) {
-  .backpack-intro {font-size:14px}
-  .backpack-stage {height:auto;min-height:240px}
-  .backpack-bag {top:115px;width:145px;height:190px}
+
+  .backpack-stage {
+    height:auto;
+    min-height:240px;
+  }
+
+  .backpack-bag {
+    top:115px;
+    width:145px;
+    height:190px;
+  }
+
   .backpack-items {
     position:relative;
     inset:auto;
     display:grid;
     grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:8px;
+    gap:12px;
     padding-top:235px;
   }
-  .backpack-object,.backpack-software {
+
+  .backpack-object,
+  .backpack-software {
     position:relative;
     left:auto;
     top:auto;
     width:100%;
     height:76px;
-    padding:8px;
+    padding:0;
+
     transform:translateY(-100px) scale(.2);
   }
+
   .backpack-stage.is-open .backpack-object {
     transform:translateY(0) scale(1);
   }
+
   .backpack-stage.is-open .backpack-object:hover {
-    transform:translateY(-4px) scale(1.03);
+    transform:translateY(-4px) scale(1.08);
   }
+
   .backpack-stage:not(.is-open) .backpack-items {
     height:235px;
     padding-top:235px;
@@ -746,165 +1229,224 @@ img {max-width:100%;display:block}
     gap:0;
     overflow:hidden;
   }
+
   .backpack-stage:not(.is-open) .backpack-object {
     height:0;
     padding:0;
     border:0;
   }
-  .backpack-details {margin-top:15px}
+
+  .backpack-details {
+    margin-top:15px;
+  }
 }
+
 @media(prefers-reduced-motion:reduce) {
-  html,.personal-gallery {scroll-behavior:auto}
-  .scroll-arrow {animation:none}
-  .trust-card,.backpack-object {
+
+  html,
+  .personal-gallery {
+    scroll-behavior:auto;
+  }
+
+  .scroll-arrow {
+    animation:none;
+  }
+
+  .trust-card,
+  .backpack-object {
     transition-duration:.01ms!important;
     transition-delay:0ms!important;
   }
 }
+
 </style>
 </head>
 
 <body>
+
 <main>
 
 <!-- =====================================
      ACCUEIL
 ===================================== -->
+
 <section class="hero" id="accueil">
+
   <div class="hero-content">
     <h1>
       <span class="hero-firstname">MATHIS</span>
       <span class="hero-lastname">SLEZAKOWA<span class="hero-dot">.</span></span>
     </h1>
+
     <h2>Journaliste &amp; Monteur vidéo.</h2>
   </div>
+
   <a class="scroll-indicator" href="#confiance">
     <span>SCROLL POUR DÉCOUVRIR</span>
     <span class="scroll-arrow">↓</span>
   </a>
+
 </section>
 
 <!-- =====================================
      COLLABORATIONS
 ===================================== -->
+
 <section class="portfolio-section trust-section" id="confiance">
+
   <div class="section-heading">
     <h2>Ils m'ont fait confiance<span>.</span></h2>
   </div>
+
   <div class="trust-grid">
+
     <a class="trust-card" href="https://www.youtube.com/@legrandjd" target="_blank" rel="noopener noreferrer">
       <img src="https://unavatar.io/youtube/legrandjd" alt="Le Grand JD">
       <span>Le Grand JD</span>
       <small class="follower-count">4,2 M abonnés</small>
     </a>
+
     <a class="trust-card" href="https://www.tiktok.com/@passed.off" target="_blank" rel="noopener noreferrer">
       <img src="https://unavatar.io/tiktok/passed.off" alt="Passe D">
       <span>Passe D</span>
       <small class="follower-count">120 k abonnés</small>
     </a>
+
     <a class="trust-card" href="https://www.youtube.com/@luludrawww" target="_blank" rel="noopener noreferrer">
       <img src="https://unavatar.io/youtube/luludrawww" alt="Lucile">
       <span>lucileoululu</span>
       <small class="follower-count">71 k abonnés</small>
     </a>
+
     <a class="trust-card" href="https://www.instagram.com/passions_nord/" target="_blank" rel="noopener noreferrer">
       <img src="images/passions-nord.png" alt="Passion Nord">
       <span>Passion Nord</span>
       <small class="follower-count">32 k abonnés</small>
     </a>
+
     <a class="trust-card" href="https://www.instagram.com/le.gout.du.nord/" target="_blank" rel="noopener noreferrer">
       <img src="images/gout-du-nord.png" alt="Goût du Nord">
       <span>Goût du Nord</span>
       <small class="follower-count">37 k abonnés</small>
     </a>
+
     <a class="trust-card" href="https://www.instagram.com/nord_sport360/" target="_blank" rel="noopener noreferrer">
       <img src="images/nord-sports-360.png" alt="Nord Sports 360">
       <span>Nord Sports 360</span>
       <small class="follower-count">6 k abonnés</small>
     </a>
+
     <a class="trust-card" href="https://www.instagram.com/made.innord59/" target="_blank" rel="noopener noreferrer">
       <img src="images/made-in-nord.png" alt="Made in Nord">
       <span>Made in Nord</span>
       <small class="follower-count">4 k abonnés</small>
     </a>
+
   </div>
+
 </section>
 
 <!-- =====================================
      JOURNALISME
 ===================================== -->
+
 <section class="portfolio-section journalism-section" id="journalisme">
+
   <div class="section-heading">
     <h2>Journalisme<span>.</span></h2>
   </div>
+
   <div class="saturn-shell">
     <div class="saturn-ring" id="journalism-ring" aria-label="Anneau de vidéos de journalisme">
 
       <article class="saturn-card vertical">
         <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/s1HxelFsgwI" title="Reportage Short 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/s1HxelFsgwI" title="Reportage Short 1" loading="lazy" allowfullscreen></iframe>
         </div>
-        <div class="video-caption"><h3>Reportage #1</h3><p>YouTube Shorts</p></div>
+        <div class="video-caption">
+          <h3>Reportage #1</h3>
+          <p>YouTube Shorts</p>
+        </div>
       </article>
 
       <article class="saturn-card vertical">
         <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/aQbkl7vN6u8" title="Reportage Short 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/aQbkl7vN6u8" title="Reportage Short 2" loading="lazy" allowfullscreen></iframe>
         </div>
-        <div class="video-caption"><h3>Reportage #2</h3><p>YouTube Shorts</p></div>
+        <div class="video-caption">
+          <h3>Reportage #2</h3>
+          <p>YouTube Shorts</p>
+        </div>
       </article>
 
       <article class="saturn-card vertical">
         <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/kAV8g8o1iic" title="Reportage Short 3" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/kAV8g8o1iic" title="Reportage Short 3" loading="lazy" allowfullscreen></iframe>
         </div>
-        <div class="video-caption"><h3>Reportage #3</h3><p>YouTube Shorts</p></div>
+        <div class="video-caption">
+          <h3>Reportage #3</h3>
+          <p>YouTube Shorts</p>
+        </div>
       </article>
 
       <article class="saturn-card vertical">
         <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/XP44B0WhQHQ" title="Reportage Short 4" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/XP44B0WhQHQ" title="Reportage Short 4" loading="lazy" allowfullscreen></iframe>
         </div>
-        <div class="video-caption"><h3>Reportage #4</h3><p>YouTube Shorts</p></div>
+        <div class="video-caption">
+          <h3>Reportage #4</h3>
+          <p>YouTube Shorts</p>
+        </div>
       </article>
 
       <article class="saturn-card horizontal">
         <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/pazyrgRDhc4" title="Reportage YouTube 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/pazyrgRDhc4" title="Reportage YouTube 1" loading="lazy" allowfullscreen></iframe>
         </div>
-        <div class="video-caption"><h3>Reportage vidéo</h3><p>YouTube</p></div>
+        <div class="video-caption">
+          <h3>Reportage vidéo</h3>
+          <p>YouTube</p>
+        </div>
       </article>
 
       <article class="saturn-card horizontal">
         <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/N9_-EJleCHM" title="Reportage YouTube 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/N9_-EJleCHM" title="Reportage YouTube 2" loading="lazy" allowfullscreen></iframe>
         </div>
-        <div class="video-caption"><h3>Reportage vidéo</h3><p>YouTube</p></div>
+        <div class="video-caption">
+          <h3>Reportage vidéo</h3>
+          <p>YouTube</p>
+        </div>
       </article>
 
     </div>
   </div>
+
   <div class="saturn-hint">
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4"/>
     </svg>
     <span>Glisse pour faire tourner l'anneau</span>
   </div>
+
 </section>
 
 <!-- =====================================
      RÉSEAUX SOCIAUX
 ===================================== -->
+
 <section class="portfolio-section social-section" id="reseaux">
+
   <div class="section-heading">
     <h2>Réseaux sociaux<span>.</span></h2>
   </div>
+
   <div class="saturn-shell">
     <div class="saturn-ring" id="social-ring" aria-label="Anneau de vidéos pour les réseaux sociaux">
 
       <article class="saturn-card horizontal">
         <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/JgkT6Ip56s4" title="Le Grand JD" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/JgkT6Ip56s4" title="Le Grand JD" loading="lazy" allowfullscreen></iframe>
         </div>
         <div class="video-caption">
           <h3>3 jours enfermé dans un lieu hanté</h3>
@@ -914,7 +1456,7 @@ img {max-width:100%;display:block}
 
       <article class="saturn-card horizontal">
         <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/S0noLqQAlcY" title="Vlog lucileoululu" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/S0noLqQAlcY" title="Vlog lucileoululu" loading="lazy" allowfullscreen></iframe>
         </div>
         <div class="video-caption">
           <h3>Vlog ! Montage de lit et emballage de commandes</h3>
@@ -926,114 +1468,168 @@ img {max-width:100%;display:block}
         <div class="video-frame">
           <iframe src="https://www.tiktok.com/player/v1/7508349375534451990?controls=1" title="Passe D TikTok 1" loading="lazy" allowfullscreen></iframe>
         </div>
-        <div class="video-caption"><h3>Passe D</h3><p>TikTok</p></div>
+        <div class="video-caption">
+          <h3>Passe D</h3>
+          <p>TikTok</p>
+        </div>
       </article>
 
       <article class="saturn-card vertical">
         <div class="video-frame">
           <iframe src="https://www.tiktok.com/player/v1/7518007860157025538?controls=1" title="Passe D TikTok 2" loading="lazy" allowfullscreen></iframe>
         </div>
-        <div class="video-caption"><h3>Passe D</h3><p>TikTok</p></div>
+        <div class="video-caption">
+          <h3>Passe D</h3>
+          <p>TikTok</p>
+        </div>
       </article>
 
     </div>
   </div>
+
   <div class="saturn-hint">
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4"/>
     </svg>
     <span>Glisse pour faire tourner l'anneau</span>
   </div>
+
 </section>
 
 <!-- =====================================
-     PERSONNEL — SANS FLÈCHES
+     PERSONNEL
 ===================================== -->
+
 <section class="portfolio-section personal-section" id="personnel">
+
   <div class="section-heading">
     <h2>Personnel<span>.</span></h2>
   </div>
 
   <div class="personal-gallery" id="personal-gallery">
+
     <article class="video-card">
       <div class="video-frame">
         <iframe src="https://www.youtube.com/embed/VYcUWn7IoPg" title="Projet personnel 1" loading="lazy" allowfullscreen></iframe>
       </div>
-      <div class="video-caption"><h3>Projet personnel #1</h3><p>YouTube</p></div>
+      <div class="video-caption">
+        <h3>Projet personnel #1</h3>
+        <p>YouTube</p>
+      </div>
     </article>
 
     <article class="video-card">
       <div class="video-frame">
         <iframe src="https://www.youtube.com/embed/a_bpjqhLzL8" title="Projet personnel 2" loading="lazy" allowfullscreen></iframe>
       </div>
-      <div class="video-caption"><h3>Projet personnel #2</h3><p>YouTube</p></div>
+      <div class="video-caption">
+        <h3>Projet personnel #2</h3>
+        <p>YouTube</p>
+      </div>
     </article>
 
     <article class="video-card">
       <div class="video-frame">
         <iframe src="https://www.youtube.com/embed/l8-5jt7wCcg" title="Projet personnel 3" loading="lazy" allowfullscreen></iframe>
       </div>
-      <div class="video-caption"><h3>Projet personnel #3</h3><p>YouTube</p></div>
+      <div class="video-caption">
+        <h3>Projet personnel #3</h3>
+        <p>YouTube</p>
+      </div>
     </article>
 
     <article class="video-card">
       <div class="video-frame">
         <iframe src="https://www.youtube.com/embed/jDSoVvFHbdE" title="Projet personnel 4" loading="lazy" allowfullscreen></iframe>
       </div>
-      <div class="video-caption"><h3>Projet personnel #4</h3><p>YouTube</p></div>
+      <div class="video-caption">
+        <h3>Projet personnel #4</h3>
+        <p>YouTube</p>
+      </div>
     </article>
 
     <article class="video-card">
       <div class="video-frame">
         <iframe src="https://www.youtube.com/embed/pC-N1CB_mYc" title="Projet personnel 5" loading="lazy" allowfullscreen></iframe>
       </div>
-      <div class="video-caption"><h3>Projet personnel #5</h3><p>YouTube</p></div>
+      <div class="video-caption">
+        <h3>Projet personnel #5</h3>
+        <p>YouTube</p>
+      </div>
     </article>
 
     <article class="video-card">
       <div class="video-frame">
         <iframe src="https://www.youtube.com/embed/dROplpeWwsg" title="Projet personnel 6" loading="lazy" allowfullscreen></iframe>
       </div>
-      <div class="video-caption"><h3>Projet personnel #6</h3><p>YouTube</p></div>
+      <div class="video-caption">
+        <h3>Projet personnel #6</h3>
+        <p>YouTube</p>
+      </div>
     </article>
+
   </div>
+
 </section>
 
 <!-- =====================================
      À PROPOS
 ===================================== -->
+
 <section class="portfolio-section about-section" id="apropos">
+
   <div class="section-heading">
     <h2>À propos<span>.</span></h2>
   </div>
+
   <div class="about-layout">
+
     <div class="about-photo">
       <img src="images/mathis-portrait.jpg" alt="Portrait de Mathis Slezakowa" loading="lazy">
     </div>
+
     <div class="about-content">
+
       <h3>Raconter des histoires, <span>en images.</span></h3>
-      <p>Moi, c'est Mathis ! Passionné par la vidéo, j'aime donner vie aux idées à travers le montage, le rythme et la narration.</p>
-      <p>Entre journalisme, création de contenus et projets personnels, j'explore différents formats avec la même envie : raconter des histoires qui captent l'attention.</p>
-      <a href="#contact" class="about-link">Travaillons ensemble <span>↗</span></a>
+
+      <p>
+        Moi, c'est Mathis ! Passionné par la vidéo,
+        j'aime donner vie aux idées à travers le montage,
+        le rythme et la narration.
+      </p>
+
+      <p>
+        Entre journalisme, création de contenus et projets
+        personnels, j'explore différents formats avec la même
+        envie : raconter des histoires qui captent l'attention.
+      </p>
+
+      <a href="#contact" class="about-link">
+        Travaillons ensemble <span>↗</span>
+      </a>
+
     </div>
+
   </div>
+
 </section>
 
 <!-- =====================================
-     MON MATÉRIEL
+     MON MATÉRIEL — VERSION ÉPURÉE
 ===================================== -->
+
 <section class="portfolio-section gear-section" id="materiel">
+
   <div class="section-heading">
     <h2>Mon matériel<span>.</span></h2>
   </div>
 
   <div class="backpack-experience">
-    <p class="backpack-intro">
-      Tout mon univers créatif dans un sac.
-      <span>Clique dessus pour découvrir mon matériel !</span>
-    </p>
+
+    <!-- Phrase au-dessus du sac supprimée -->
 
     <div class="backpack-stage" id="backpack-stage">
+
       <div class="backpack-items" id="backpack-items" inert>
 
         <!-- iPHONE 18 PRO -->
@@ -1078,20 +1674,49 @@ img {max-width:100%;display:block}
 
       </div>
 
-      <button class="backpack-bag" id="backpack-bag" type="button" aria-controls="backpack-items" aria-expanded="false" aria-label="Ouvrir le sac">
+      <!-- SAC -->
+
+      <button
+        class="backpack-bag"
+        id="backpack-bag"
+        type="button"
+        aria-controls="backpack-items"
+        aria-expanded="false"
+        aria-label="Ouvrir le sac"
+      >
         <img class="bag-closed" src="images/sac-ferme.png" alt="">
         <img class="bag-open" src="images/sac-ouvert.png" alt="">
       </button>
+
     </div>
+
+    <!-- TEXTE SIMPLIFIÉ -->
 
     <div class="backpack-details" aria-live="polite">
-      <span class="backpack-details-label">MON MATÉRIEL</span>
-      <h3 id="backpack-detail-title">Prêt à découvrir mon univers ?</h3>
-      <p id="backpack-detail-text">Clique sur le sac pour faire apparaître mon matériel.</p>
+
+      <span class="backpack-details-label">
+        MON MATÉRIEL
+      </span>
+
+      <h3 id="backpack-detail-title">
+        Clique sur le sac pour faire apparaître mon matériel
+      </h3>
+
+      <p id="backpack-detail-text"></p>
+
     </div>
 
-    <button class="backpack-replay" id="backpack-replay" type="button" hidden>↻ Ranger le matériel</button>
+    <button
+      class="backpack-replay"
+      id="backpack-replay"
+      type="button"
+      hidden
+    >
+      ↻ Ranger le matériel
+    </button>
+
   </div>
+
 </section>
 
 </main>
@@ -1099,71 +1724,127 @@ img {max-width:100%;display:block}
 <!-- =====================================
      CONTACT
 ===================================== -->
+
 <footer class="site-footer" id="contact">
-  <h2 class="contact-title">Contact<span>.</span></h2>
+
+  <h2 class="contact-title">
+    Contact<span>.</span>
+  </h2>
 
   <div class="contact-intro">
-    <h3>Un projet en tête<span> ?</span></h3>
-    <p>Une vidéo à monter, une histoire à raconter ou simplement envie d'échanger ? N'hésite pas à me contacter !</p>
+
+    <h3>
+      Un projet en tête<span> ?</span>
+    </h3>
+
+    <p>
+      Une vidéo à monter, une histoire à raconter
+      ou simplement envie d'échanger ?
+      N'hésite pas à me contacter !
+    </p>
+
   </div>
 
   <div class="contact-grid">
+
     <a class="contact-item" href="tel:+33621439604">
-      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.09 3.18 2 2 0 0 1 4.08 1h3a2 2 0 0 1 2 1.72c.12.96.34 1.9.65 2.8a2 2 0 0 1-.45 2.11L8.01 8.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.31 1.84.53 2.8.65A2 2 0 0 1 22 16.92z"/></svg>
+      <svg viewBox="0 0 24 24">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.09 3.18 2 2 0 0 1 4.08 1h3a2 2 0 0 1 2 1.72c.12.96.34 1.9.65 2.8a2 2 0 0 1-.45 2.11L8.01 8.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.31 1.84.53 2.8.65A2 2 0 0 1 22 16.92z"/>
+      </svg>
       <span>06 21 43 96 04</span>
     </a>
+
     <a class="contact-item" href="mailto:mslezakowa@gmail.com">
-      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+      <svg viewBox="0 0 24 24">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <path d="m2 6 10 7 10-7"/>
+      </svg>
       <span>mslezakowa@gmail.com</span>
     </a>
+
     <a class="contact-item" href="https://www.linkedin.com/in/mathis-slezakowa-4b3592253/" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-7M11 13a3 3 0 0 1 6 0v4"/></svg>
+      <svg viewBox="0 0 24 24">
+        <rect x="2" y="2" width="20" height="20" rx="2"/>
+        <path d="M7 10v7M7 7v.01M11 17v-7M11 13a3 3 0 0 1 6 0v4"/>
+      </svg>
       <span>Mathis Slezakowa</span>
     </a>
+
     <a class="contact-item" href="https://www.instagram.com/mathis.slz/" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+      <svg viewBox="0 0 24 24">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/>
+      </svg>
       <span>mathis.slz</span>
     </a>
+
   </div>
 
-  <div class="footer-bottom">© 2026 — Mathis Slezakowa</div>
+  <div class="footer-bottom">
+    © 2026 — Mathis Slezakowa
+  </div>
+
 </footer>
 
 <script>
+
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =====================================
      COLLABORATIONS
   ===================================== */
+
   const trust = document.querySelector(".trust-grid");
 
   if (trust) {
+
     const cards = [...trust.querySelectorAll(".trust-card")];
     let active = 3;
     let timer = null;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
 
     function drawTrust() {
+
       const total = cards.length;
-      const spacing = Math.min(260,Math.max(105,trust.clientWidth*.24));
+
+      const spacing = Math.min(
+        260,
+        Math.max(105,trust.clientWidth*.24)
+      );
 
       cards.forEach((card,i) => {
+
         let d = i-active;
+
         if (d>total/2) d-=total;
         if (d< -total/2) d+=total;
 
         const a=Math.abs(d);
+
         card.style.setProperty("--x",d*spacing+"px");
         card.style.setProperty("--z",-a*110+"px");
         card.style.setProperty("--scale",Math.max(.55,1.18-a*.22));
         card.style.setProperty("--rotate",d*-9+"deg");
         card.style.setProperty("--depth",10-a);
-        card.style.opacity=a===0?1:a===1?.72:a===2?.35:0;
-        card.style.filter=`blur(${a===0?0:a===1?.7:a===2?2.2:5}px)`;
+
+        card.style.opacity=
+          a===0?1:
+          a===1?.72:
+          a===2?.35:0;
+
+        card.style.filter=
+          `blur(${a===0?0:a===1?.7:a===2?2.2:5}px)`;
+
         card.classList.toggle("is-focused",d===0);
         card.classList.toggle("is-visible",a<=2);
         card.tabIndex=a<=2?0:-1;
+
       });
+
     }
 
     function stopTrust() {
@@ -1172,52 +1853,77 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function startTrust() {
-      stopTrust();
-      if(reduced.matches || document.hidden || trust.matches(":hover") ||
-         trust.contains(document.activeElement)) return;
 
-      timer=setInterval(()=>{
+      stopTrust();
+
+      if (
+        reduced.matches ||
+        document.hidden ||
+        trust.matches(":hover") ||
+        trust.contains(document.activeElement)
+      ) return;
+
+      timer=setInterval(() => {
         active=(active+1)%cards.length;
         drawTrust();
       },3000);
+
     }
 
-    cards.forEach((card,i)=>{
-      card.addEventListener("click",e=>{
+    cards.forEach((card,i) => {
+
+      card.addEventListener("click",e => {
+
         if(i!==active) {
           e.preventDefault();
           active=i;
           drawTrust();
           startTrust();
         }
+
       });
+
     });
 
     trust.addEventListener("mouseenter",stopTrust);
     trust.addEventListener("mouseleave",startTrust);
     trust.addEventListener("focusin",stopTrust);
-    trust.addEventListener("focusout",()=>setTimeout(startTrust,0));
+
+    trust.addEventListener("focusout",() => {
+      setTimeout(startTrust,0);
+    });
+
     document.addEventListener("visibilitychange",startTrust);
     window.addEventListener("resize",drawTrust);
+
     reduced.addEventListener?.("change",startTrust);
 
     drawTrust();
     startTrust();
+
   }
 
   /* =====================================
-     ANNEAUX DE SATURNE — 3D
+     ANNEAUX DE SATURNE
   ===================================== */
+
   function createSaturnRing(id, initialOffset=0) {
+
     const ring=document.getElementById(id);
+
     if(!ring) return;
 
     const cards=[...ring.querySelectorAll(".saturn-card")];
     const count=cards.length;
+
     if(!count) return;
 
     const TWO_PI=Math.PI*2;
-    const reduced=window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const reduced=window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
     let angle=initialOffset;
     let dragging=false;
     let pointerId=null;
@@ -1230,15 +1936,22 @@ document.addEventListener("DOMContentLoaded", () => {
     let frontIndex=-1;
 
     function render() {
+
       const width=ring.clientWidth;
       const mobile=width<540;
-      const radiusX=Math.min(width*.37,mobile?165:345);
+
+      const radiusX=Math.min(
+        width*.37,
+        mobile?165:345
+      );
+
       const radiusY=mobile?38:57;
 
       let bestIndex=0;
       let bestDepth=-Infinity;
 
-      const positions=cards.map((card,i)=>{
+      const positions=cards.map((card,i) => {
+
         const theta=angle+(i/count)*TWO_PI;
         const depth=Math.cos(theta);
 
@@ -1253,14 +1966,17 @@ document.addEventListener("DOMContentLoaded", () => {
           depth,
           theta
         };
+
       });
 
       const previousFront=frontIndex;
       frontIndex=bestIndex;
 
-      cards.forEach((card,i)=>{
+      cards.forEach((card,i) => {
+
         const p=positions[i];
         const closeness=(p.depth+1)/2;
+
         const scale=.47+closeness*.53;
         const rotate=-Math.sin(p.theta)*42;
         const blur=Math.pow(1-closeness,1.3)*5.5;
@@ -1272,18 +1988,32 @@ document.addEventListener("DOMContentLoaded", () => {
         card.style.setProperty("--sr",rotate+"deg");
         card.style.setProperty("--sb",blur+"px");
         card.style.setProperty("--sz",Math.round(closeness*100));
+
         card.style.opacity=opacity;
 
         const isFront=i===bestIndex;
+
         card.classList.toggle("is-front",isFront);
         card.setAttribute("aria-hidden",String(!isFront));
+
         card.querySelector("iframe").tabIndex=isFront?0:-1;
+
       });
 
-      if(previousFront!==-1 && previousFront!==frontIndex) {
+      if(
+        previousFront!==-1 &&
+        previousFront!==frontIndex
+      ) {
+
         const oldFrame=cards[previousFront].querySelector("iframe");
-        if(oldFrame && oldFrame.src.includes("youtube.com/embed/")) {
+
+        if(
+          oldFrame &&
+          oldFrame.src.includes("youtube.com/embed/")
+        ) {
+
           try {
+
             oldFrame.contentWindow.postMessage(
               JSON.stringify({
                 event:"command",
@@ -1292,13 +2022,19 @@ document.addEventListener("DOMContentLoaded", () => {
               }),
               "https://www.youtube.com"
             );
+
           } catch(e) {}
+
         }
+
       }
+
     }
 
     function animate(timestamp) {
+
       if(!lastFrame) lastFrame=timestamp;
+
       const dt=Math.min(timestamp-lastFrame,50);
       lastFrame=timestamp;
 
@@ -1310,111 +2046,169 @@ document.addEventListener("DOMContentLoaded", () => {
         !document.hidden &&
         !reduced.matches
       ) {
+
         angle+=dt*.00016;
         render();
+
       }
 
       requestAnimationFrame(animate);
+
     }
 
-    ring.addEventListener("pointerdown",e=>{
+    ring.addEventListener("pointerdown",e => {
+
       if(e.target.closest("iframe")) return;
-      if(e.pointerType==="mouse" && e.button!==0) return;
+
+      if(
+        e.pointerType==="mouse" &&
+        e.button!==0
+      ) return;
 
       dragging=true;
       pointerId=e.pointerId;
       lastX=e.clientX;
       dragDistance=0;
+
       ring.classList.add("is-dragging");
+
       ring.setPointerCapture?.(e.pointerId);
+
     });
 
-    ring.addEventListener("pointermove",e=>{
-      if(!dragging || e.pointerId!==pointerId) return;
+    ring.addEventListener("pointermove",e => {
+
+      if(
+        !dragging ||
+        e.pointerId!==pointerId
+      ) return;
 
       const dx=e.clientX-lastX;
+
       lastX=e.clientX;
       dragDistance+=Math.abs(dx);
 
       angle+=dx*.009;
       render();
+
     });
 
     function endDrag(e) {
-      if(!dragging || e.pointerId!==pointerId) return;
+
+      if(
+        !dragging ||
+        e.pointerId!==pointerId
+      ) return;
+
       dragging=false;
       pointerId=null;
+
       ring.classList.remove("is-dragging");
+
     }
 
     ring.addEventListener("pointerup",endDrag);
     ring.addEventListener("pointercancel",endDrag);
-    ring.addEventListener("lostpointercapture",()=>{
+
+    ring.addEventListener("lostpointercapture",() => {
+
       dragging=false;
       pointerId=null;
+
       ring.classList.remove("is-dragging");
+
     });
 
-    cards.forEach((card,i)=>{
-      card.addEventListener("click",e=>{
+    cards.forEach((card,i) => {
+
+      card.addEventListener("click",e => {
+
         if(dragDistance>8) {
+
           e.preventDefault();
           dragDistance=0;
           return;
+
         }
 
         if(i!==frontIndex) {
+
           e.preventDefault();
 
           const targetAngle=-(i/count)*TWO_PI;
+
           const diff=Math.atan2(
             Math.sin(targetAngle-angle),
             Math.cos(targetAngle-angle)
           );
+
           angle+=diff;
           render();
+
         }
+
       });
+
     });
 
-    ring.addEventListener("mouseenter",()=>hovering=true);
-    ring.addEventListener("mouseleave",()=>hovering=false);
-    ring.addEventListener("focusin",()=>focused=true);
-    ring.addEventListener("focusout",()=>{
+    ring.addEventListener("mouseenter",() => hovering=true);
+    ring.addEventListener("mouseleave",() => hovering=false);
+
+    ring.addEventListener("focusin",() => focused=true);
+
+    ring.addEventListener("focusout",() => {
       focused=ring.contains(document.activeElement);
     });
 
     ring.tabIndex=0;
-    ring.addEventListener("keydown",e=>{
+
+    ring.addEventListener("keydown",e => {
+
       if(e.target!==ring) return;
 
-      if(e.key==="ArrowLeft" || e.key==="ArrowRight") {
+      if(
+        e.key==="ArrowLeft" ||
+        e.key==="ArrowRight"
+      ) {
+
         e.preventDefault();
-        angle+=(e.key==="ArrowRight"?1:-1)*TWO_PI/count;
+
+        angle+=(
+          e.key==="ArrowRight"?1:-1
+        )*TWO_PI/count;
+
         render();
+
       }
+
     });
 
     if("IntersectionObserver" in window) {
-      const observer=new IntersectionObserver(entries=>{
+
+      const observer=new IntersectionObserver(entries => {
         visible=entries[0].isIntersecting;
       },{threshold:.05});
+
       observer.observe(ring);
+
     }
 
     window.addEventListener("resize",render);
     reduced.addEventListener?.("change",render);
 
     render();
+
     requestAnimationFrame(animate);
+
   }
 
   createSaturnRing("journalism-ring",0);
   createSaturnRing("social-ring",0);
 
   /* =====================================
-     SAC INTERACTIF — 8 OBJETS
+     SAC INTERACTIF — VERSION ÉPURÉE
   ===================================== */
+
   const stage=document.getElementById("backpack-stage");
   const bag=document.getElementById("backpack-bag");
   const items=document.getElementById("backpack-items");
@@ -1422,82 +2216,123 @@ document.addEventListener("DOMContentLoaded", () => {
   const title=document.getElementById("backpack-detail-title");
   const description=document.getElementById("backpack-detail-text");
 
-  if(stage && bag && items && replay && title && description) {
+  if(
+    stage &&
+    bag &&
+    items &&
+    replay &&
+    title &&
+    description
+  ) {
 
     const gear={
+
       iphone:[
         "iPhone 18 Pro",
         "Mon smartphone pour la captation vidéo et la création de contenu."
       ],
+
       macbook:[
         "MacBook Pro M4 Max",
         "Mon ordinateur principal pour le montage vidéo et la postproduction."
       ],
+
       mouse:[
         "Logitech MX Master 4",
         "Ma souris pour travailler avec précision sur mes projets."
       ],
+
       screen:[
         "MSI Modern MD271UL",
         "Mon écran externe 27 pouces 4K UHD pour le montage et la création."
       ],
+
       premiere:[
         "Adobe Premiere Pro",
         "Mon logiciel de montage vidéo pour les reportages et les créations."
       ],
+
       resolve:[
         "DaVinci Resolve",
         "Mon outil pour l'étalonnage et la postproduction."
       ],
+
       indesign:[
         "Adobe InDesign",
         "Création de documents et mise en page."
       ],
+
       insta360:[
         "Insta360 Studio",
         "Traitement et export de vidéos à 360°."
       ]
+
     };
 
     function setOpen(open) {
+
       stage.classList.toggle("is-open",open);
-      bag.setAttribute("aria-expanded",String(open));
-      bag.setAttribute("aria-label",open?"Fermer le sac":"Ouvrir le sac");
+
+      bag.setAttribute(
+        "aria-expanded",
+        String(open)
+      );
+
+      bag.setAttribute(
+        "aria-label",
+        open?"Fermer le sac":"Ouvrir le sac"
+      );
+
       items.inert=!open;
       replay.hidden=!open;
 
       title.textContent=open
         ?"Mon matériel est sorti !"
-        :"Prêt à découvrir mon univers ?";
+        :"Clique sur le sac pour faire apparaître mon matériel";
 
       description.textContent=open
         ?"Clique sur un équipement pour le découvrir."
-        :"Clique sur le sac pour faire apparaître mon matériel.";
+        :"";
+
     }
 
-    bag.addEventListener("click",()=>{
-      setOpen(!stage.classList.contains("is-open"));
+    bag.addEventListener("click",() => {
+
+      setOpen(
+        !stage.classList.contains("is-open")
+      );
+
     });
 
-    items.querySelectorAll(".backpack-object").forEach(object=>{
-      object.addEventListener("click",()=>{
+    items.querySelectorAll(".backpack-object").forEach(object => {
+
+      object.addEventListener("click",() => {
+
         const info=gear[object.dataset.gear];
+
         if(!info) return;
 
         title.textContent=info[0];
         description.textContent=info[1];
+
       });
+
     });
 
-    replay.addEventListener("click",()=>{
+    replay.addEventListener("click",() => {
+
       setOpen(false);
       bag.focus();
+
     });
 
     setOpen(false);
+
   }
 
 });
+
 </script>
+
 </body>
 </html>
