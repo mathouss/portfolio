@@ -1637,13 +1637,97 @@ img { max-width:100%; display:block; }
   }
 }
 
+/* ==============================
+   MENTIONS LÉGALES ET CONFIDENTIALITÉ
+============================== */
+
+.legal-links {
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:16px;
+}
+
+.legal-links button {
+  background:none;
+  border:0;
+  padding:0;
+  color:var(--muted);
+  font-size:12px;
+  cursor:pointer;
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+
+.legal-links button:hover {
+  color:var(--lime);
+}
+
+.legal-dialog {
+  width:min(720px,calc(100vw - 28px));
+  max-height:85vh;
+  padding:0;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:var(--panel);
+  color:var(--text);
+}
+
+.legal-dialog::backdrop {
+  background:rgba(0,0,0,.8);
+}
+
+.legal-dialog-content {
+  padding:32px;
+  max-height:85vh;
+  overflow-y:auto;
+  line-height:1.75;
+}
+
+.legal-dialog h2 {
+  color:var(--lime);
+  margin:0 0 20px;
+  font-family:Montserrat,sans-serif;
+}
+
+.legal-dialog h3 {
+  color:var(--violet);
+  margin:22px 0 8px;
+}
+
+.legal-dialog p,
+.legal-dialog li {
+  color:var(--muted);
+  font-size:14px;
+}
+
+.legal-dialog a {
+  color:var(--lime);
+  text-decoration:underline;
+}
+
+.legal-close {
+  float:right;
+  background:var(--bg);
+  color:var(--text);
+  border:1px solid var(--line);
+  border-radius:50%;
+  width:38px;
+  height:38px;
+  cursor:pointer;
+  font-size:23px;
+}
+
 </style>
 </head>
 
 <body>
 <main>
 
-<!-- ACCUEIL -->
+<!-- ==============================
+     ACCUEIL
+============================== -->
+
 <section class="hero" id="accueil">
   <div class="hero-content">
     <h1>
@@ -1659,54 +1743,280 @@ img { max-width:100%; display:block; }
   </a>
 </section>
 
-<!-- ILS M'ONT FAIT CONFIANCE -->
+<!-- ==============================
+     ILS M'ONT FAIT CONFIANCE
+============================== -->
+
 <section class="portfolio-section trust-section" id="confiance">
   <div class="section-heading">
     <h2>Ils m'ont fait confiance<span>.</span></h2>
   </div>
 
   <div class="trust-grid">
-    <a class="trust-card" href="https://www.youtube.com/@legrandjd" target="_blank" rel="noopener noreferrer">
-      <img src="https://unavatar.io/youtube/legrandjd" alt="Le Grand JD">
+
+    <a class="trust-card"
+       href="https://www.youtube.com/@legrandjd"
+       target="_blank"
+       rel="noopener noreferrer">
+      <img src="https://unavatar.io/youtube/legrandjd"
+           alt="Le Grand JD">
       <span>Le Grand JD</span>
       <small class="follower-count">4,2 M abonnés</small>
     </a>
 
-    <a class="trust-card" href="https://www.tiktok.com/@passed.off" target="_blank" rel="noopener noreferrer">
-      <img src="https://unavatar.io/tiktok/passed.off" alt="Passe D">
+    <a class="trust-card"
+       href="https://www.tiktok.com/@passed.off"
+       target="_blank"
+       rel="noopener noreferrer">
+      <img src="https://unavatar.io/tiktok/passed.off"
+           alt="Passe D">
       <span>Passe D</span>
       <small class="follower-count">120 k abonnés</small>
     </a>
 
-    <a class="trust-card" href="https://www.youtube.com/@luludrawww" target="_blank" rel="noopener noreferrer">
-      <img src="https://unavatar.io/youtube/luludrawww" alt="Lucile">
+    <a class="trust-card"
+       href="https://www.youtube.com/@luludrawww"
+       target="_blank"
+       rel="noopener noreferrer">
+      <img src="https://unavatar.io/youtube/luludrawww"
+           alt="Lucile">
       <span>lucileoululu</span>
       <small class="follower-count">71 k abonnés</small>
     </a>
 
-    <a class="trust-card" href="https://www.instagram.com/passions_nord/" target="_blank" rel="noopener noreferrer">
-      <img src="images/passions-nord.png" alt="Passion Nord">
+    <a class="trust-card"
+       href="https://www.instagram.com/passions_nord/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <img src="images/passions-nord.png"
+           alt="Passion Nord">
       <span>Passion Nord</span>
       <small class="follower-count">32 k abonnés</small>
     </a>
 
-    <a class="trust-card" href="https://www.instagram.com/le.gout.du.nord/" target="_blank" rel="noopener noreferrer">
-      <img src="images/gout-du-nord.png" alt="Goût du Nord">
+    <a class="trust-card"
+       href="https://www.instagram.com/le.gout.du.nord/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <img src="images/gout-du-nord.png"
+           alt="Goût du Nord">
       <span>Goût du Nord</span>
       <small class="follower-count">37 k abonnés</small>
     </a>
 
-    <a class="trust-card" href="https://www.instagram.com/nord_sport360/" target="_blank" rel="noopener noreferrer">
-      <img src="images/nord-sports-360.png" alt="Nord Sports 360">
+    <a class="trust-card"
+       href="https://www.instagram.com/nord_sport360/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <img src="images/nord-sports-360.png"
+           alt="Nord Sports 360">
       <span>Nord Sports 360</span>
       <small class="follower-count">6 k abonnés</small>
     </a>
 
-    <a class="trust-card" href="https://www.instagram.com/made.innord59/" target="_blank" rel="noopener noreferrer">
-      <img src="images/made-in-nord.png" alt="Made in Nord">
+    <a class="trust-card"
+       href="https://www.instagram.com/made.innord59/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <img src="images/made-in-nord.png"
+           alt="Made in Nord">
       <span>Made in Nord</span>
       <small class="follower-count">4 k abonnés</small>
     </a>
+
+  </div>
+</section>
+
+<!-- JOURNALISME -->
+<section class="portfolio-section journalism-section" id="journalisme">
+  <div class="section-heading">
+    <h2>Journalisme<span>.</span></h2>
+  </div>
+
+  <div class="orbit-scene">
+    <div class="orbit-decoration" aria-hidden="true">
+      <span class="star"></span>
+      <span class="star"></span>
+      <span class="star"></span>
+      <span class="star"></span>
+      <span class="star"></span>
+      <span class="star"></span>
+    </div>
+
+    <div class="orbit-path" aria-hidden="true"></div>
+    <div class="orbit-center" aria-hidden="true"></div>
+
+    <div class="orbit-ring" id="journalism-ring" aria-label="Vidéos de journalisme">
+      <article class="orbit-card vertical">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/s1HxelFsgwI" title="Reportage Short 1" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </article>
+
+      <article class="orbit-card vertical">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/aQbkl7vN6u8" title="Reportage Short 2" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </article>
+
+      <article class="orbit-card vertical">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/kAV8g8o1iic" title="Reportage Short 3" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </article>
+
+      <article class="orbit-card vertical">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/XP44B0WhQHQ" title="Reportage Short 4" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </article>
+
+      <article class="orbit-card horizontal">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/pazyrgRDhc4" title="Reportage YouTube 1" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </article>
+
+      <article class="orbit-card horizontal">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/N9_-EJleCHM" title="Reportage YouTube 2" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- RÉSEAUX SOCIAUX -->
+<section class="portfolio-section social-section" id="reseaux">
+  <div class="section-heading">
+    <h2>Réseaux sociaux<span>.</span></h2>
+  </div>
+
+  <div class="orbit-scene">
+    <div class="orbit-decoration" aria-hidden="true">
+      <span class="star"></span>
+      <span class="star"></span>
+      <span class="star"></span>
+      <span class="star"></span>
+      <span class="star"></span>
+      <span class="star"></span>
+    </div>
+
+    <div class="orbit-path" aria-hidden="true"></div>
+    <div class="orbit-center" aria-hidden="true"></div>
+
+    <div class="orbit-ring" id="social-ring" aria-label="Vidéos pour les réseaux sociaux">
+      <article class="orbit-card horizontal">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/JgkT6Ip56s4" title="Le Grand JD" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-caption">
+          <h3>3 jours enfermé dans un lieu hanté</h3>
+          <p>Le Grand JD · YouTube</p>
+        </div>
+      </article>
+
+      <article class="orbit-card horizontal">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/S0noLqQAlcY" title="Vlog lucileoululu" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-caption">
+          <h3>Vlog ! Montage de lit et emballage de commandes</h3>
+          <p>lucileoululu · YouTube</p>
+        </div>
+      </article>
+
+      <article class="orbit-card vertical">
+        <div class="video-frame">
+          <iframe src="https://www.tiktok.com/player/v1/7508349375534451990?controls=1" title="Passe D TikTok 1" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-caption">
+          <h3>Passe D</h3>
+          <p>TikTok</p>
+        </div>
+      </article>
+
+      <article class="orbit-card vertical">
+        <div class="video-frame">
+          <iframe src="https://www.tiktok.com/player/v1/7518007860157025538?controls=1" title="Passe D TikTok 2" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-caption">
+          <h3>Passe D</h3>
+          <p>TikTok</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONNEL -->
+<section class="portfolio-section personal-section" id="personnel">
+  <div class="section-heading">
+    <h2>Personnel<span>.</span></h2>
+  </div>
+
+  <div class="personal-gallery" id="personal-gallery">
+
+    <article class="video-card">
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/VYcUWn7IoPg" title="Camp Scouts - Guidel" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">
+        <h3>Camp Scouts - Guidel</h3>
+        <p>2024</p>
+      </div>
+    </article>
+
+    <article class="video-card">
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/a_bpjqhLzL8" title="Camp Scouts - Grignols" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">
+        <h3>Camp Scouts - Grignols</h3>
+        <p>2025</p>
+      </div>
+    </article>
+
+    <article class="video-card">
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/l8-5jt7wCcg" title="Flora Loop - Publicité dans le cadre scolaire" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">
+        <h3>Flora Loop - Publicité dans le cadre scolaire</h3>
+        <p>2025</p>
+      </div>
+    </article>
+
+    <article class="video-card">
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/jDSoVvFHbdE" title="Espace Mental - Publicité" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">
+        <h3>Espace Mental - Publicité</h3>
+        <p>2026</p>
+      </div>
+    </article>
+
+    <article class="video-card">
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/pC-N1CB_mYc" title="Camp Pioks - Křimice" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">
+        <h3>Camp Pioks - Křimice</h3>
+        <p>2026</p>
+      </div>
+    </article>
+
+    <article class="video-card">
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/dROplpeWwsg" title="Les Friches dans le Nord - Reportage dans le cadre scolaire" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">
+        <h3>Les Friches dans le Nord - Reportage dans le cadre scolaire</h3>
+        <p>2025</p>
+      </div>
+    </article>
+
   </div>
 </section>
 
@@ -2034,11 +2344,68 @@ img { max-width:100%; display:block; }
     </a>
   </div>
 
-  <div class="footer-bottom">© 2026 — Mathis Slezakowa</div>
+  <div class="footer-bottom">© 2026 — Mathis Slezakowa
+    <div class="legal-links">
+      <button type="button" data-legal-open="legal-notices">Mentions légales</button>
+      <button type="button" data-legal-open="privacy-policy">Politique de confidentialité</button>
+    </div>
+  </div>
 </footer>
+
+
+<!-- Informations légales : sans modification des lecteurs vidéo -->
+<dialog class="legal-dialog" id="legal-notices" aria-labelledby="legal-notices-title">
+  <div class="legal-dialog-content">
+    <form method="dialog"><button class="legal-close" aria-label="Fermer">×</button></form>
+    <h2 id="legal-notices-title">Mentions légales</h2>
+    <h3>Éditeur du site</h3>
+    <p>Mathis Slezakowa — Portfolio personnel de journaliste et monteur vidéo.<br>
+    Contact : <a href="mailto:mslezakowa@gmail.com">mslezakowa@gmail.com</a>.<br>
+    Adresse postale de l'éditeur : [à compléter avant publication].</p>
+    <h3>Hébergement</h3>
+    <p>Site publié via Cloudflare Pages (à confirmer).<br>
+    Raison sociale et adresse de l'hébergeur : [à compléter et vérifier avant publication].</p>
+    <h3>Propriété intellectuelle</h3>
+    <p>Les textes, éléments graphiques et réalisations présentés sur ce portfolio sont protégés par les droits de leurs titulaires respectifs. Les vidéos intégrées restent hébergées sur leurs plateformes d'origine et appartiennent à leurs ayants droit.</p>
+    <h3>Liens externes</h3>
+    <p>Le site propose des liens vers des plateformes et services tiers. Leur contenu et leurs pratiques de confidentialité relèvent de leurs éditeurs.</p>
+  </div>
+</dialog>
+
+<dialog class="legal-dialog" id="privacy-policy" aria-labelledby="privacy-policy-title">
+  <div class="legal-dialog-content">
+    <form method="dialog"><button class="legal-close" aria-label="Fermer">×</button></form>
+    <h2 id="privacy-policy-title">Politique de confidentialité</h2>
+    <h3>Responsable du site</h3>
+    <p>Mathis Slezakowa — <a href="mailto:mslezakowa@gmail.com">mslezakowa@gmail.com</a>.</p>
+    <h3>Prise de contact</h3>
+    <p>Lorsque vous me contactez par courriel, les informations que vous transmettez sont utilisées pour répondre à votre demande. Vous pouvez demander l'accès, la rectification ou la suppression de vos données en écrivant à l'adresse indiquée ci-dessus, sous réserve des obligations légales applicables.</p>
+    <h3>Contenus externes</h3>
+    <p>Ce site intègre directement des lecteurs YouTube et TikTok et utilise des ressources tierces, notamment Google Fonts et des images de profils externes. Dès le chargement de ces éléments, les fournisseurs concernés peuvent recevoir des informations techniques telles que votre adresse IP et déposer ou lire des traceurs selon leurs pratiques. Aucune fenêtre de consentement n'est actuellement affichée avant ces chargements.</p>
+    <p>Consultez les politiques de confidentialité des services concernés pour en savoir plus. L'intégration directe de ces lecteurs et ressources doit être examinée au regard des règles applicables aux traceurs et au consentement avant publication.</p>
+    <h3>Hébergement et journaux techniques</h3>
+    <p>L'hébergeur peut traiter des données techniques nécessaires à la mise à disposition et à la sécurité du site. Les durées de conservation et les éventuels outils de mesure d'audience restent à vérifier selon la configuration réelle de l'hébergement.</p>
+    <h3>Vos droits</h3>
+    <p>Selon la réglementation applicable, vous disposez notamment de droits d'accès, de rectification, d'effacement et d'opposition. Vous pouvez également saisir la CNIL : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>.</p>
+  </div>
+</dialog>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* Ouverture des deux fenêtres légales */
+  document.querySelectorAll('[data-legal-open]').forEach(button => {
+    button.addEventListener('click', () => {
+      const dialog = document.getElementById(button.dataset.legalOpen);
+      if (dialog && !dialog.open) dialog.showModal();
+    });
+  });
+  document.querySelectorAll('.legal-dialog').forEach(dialog => {
+    dialog.addEventListener('click', event => {
+      if (event.target === dialog) dialog.close();
+    });
+  });
+
 
   /* ========================================
      PARAMÈTRES GÉNÉRAUX
@@ -2305,6 +2672,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function createOrbit(ringId) {
 
     const ring = document.getElementById(ringId);
+
 
     if (!ring) {
       return;
@@ -2737,6 +3105,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         passive: true
       }
+
     );
 
     /* ----------------------------------------
