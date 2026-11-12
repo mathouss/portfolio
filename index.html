@@ -2089,7 +2089,7 @@ img { max-width:100%; display:block; }
       <article class="orbit-card horizontal">
         <div class="video-frame">
           <iframe
-            data-src="https://www.youtube-nocookie.com/embed/JgkT6Ip56s4"
+           src="https://www.youtube-nocookie.com/embed/..."
             title="Le Grand JD"
             loading="lazy"
             allowfullscreen>
@@ -2106,7 +2106,7 @@ img { max-width:100%; display:block; }
       <article class="orbit-card horizontal">
         <div class="video-frame">
           <iframe
-            data-src="https://www.youtube-nocookie.com/embed/S0noLqQAlcY"
+src="https://www.youtube-nocookie.com/embed/..."
             title="Vlog lucileoululu"
             loading="lazy"
             allowfullscreen>
@@ -2123,7 +2123,7 @@ img { max-width:100%; display:block; }
       <article class="orbit-card vertical">
         <div class="video-frame">
           <iframe
-            data-src="https://www.tiktok.com/player/v1/7508349375534451990?controls=1"
+src="https://www.tiktok.com/player/v1/..."
             title="Passe D TikTok 1"
             loading="lazy"
             allowfullscreen>
@@ -2140,7 +2140,7 @@ img { max-width:100%; display:block; }
       <article class="orbit-card vertical">
         <div class="video-frame">
           <iframe
-            data-src="https://www.tiktok.com/player/v1/7518007860157025538?controls=1"
+src="https://www.tiktok.com/player/v1/..."
             title="Passe D TikTok 2"
             loading="lazy"
             allowfullscreen>
@@ -2171,7 +2171,7 @@ img { max-width:100%; display:block; }
     <article class="video-card">
       <div class="video-frame">
         <iframe
-          data-src="https://www.youtube-nocookie.com/embed/VYcUWn7IoPg"
+src="https://www.youtube-nocookie.com/embed/..."
           title="Camp Scouts - Guidel"
           loading="lazy"
           allowfullscreen>
@@ -2186,7 +2186,7 @@ img { max-width:100%; display:block; }
     <article class="video-card">
       <div class="video-frame">
         <iframe
-          data-src="https://www.youtube-nocookie.com/embed/a_bpjqhLzL8"
+src="https://www.youtube-nocookie.com/embed/..."
           title="Camp Scouts - Grignols"
           loading="lazy"
           allowfullscreen>
@@ -2201,7 +2201,7 @@ img { max-width:100%; display:block; }
     <article class="video-card">
       <div class="video-frame">
         <iframe
-          data-src="https://www.youtube-nocookie.com/embed/l8-5jt7wCcg"
+src="https://www.youtube-nocookie.com/embed/..."
           title="Flora Loop - Publicité dans le cadre scolaire"
           loading="lazy"
           allowfullscreen>
@@ -2216,7 +2216,7 @@ img { max-width:100%; display:block; }
     <article class="video-card">
       <div class="video-frame">
         <iframe
-          data-src="https://www.youtube-nocookie.com/embed/jDSoVvFHbdE"
+src="https://www.youtube-nocookie.com/embed/..."
           title="Espace Mental - Publicité"
           loading="lazy"
           allowfullscreen>
@@ -2231,7 +2231,7 @@ img { max-width:100%; display:block; }
     <article class="video-card">
       <div class="video-frame">
         <iframe
-          data-src="https://www.youtube-nocookie.com/embed/pC-N1CB_mYc"
+src="https://www.youtube-nocookie.com/embed/..."
           title="Camp Pioks - Křimice"
           loading="lazy"
           allowfullscreen>
@@ -2246,7 +2246,7 @@ img { max-width:100%; display:block; }
     <article class="video-card">
       <div class="video-frame">
         <iframe
-          data-src="https://www.youtube-nocookie.com/embed/dROplpeWwsg"
+src="https://www.youtube-nocookie.com/embed/..."
           title="Les Friches dans le Nord - Reportage dans le cadre scolaire"
           loading="lazy"
           allowfullscreen>
@@ -3664,98 +3664,7 @@ document.addEventListener("DOMContentLoaded", () => {
      YOUTUBE ET TIKTOK
   ========================================= */
 
-  document.querySelectorAll(
-    ".video-frame iframe[data-src]"
-  ).forEach(iframe => {
-
-    const frame = iframe.closest(
-      ".video-frame"
-    );
-
-    if (!frame) return;
-
-    const videoUrl = iframe.dataset.src;
-
-    if (!videoUrl) return;
-
-    const isTikTok =
-      videoUrl.includes("tiktok.com");
-
-    const platform = isTikTok
-      ? "TikTok"
-      : "YouTube";
-
-    // Empêche l'affichage d'un lecteur vide
-    // avant l'accord du visiteur.
-
-    iframe.style.visibility = "hidden";
-
-    // Création du panneau de consentement.
-
-    const overlay = document.createElement(
-      "div"
-    );
-
-    overlay.className = "video-consent";
-
-    const message = document.createElement(
-      "p"
-    );
-
-    message.textContent =
-      "Cette vidéo est hébergée par " +
-      platform +
-      ". Son affichage peut entraîner " +
-      "le traitement de données personnelles.";
-
-    const playButton = document.createElement(
-      "button"
-    );
-
-    playButton.type = "button";
-
-    playButton.textContent =
-      "Accepter et voir la vidéo";
-
-    playButton.setAttribute(
-      "aria-label",
-      "Accepter et charger cette vidéo " +
-      platform
-    );
-
-    const details = document.createElement(
-      "small"
-    );
-
-    details.textContent =
-      "Le lecteur sera chargé uniquement " +
-      "après votre clic.";
-
-    overlay.appendChild(message);
-    overlay.appendChild(playButton);
-    overlay.appendChild(details);
-
-    frame.appendChild(overlay);
-
-    playButton.addEventListener(
-      "click",
-      () => {
-
-        // Le lecteur externe ne charge
-        // qu'après ce clic.
-
-        iframe.src = videoUrl;
-
-        iframe.style.visibility = "visible";
-
-        overlay.remove();
-
-      }
-    );
-
-  });
-
-
+ 
   /* =========================================
      LIENS D'ANCRAGE
   ========================================= */
